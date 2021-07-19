@@ -2,11 +2,11 @@
   "name": "paintsocial",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-"scripts": {
-  "start": "node app.js",
-  "server": "nodemon app.js"
-},
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
