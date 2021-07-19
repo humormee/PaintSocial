@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
 import session from './session_api_reducer';
+<<<<<<< HEAD
+=======
+import errors from './errors_reducer';
+>>>>>>> Auth-Frontend
 
 const RootReducer = combineReducers({
-  session
+  session,
+  errors
 });
 
 export default RootReducer;
