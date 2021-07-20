@@ -3,9 +3,12 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const users = require("./routes/api/users");
+const paintings = require("./routes/api/paintings");
+
 const bodyParser = require('body-parser');
 const passport = require('passport');
 require('./config/passport')(passport);
+
 
 const path = require('path');
 if (process.env.NODE_ENV === 'production') {
@@ -20,6 +23,7 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 
 app.use("/api/users", users);
+app.use("/api/paintings", paintings)
 
 mongoose
   .connect(db, { useNewUrlParser: true })
