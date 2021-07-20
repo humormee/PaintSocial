@@ -7,6 +7,7 @@ const Painting = require('../../models/Painting');
 const validatePainting = require('../../validation/paintings');
 
 router.get('/', (req, res) => {
+    debugger
     Painting.find()
         .sort({ date: -1 })
         .then(paintings => res.json(paintings))
@@ -47,3 +48,5 @@ router.post('/',
 
     newPainting.save().then(painting => res.json(painting));
 })
+
+module.exports = router;
