@@ -5,7 +5,7 @@ import DrawPainting from './draw_painting';
 const mSTP = (state) => {
   return {
     currentUser: state.session.user,
-    // newPaiting: state.painting.new
+    newPaiting: state.painting.new
   };
 };
 
