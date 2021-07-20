@@ -1,9 +1,9 @@
 body {
-  // background: rgb(232, 159, 101); 
-  // background: rgb(227, 222, 193); 
+
+  background: rgb(227, 222, 193); 
   // background: rgb(185, 70, 41); 
-  // background: rgb(71, 175, 175); 
-  // background: rgb(180, 150, 125); 
+  // background: rgb(232, 159, 101); 
+  
   padding: 0;
   margin: 0;
   
@@ -14,13 +14,35 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  border: 1px solid red;
+  border: 1px solid lightgray;
   margin: 0;
   padding: 0 10px;
+
+  background: rgb(71, 175, 175); 
+}
+
+.signup-form, .login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  border: 1px solid lightgray;
+  border-radius: 15px;
+
+  width: 250px;  
+  margin: 20px auto;
+  padding: 20px 10px 20px 10px;
+  background: rgb(180, 150, 125); 
+}
+
+h1 {
+  font-size: 20px;
 }
 
 button {
-  font-size: 16px;
+  font-size: 12px;
   padding: 10px;
   margin: 5px;
   border-radius: 10px;
@@ -33,20 +55,14 @@ button:hover {
   background-color: rgb(216, 209, 209);
 }
 
-.signin-form, .login-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  width: 300px;  
-  border: 1px solid red;
-  margin: 20px auto;
-  padding: 10px
-
-  input {
-    
-  }
+input {
+  padding: 7px;
+  margin: 2px;
+  border-radius: 10px;
+  border: 1px solid grey;
 }
 
+.submit:hover {
+  cursor: pointer;
+  background-color: rgb(216, 209, 209);
+}
