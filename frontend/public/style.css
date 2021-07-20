@@ -1,8 +1,8 @@
 body {
 
   background: rgb(227, 222, 193); 
-  // background: rgb(185, 70, 41); 
-  // background: rgb(232, 159, 101); 
+  /*  background: rgb(185, 70, 41); 
+   background: rgb(232, 159, 101);  */
   
   padding: 0;
   margin: 0;
@@ -65,4 +65,11 @@ input {
 .submit:hover {
   cursor: pointer;
   background-color: rgb(216, 209, 209);
+}
+
+#canvas {
+  border: 2px solid black;
+  background: white;
+  width: 500px;
+  height: 500px;
 }
