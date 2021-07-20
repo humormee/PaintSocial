@@ -3,8 +3,11 @@ window.addEventListener('load', () => {
   const context = canvas.getContext('2d');
 
   // programatically resizing
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
+  // canvas.height = window.innerHeight;
+  // canvas.width = window.innerWidth;
+  canvas.height = 500;
+  canvas.width = 600;
+  context.translate(-50, -175);
   
   // variables
   let painting = false;

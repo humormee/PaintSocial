@@ -68,8 +68,9 @@ input {
 }
 
 #canvas {
+  margin: 50px;
   border: 2px solid black;
   background: white;
-  width: 500px;
-  height: 500px;
+  /* width: 800px;
+  height: 500px; */
 }
