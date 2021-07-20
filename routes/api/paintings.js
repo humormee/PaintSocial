@@ -31,6 +31,16 @@ router.get('/:id', (req, res) => {
         );
 });
 
+router.delete('/:id', (req, res) => {
+    debugger
+    var id = req.params.id;
+    var collection = db.get().collection('paintings');
+
+    collection.deleteOne( { _id: new mongo.ObjectId(id) }, function(err, results ) {  
+    });
+    res.json({ success: id })
+});
+
 router.post('/', 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
@@ -41,9 +51,11 @@ router.post('/',
     }
 
 
+    // painting_image: req.body.painting_image,
+
     const newPainting = new Painting ({
         artist: req.user.id,
-        painting_image: req.body.painting_image,
+        painting_image: 'temp value',
         title: req.body.title
     })
 
