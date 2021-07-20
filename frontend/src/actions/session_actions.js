@@ -25,10 +25,10 @@ export const logoutUser = () => ({
 });
 
 export const signup = user => dispatch => {
-  debugger
+  // debugger
   return ((
   APIUtil.signup(user).then(() => {
-    debugger
+    // debugger
   return ((
     dispatch(receiveUserSignIn())
   ), err => (
@@ -39,7 +39,7 @@ export const signup = user => dispatch => {
 )};
 
 export const login = user => dispatch => {
-  debugger
+  // debugger
 return (
   APIUtil.login(user).then(res => {
     // debugger

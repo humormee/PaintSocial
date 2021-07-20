@@ -24,8 +24,8 @@ class NavBar extends React.Component {
     } else {
       return (
         <div>
-          <Link to={'/signup'}>Signup</Link>
-          <Link to={'/login'}>Login</Link>
+          <Link to={'/signup'}><button>Signup</button></Link>
+          <Link to={'/login'}><button>Login</button></Link>
         </div>
       );
     }
@@ -33,7 +33,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="nav-bar">
         <h1>Paint Social</h1>
         {this.getLinks()}
       </div>
