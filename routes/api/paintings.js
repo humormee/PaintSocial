@@ -7,7 +7,6 @@ const Painting = require('../../models/Painting');
 const validatePainting = require('../../validation/paintings');
 
 router.get('/', (req, res) => {
-    debugger
     Painting.find()
         .sort({ date: -1 })
         .then(paintings => res.json(paintings))
@@ -41,12 +40,17 @@ router.post('/',
         return res.status(400).json(errors);
     }
 
+
     const newPainting = new Painting ({
-        artist: req.artist.id,
+        artist: req.user.id,
+        painting_image: req.body.painting_image,
         title: req.body.title
     })
 
-    newPainting.save().then(painting => res.json(painting));
+    newPainting.save().then(painting => res.json(painting)).catch(err =>
+            res.status(404).json({ paintingnotposted: 'painting did not save correctly' }
+        )
+    )
 })
 
 module.exports = router;
