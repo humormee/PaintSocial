@@ -1,5 +1,4 @@
 import React from 'react';
-import { fetchPainting } from '../../actions/painting_actions';
 
 export default class PaintingShow extends React.Component {
   constructor(props){

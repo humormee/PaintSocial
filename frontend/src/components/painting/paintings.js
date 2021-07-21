@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import PaintingItem from './painting';
 
 class Painting extends React.Component {
   constructor(props) {
@@ -9,6 +8,11 @@ class Painting extends React.Component {
     this.state = {
       paintings: []
     }
+  }
+
+  delete(id){
+    this.props.deletePainting(id)
+    // then(this.setState({ deleted: id }))
   }
 
   componentWillMount() {
@@ -24,11 +28,23 @@ class Painting extends React.Component {
       return <div>No paintings</div>
     } else {
       return (
-        <div>
-          <h2>Paintings</h2>
-            <div class="painting-index">
-              { this.state.paintings.map(painting => (
-                <PaintingItem key={painting.id} painting={painting} /> 
+        <div className="index-container">
+          <h1>Paintings</h1>
+            <div className="painting-index">
+              {this.state.paintings.map(painting => (              
+                <div className="painting-index-item">
+                  painting ID: {painting._id}
+                  <br />
+                  title: {painting.title}
+                  <br />
+                  Artist: {painting.artist}
+                  <br />
+                  Painting: {painting.painting_image}
+                  <br />    
+                  <button onClick={() => this.delete(painting._id)}>
+                    Delete
+                  </button>           
+                </div>
               ))}
             </div>            
         </div>

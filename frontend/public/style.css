@@ -161,16 +161,6 @@ input:focus::placeholder {
   background-color: rgb(108, 184, 255);
 }
 
-#canvas {
-  position: relative;
-  left: 17.5%;
-  border: 2px solid black;
-  background: white;
-  /* width: 800px;
-  height: 500px; */
-}
-
-
 .frontlogo img {
   position: relative;
   left: 28.5%;
@@ -259,3 +249,57 @@ input:focus::placeholder {
   height: 50.25px;
   opacity: 55%;
 }
+
+
+/* painting index */
+.index-container {
+  margin-top: 20px;
+}
+
+.index-container > h1{
+  text-align: center;
+}
+
+.painting-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  background: white;
+
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  width: 900px;
+  margin: 20px auto;
+}
+
+.painting-index-item{
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Draw Painting */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px solid red;
+}
+
+canvas {
+  box-shadow: 5px 5px 5px 5px rgb(56, 54, 54);
+  cursor: pointer;
+}
+
+/* #canvas {
+  position: relative;
+  left: 17.5%;
+  border: 2px solid black;
+  background: white;
+  /* width: 800px;
+  height: 500px; */
+} */

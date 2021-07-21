@@ -2,7 +2,8 @@ import {
   RECEIVE_PAINTINGS,
   RECEIVE_USER_PAINTINGS,
   RECEIVE_NEW_PAINTING,
-  RECEIVE_PAINTING
+  RECEIVE_PAINTING,
+  REMOVE_PAINTING
 } from '../actions/painting_actions';
 
 const paintingsReducer = (oldState = { all: {}, user: {}, new: undefined}, action) => {
@@ -20,8 +21,11 @@ const paintingsReducer = (oldState = { all: {}, user: {}, new: undefined}, actio
     case RECEIVE_NEW_PAINTING:
       nextState.next = action.painting.data
       return nextState;
-      default:
-        return oldState;
+    case REMOVE_PAINTING:
+      delete nextState[action.id]
+      return nextState;
+    default:
+      return oldState;
   }
 };
 
