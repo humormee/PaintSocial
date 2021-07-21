@@ -2,11 +2,19 @@ import { connect } from 'react-redux';
 import PaintingShow from './painting_show';
 import { fetchPainting } from '../../actions/painting_actions';
 
-const mSTP = ({entities}) => {
+// const mSTP = ({entities}) => {
+//   // debugger
+//   // const paintingId = parseInt(match.params.paintingId);
+//   // return { paintingId }
+// }
+
+const mSTP = (state, props) => {
   // debugger
-  // const paintingId = parseInt(match.params.paintingId);
-  // return { paintingId }
-}
+  return {
+    painting: state.entities.paintings[props.match.params.id],
+    // comments: state.entities.comments
+  }
+};
 
 const mDTP = dispatch => {
   return {

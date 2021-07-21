@@ -34,6 +34,7 @@ class Painting extends React.Component {
               {this.state.paintings.map(painting => (              
                 <div className="painting-index-item">
                   painting ID: {painting._id}
+                  <Link to={`/paintings/${painting._id}`} >painting ID: {painting._id}</Link>
                   <br />
                   title: {painting.title}
                   <br />
