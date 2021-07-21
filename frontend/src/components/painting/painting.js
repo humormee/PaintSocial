@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 class PaintingItem extends React.Component {
   render() {
     return (
-      <Link to={"/"}>
+      <Link painting={this.props.painting} to={`/paintings/${this.props.painting.id}`}>
         <div className="painting-index-item">
           title: {this.props.painting.title}
           <br />

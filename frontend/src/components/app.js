@@ -8,6 +8,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import DrawPaintingContainer from './painting/draw_painting_container';
 import PaintingsContainer from './painting/paintings_container';
+import PaintingShow from './painting/painting_show';
 
 const App = () => (
   <div className="outermost">
@@ -17,8 +18,9 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
-      <Route exact path="/draw-painting" conponent={DrawPaintingContainer} />
-      <Route exact path="/paintings" component={PaintingsContainer} />
+      <Route exact path="/draw-painting" component={DrawPaintingContainer} />
+      <Route exact path="/" component={PaintingsContainer} />
+      <Route exact path="/paintings/:id" component={PaintingShow} />
       <DrawPaintingContainer />
     </Switch>
   </div>
