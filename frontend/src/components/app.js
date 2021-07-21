@@ -7,7 +7,6 @@ import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import DrawPaintingContainer from './painting/draw_painting_container';
-import PaintBox from './painting/draw_painting_container';
 
 const App = () => (
   <div className="outermost">
@@ -16,10 +15,9 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route exact path="/painting" conponent={DrawPaintingContainer} />
+      {/* <ProtectedRoute exact path="/painting" conponent={DrawPaintingContainer} /> */}
+      <DrawPaintingContainer />
     </Switch>
-    {/* <Route exact path="/painting" conponent={DrawPaintingContainer} /> */}
-    {/* <PaintBox /> */}
   </div>
 );
 
