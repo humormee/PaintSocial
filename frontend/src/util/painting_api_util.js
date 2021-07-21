@@ -1,10 +1,13 @@
 import axios from 'axios';
 
 
-
 export const getPaintings = () => {
   return axios.get('/api/paintings')
 };
+
+export const getPainting = id => {
+  return axios.get(`/api/paintings/${id}`)
+}
 
 export const getUserPaintings = id => {
   return axios.get(`/api/paintings/user/${id}`)
@@ -13,3 +16,4 @@ export const getUserPaintings = id => {
 export const drawPainting = data => {
   return axios.post('/api/paintings/', data)
 }
+
