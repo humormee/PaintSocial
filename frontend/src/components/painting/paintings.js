@@ -11,6 +11,11 @@ class Painting extends React.Component {
     }
   }
 
+  delete(id){
+    this.props.deletePainting(id)
+    // then(this.setState({ deleted: id }))
+  }
+
   componentWillMount() {
     this.props.fetchPaintings();
   }
@@ -26,9 +31,27 @@ class Painting extends React.Component {
       return (
         <div>
           <h2>Paintings</h2>
-            <div class="painting-index">
-              { this.state.paintings.map(painting => (
-                <PaintingItem key={painting.id} painting={painting} /> 
+            <div className="painting-index">
+              {this.state.paintings.map(painting => (
+                // <PaintingItem 
+                //   key={painting.id} 
+                //   painting={painting} 
+                //   deletePainting={this.deletePainting} 
+                // /> 
+              
+                <div className="painting-index-item">
+                  painting ID: {painting._id}
+                  <br />
+                  title: {painting.title}
+                  <br />
+                  Artist: {painting.artist}
+                  <br />
+                  Painting: {painting.painting_image}
+                  <br />    
+                  <button onClick={() => this.delete(painting._id)}>
+                    Delete
+                  </button>           
+                </div>
               ))}
             </div>            
         </div>

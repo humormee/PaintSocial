@@ -3,17 +3,21 @@ import { Link } from 'react-router-dom'
 
 class PaintingItem extends React.Component {
   render() {
+    const { painting } = this.props;
     return (
-      <Link painting={this.props.painting} to={`/paintings/${this.props.painting.id}`}>
+      // <Link painting={painting} to={`/paintings/${painting.id}`}>
         <div className="painting-index-item">
-          title: {this.props.painting.title}
+          title: {painting.title}
           <br />
-          Artist: {this.props.painting.artist}
+          Artist: {painting.artist}
           <br />
-          Painting: {this.props.painting.painting_image}
-          <br />               
+          Painting: {painting.painting_image}
+          <br />    
+          <button onClick={() => this.props.delete(painting.id)}>
+            Delete
+          </button>           
         </div>
-      </Link>      
+      // </Link>      
     )
   }
 }

@@ -18,8 +18,8 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
-      <Route exact path="/draw-painting" component={DrawPaintingContainer} />
       <Route exact path="/" component={PaintingsContainer} />
+      <Route exact path="/draw-painting" component={DrawPaintingContainer} />
       <Route exact path="/paintings/:id" component={PaintingShowContainer} />
       <DrawPaintingContainer />
     </Switch>

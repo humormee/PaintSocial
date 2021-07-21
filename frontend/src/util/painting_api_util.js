@@ -17,3 +17,6 @@ export const drawPainting = data => {
   return axios.post('/api/paintings/', data)
 }
 
+export const deleteP = id => {
+  return axios.delete(`/api/paintings/${id}`)
+}

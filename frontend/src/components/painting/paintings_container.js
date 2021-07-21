@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPaintings } from '../../actions/painting_actions';
+import { fetchPaintings, deletePainting } from '../../actions/painting_actions';
 import Paintings from './paintings';
 
 const mSTP = (state) => ({
@@ -7,7 +7,8 @@ const mSTP = (state) => ({
 })
 
 const mDTP = dispatch => ({
-  fetchPaintings: () => dispatch(fetchPaintings())
+  fetchPaintings: () => dispatch(fetchPaintings()),
+  deletePainting: id => dispatch(deletePainting(id))
 })
 
 export default connect(mSTP, mDTP)(Paintings)
