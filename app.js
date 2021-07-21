@@ -11,6 +11,7 @@ require('./config/passport')(passport);
 
 
 const path = require('path');
+debugger
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
   app.get('/', (req, res) => {
