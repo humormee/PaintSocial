@@ -5,9 +5,9 @@ window.addEventListener('load', () => {
   // programatically resizing
   // canvas.height = window.innerHeight;
   // canvas.width = window.innerWidth;
-  canvas.height = 500;
-  canvas.width = 600;
-  context.translate(-50, -175);
+  canvas.height = 600;
+  canvas.width = 1000;
+  context.translate(-270, -100);
   
   // variables
   let painting = false;

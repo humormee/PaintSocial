@@ -54,25 +54,31 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form">
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              placeholder="Email"
-            />
-            <br />
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"
-            />
-            <br />
-            <input type="submit" value="Submit" className="submit"/>
-            {this.renderErrors()}
+      <div>
+        <div className="login-form">
+          <div className="formbacklog">
+            <img src="https://cdn.discordapp.com/attachments/597985513701376013/867246418484658176/Form_Background.png" alt="formbackground">
+            </img>
           </div>
-        </form>
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                placeholder="Email"
+              />
+              <br />
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="Password"
+              />
+              <br />
+              <input type="submit" value="Submit" className="submit"/>
+              {this.renderErrors()}
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
