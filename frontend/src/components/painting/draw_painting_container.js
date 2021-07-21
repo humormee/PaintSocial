@@ -4,8 +4,12 @@ import DrawPainting from './draw_painting';
 
 const mSTP = (state) => {
   return {
-    currentUser: state.session.user,
-    newPaiting: state.painting.new
+    newPainting: {
+      title: '',
+      artist: state.session.user,
+      painting_image: 'temp',
+      date: Date.now
+    }
   };
 };
 

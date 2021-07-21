@@ -5,15 +5,15 @@ class DrawPainting extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.newPainting;
     // this.state = {title: "temp title"}
+    this.state = this.props.newPainting;
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.drawPainting(this.state)
+    this.props.createPainting(this.state)
   }
 
   update() {

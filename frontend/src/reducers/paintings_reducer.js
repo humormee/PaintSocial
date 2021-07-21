@@ -4,8 +4,8 @@ import {
   RECEIVE_NEW_PAINTING
 } from '../actions/painting_actions';
 
-const PaintingsReducer = (oldState = { all: {}, user: {}, new: undefined}, action) => {
-  Object.freeze(state);
+const paintingsReducer = (oldState = { all: {}, user: {}, new: undefined}, action) => {
+  Object.freeze(oldState);
   let nextState = Object.assign({}, oldState);
   switch (action.type) {
     case RECEIVE_PAINTINGS:
@@ -18,8 +18,8 @@ const PaintingsReducer = (oldState = { all: {}, user: {}, new: undefined}, actio
       nextState.next = action.painting.data
       return nextState;
       default:
-        return state;
+        return oldState;
   }
 };
 
-export default PaintingsReducer;
+export default paintingsReducer;

@@ -19,7 +19,7 @@ const App = () => (
       <Route exact path="/painting" conponent={DrawPaintingContainer} />
     </Switch>
     {/* <Route exact path="/painting" conponent={DrawPaintingContainer} /> */}
-    <PaintBox />
+    {/* <PaintBox /> */}
   </div>
 );
 
