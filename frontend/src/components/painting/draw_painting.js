@@ -26,14 +26,14 @@ class DrawPainting extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="field">
             <input type="text" 
               value={this.state.title} 
               onChange={this.update()}
               placeholder="Title"
             />
-            <PaintBox />
             <input type="submit" value="Create Painting" />
+            <PaintBox />
           </div>
         </form>
       </div>
