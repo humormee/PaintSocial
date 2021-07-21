@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import PaintingShow from './painting_show';
 import { fetchPainting } from '../../actions/painting_actions';
 
-const mSTP = ({entities}) => {
+const mSTP = ({entities}, ownProps) => {
   // debugger
-  const paintingId = parseInt(match.params.paintingId);
+  const paintingId = parseInt(ownProps.match.params.paintingId);
   return { paintingId }
 }
 

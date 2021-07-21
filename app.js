@@ -19,6 +19,15 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
+async function postPainting({painting, title}) {
+  const formData = new FormData();
+  formData.append("painting", painting)
+  formData.append("title", title)
+
+  const result = await axios.post('/paintings', formData, { headers: { 'Content-Type': 'multipart/form'}})
+  return result.data
+}
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
