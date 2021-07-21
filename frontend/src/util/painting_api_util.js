@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 
+
 export const getPaintings = () => {
   return axios.get('/api/paintings')
 };
