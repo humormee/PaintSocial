@@ -17,10 +17,9 @@ export default class PaintingShow extends React.Component {
       this.props.fetchArtist(this.props.painting.artist)
     });
     debugger
-    // this.props.fetchArtist(this.props.painting.artist);
   }
 
-  
+
   render() {
     
     if(!this.props.painting || !this.props.entities.paintings.artist){
