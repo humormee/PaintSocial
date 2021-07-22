@@ -13,7 +13,8 @@ const mSTP = (state, props) => {
   }
   return {
     painting: painting,
-    entities: state.entities
+    entities: state.entities,
+    session: state.session
   }
 };
 

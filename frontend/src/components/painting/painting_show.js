@@ -45,17 +45,19 @@ export default class PaintingShow extends React.Component {
   }
 
   renderButton() {
+    
+    const { user } = this.props.session;
+    const artistId = this.props.painting.artist;
     debugger
-    const { user } = this.props.state.user;
-    const { artistId } = this.props.paintings.artist._id;
-    if(artistId === user._id){
+    if(artistId === user.id){
       return (
         <div>
-          {/* <button className="delete-painting" onClick={}/> */}
+          <button className="delete-painting" value={this.props.match.params.id} onClick={this.handleDelete}>Delete</button>
         </div>
       )
     }
   }
+
 
   render() {
     
@@ -68,6 +70,7 @@ export default class PaintingShow extends React.Component {
         <p>{this.props.painting.title}</p>
         <p>{this.props.entities.paintings.artist.email}</p>
         {console.log(this.props.painting)}
+        <div>{this.renderButton()}</div>
       </div>
     )
   }
