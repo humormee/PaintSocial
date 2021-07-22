@@ -3,6 +3,8 @@ import React from 'react';
 export default class PaintingShow extends React.Component {
   constructor(props){
     super(props)
+
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -20,6 +22,40 @@ export default class PaintingShow extends React.Component {
     // this.props.fetchArtist(this.props.painting.artist);
   }
 
+
+  // renderButton(){
+
+  //   const { user } = this.props;
+  //   const { id } = this.props.user;
+  //   const { author_id } = this.props.event;
+  //   if(user && id === author_id){
+  //     return (
+  //       <div className="edit-delete-event">
+  //         <button className="edit-event" value={this.props.event.id} onClick={this.handleEdit}>Edit Event</button>
+  //         <button className="delete-event" value={this.props.event.id} onClick={this.handleDelete}>Delete Event</button>
+  //       </div>
+  //     )
+  //   };
+  // }
+
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deletePainting(this.props.match.params.id)
+    .then(() => this.props.history.push('/'));
+  }
+
+  renderButton() {
+    debugger
+    const { user } = this.props.state.user;
+    const { artistId } = this.props.paintings.artist._id;
+    if(artistId === user._id){
+      return (
+        <div>
+          {/* <button className="delete-painting" onClick={}/> */}
+        </div>
+      )
+    }
+  }
 
   render() {
     

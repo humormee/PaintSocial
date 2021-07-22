@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PaintingShow from './painting_show';
-import { fetchPainting, fetchPaintings, fetchArtist} from '../../actions/painting_actions';
+import { fetchPainting, fetchPaintings, fetchArtist, deletePainting} from '../../actions/painting_actions';
 
 const mSTP = (state, props) => {
   const paintArray = state.entities.paintings.all;
@@ -22,7 +22,8 @@ const mDTP = dispatch => {
   return {
     fetchArtist: id => dispatch(fetchArtist(id)),
     fetchPainting: id => dispatch(fetchPainting(id)),
-    fetchPaintings: () => dispatch(fetchPaintings())
+    fetchPaintings: () => dispatch(fetchPaintings()),
+    deletePainting: id => dispatch(deletePainting(id))
   }
 }
 

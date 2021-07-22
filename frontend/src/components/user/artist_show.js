@@ -13,12 +13,16 @@ class ArtistShow extends React.Component {
   }
 
   render(){
-    if(!this.props.entities.paintings.artist){
+    debugger
+    if(!this.props.entities.paintings.artist || !this.props.entities.paintings.user.length > 0){
       return null;
     }
 
     const { username, email } = this.props.entities.paintings.artist;
-    const userPaintings = this.props.entities.paintings.all;
+    
+    const userPaintings = this.props.entities.paintings.user;
+    debugger
+
     // const paintingsArr;
 
     // for(i = 0; i < allPaintings.length; i++) {
