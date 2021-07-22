@@ -1,10 +1,20 @@
 import * as APIUtil from '../util/session_api_util';
+// import
 import jwt_decode from 'jwt-decode';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+export const RECEIVE_ARTIST = "RECEIVE_ARTIST";
+
+export const receiveArtist = artist => {
+  debugger
+  return ({
+    type: RECEIVE_ARTIST,
+    artist
+  })
+}
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -23,6 +33,18 @@ export const receiveErrors = errors => ({
 export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
+
+export const fetchArtist = id => dispatch => {
+  debugger
+return (
+  APIUtil.getArtist(id).then(artist => {
+    debugger
+    return (
+      dispatch(receiveArtist(artist))
+    )
+  }).catch(err =>
+  console.log(err))
+)};
 
 export const signup = user => dispatch => {
   // debugger

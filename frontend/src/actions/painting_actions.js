@@ -12,6 +12,7 @@ export const RECEIVE_USER_PAINTINGS = 'RECEIVE_USER_PAINTINGS';
 export const RECEIVE_NEW_PAINTING = 'RECEIVE_NEW_PAINTING';
 export const REMOVE_PAINTING = 'REMOVE_PAINTING';
 
+
 export const receivePaintings = paintings => ({
   type: RECEIVE_PAINTINGS,
   paintings

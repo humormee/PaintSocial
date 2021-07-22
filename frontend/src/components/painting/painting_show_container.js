@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PaintingShow from './painting_show';
 import { fetchPainting, fetchPaintings} from '../../actions/painting_actions';
-
+import { fetchArtist } from '../../actions/session_actions'
 // const mSTP = ({entities}) => {
 //   // debugger
 //   // const paintingId = parseInt(match.params.paintingId);
@@ -13,7 +13,7 @@ const mSTP = (state, props) => {
   const paintArray = state.entities.paintings.all;
   let painting;
   
-  for (let i = 0; i< paintArray.length; i++) {
+  for (let i = 0; i < paintArray.length; i++) {
     if ( paintArray[i]._id === props.match.params.id ) {
       painting = paintArray[i]
     } 
@@ -24,7 +24,9 @@ const mSTP = (state, props) => {
 };
 
 const mDTP = dispatch => {
+  debugger
   return {
+    fetchArtist: id => dispatch(fetchArtist(id)),
     fetchPainting: id => dispatch(fetchPainting(id)),
     fetchPaintings: () => dispatch(fetchPaintings())
   }

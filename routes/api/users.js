@@ -20,6 +20,8 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
     });
   })
 
+
+
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -96,5 +98,22 @@ router.post('/register', (req, res) => {
         })
       })
   })
+
+  // router.get('/:id', (req, res) => {
+//   Painting.findById(req.params.id)
+//       .then(painting => res.json(painting))
+//       .catch(err =>
+//           res.status(404).json({ nopaintingfound: 'No painting found with that ID' })
+//       );
+// });
+
+router.get('/:id', (req, res) => {
+  debugger
+  User.findById(req.params.id)
+      .then(user => res.json(user))
+      .catch(err =>
+        res.status(404).json({ nouserfoundwiththatid: 'No painting found with that ID' })
+      );
+})
 
 module.exports = router;

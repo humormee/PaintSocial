@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
+import axios from 'axios';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
 
+  window.axios = axios;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 

@@ -6,13 +6,14 @@ export default class PaintingShow extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
-    // this.props.fetchPainting(this.props.painting._id)
-    this.props.fetchPaintings()
+    debugger
+    this.props.fetchPainting(this.props.painting._id);
+    this.props.fetchPaintings();
+    this.props.fetchArtist(this.props.painting.artist);
   }
 
   render() {
-    // debugger
+    debugger
     return (
       <div>
         <p>You are on the Paintings Show Component</p>
