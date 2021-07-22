@@ -20,10 +20,13 @@ export const receivePaintings = paintings => ({
   paintings
 });
 
-export const receivePainting = painting => ({
-  type: RECEIVE_PAINTING,
-  painting
-});
+export const receivePainting = painting => {
+  debugger
+  return ({
+    type: RECEIVE_PAINTING,
+    painting
+  })
+};
 
 export const receiveArtist = artist => {
   
@@ -43,10 +46,13 @@ export const receiveNewPainting = painting => ({
   painting
 })
 
-export const removePainting = id => ({
-  type: REMOVE_PAINTING,
-  id
-})
+export const removePainting = id => {
+  
+  return ({
+    type: REMOVE_PAINTING,
+    id
+  })
+}
 
 export const fetchArtist = id => dispatch => {
   
@@ -64,10 +70,12 @@ export const fetchPaintings = () => dispatch => (
   getPaintings().then(paintings => dispatch(receivePaintings(paintings))).catch(err => console.log(err))
 );
 
-export const fetchPainting = id => dispatch => (
-  getPainting(id).then(painting => dispatch(receivePainting(painting))).catch(err =>
-  console.log(err))
-)
+export const fetchPainting = id => dispatch => {
+  return (
+    getPainting(id).then(painting => dispatch(receivePainting(painting))).catch(err =>
+    console.log(err))
+  )
+}
 
 export const fetchUserPaintings = id => dispatch => (
   getUserPaintings(id).then(paintings => dispatch(receiveUserPaintings(paintings))).catch(err => console.log(err))
