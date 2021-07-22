@@ -161,6 +161,7 @@ input:focus::placeholder {
   background-color: rgb(108, 184, 255);
 }
 
+
 .frontlogo img {
   position: relative;
   left: 28.5%;
@@ -302,4 +303,17 @@ canvas {
   background: white;
   /* width: 800px;
   height: 500px; */
-} */
+/* } */
+
+.demobutton {
+  border-radius: 6px;
+  background-color: rgba(67, 164, 255, 1);
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.demobutton:hover {
+  background-color: rgb(108, 184, 255);
+}
