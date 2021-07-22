@@ -8,6 +8,7 @@ export default class PaintingShow extends React.Component {
   componentDidMount() {
     
     this.props.fetchPaintings();
+    // debugger
     this.props.fetchPainting(this.props.match.params.id).then(res => {
       return console.log(res)
       });
@@ -15,6 +16,8 @@ export default class PaintingShow extends React.Component {
     this.props.fetchPainting(this.props.match.params.id).then(() => {
       this.props.fetchArtist(this.props.painting.artist)
     });
+    // debugger
+    // this.props.fetchArtist(this.props.painting.artist);
   }
 
 

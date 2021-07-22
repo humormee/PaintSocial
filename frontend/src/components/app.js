@@ -9,6 +9,7 @@ import SignupFormContainer from './session/signup_form_container';
 import DrawPaintingContainer from './painting/draw_painting_container';
 import PaintingsContainer from './painting/paintings_container';
 import PaintingShowContainer from './painting/painting_show_container';
+import ArtistShowContainer from './user/artist_show_container'
 
 const App = () => (
   <div className="outermost">
@@ -21,6 +22,7 @@ const App = () => (
       <Route exact path="/" component={PaintingsContainer} />
       <Route exact path="/draw-painting" component={DrawPaintingContainer} />
       <Route exact path="/paintings/:id" component={PaintingShowContainer} />
+      <Route exact path="/artist/:id" component={ArtistShowContainer} />
       <DrawPaintingContainer />
     </Switch>
   </div>
