@@ -20,8 +20,6 @@ const mSTP = (state, props) => {
   }
   return {
     painting: painting
-    // painting: state.entities.paintings.all[props.match.params.id],
-    // comments: state.entities.comments
   }
 };
 
