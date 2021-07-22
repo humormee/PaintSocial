@@ -7,7 +7,7 @@ class MainPage extends React.Component {
     return (
       <div>
         <div className="frontlogo">
-            <Link to="/login">
+            <Link to="/">
                 <img src="https://cdn.discordapp.com/attachments/597985513701376013/867240581189337098/PaintSocial_Logo_Bigger.png" alt="PaintSocialLogo"/>
             </Link>
         </div>
