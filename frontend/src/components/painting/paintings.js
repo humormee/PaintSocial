@@ -43,7 +43,7 @@ class Painting extends React.Component {
                   <br />
                   title: {painting.title}
                   <br />
-                  Artist: {painting.artist}
+                  <Link to={`/artist/${painting.artist}`}>Artist: {painting.artist}</Link>
                   <br />
                   Painting: {painting.painting_image}
                   <br />    

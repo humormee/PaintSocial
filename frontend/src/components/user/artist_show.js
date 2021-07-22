@@ -14,8 +14,9 @@ class ArtistShow extends React.Component {
     // if(!this.props.entities.artist){
     //   return null;
     // }
-
+    debugger
     return (
+      
       <div className="usershowpage">
         <h1>you are on a users show page</h1>
       </div>
