@@ -10,8 +10,8 @@ window.addEventListener('load', () => {
 
   let start_background_color = "white";
   let draw_color = "black";
-  let draw_width = "2";
-  let is_drawing = false;
+  let draw_width = "3";
+  let drawing = false;
 
   let restore_array = [];
   let index = -1;
@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
   canvas.addEventListener("mouseout", stop, false)
 
   function start(event) {
-    is_drawing = true;
+    drawing = true;
     context.beginPath();
     context.moveTo(event.clientX - canvas.offsetLeft,
       event.clientY - canvas.offsetTop);
@@ -38,7 +38,7 @@ window.addEventListener('load', () => {
   }
 
   function draw(event) {
-    if (is_drawing) {
+    if (drawing) {
       context.lineTo(event.clientX - canvas.offsetLeft,
         event.clientY - canvas.offsetTop);
         context.strokeStyle = draw_color;
@@ -51,10 +51,10 @@ window.addEventListener('load', () => {
   }
 
   function stop(event) {  
-    if (is_drawing) {
+    if (drawing) {
       context.stroke();
       context.closePath();
-      is_drawing = false;
+      drawing = false;
     }
     event.preventDefault();
 

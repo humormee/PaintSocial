@@ -9,8 +9,8 @@ const PaintingSchema = new Schema(
         ref: 'users'
     },
     painting_image: {
-        type: String,
-        required: true
+        type: Array,
+        required: false
     },
     title: {
         type: String,
