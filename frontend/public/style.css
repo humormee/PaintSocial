@@ -286,6 +286,7 @@ input:focus::placeholder {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   border: 1px solid red;
 }
@@ -293,6 +294,8 @@ input:focus::placeholder {
 canvas {
   box-shadow: 5px 5px 5px 5px rgb(56, 54, 54);
   cursor: pointer;
+  /* width: 900px; */
+  /* height: 100px; */
 }
 
 /* #canvas {
@@ -301,5 +304,5 @@ canvas {
   border: 2px solid black;
   background: white;
   /* width: 800px;
-  height: 500px; */
+  height: 500px; 
 } */
