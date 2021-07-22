@@ -9,9 +9,11 @@ export default class PaintingShow extends React.Component {
     
     this.props.fetchPaintings();
     this.props.fetchPainting(this.props.match.params.id).then(res => {
-      
       return console.log(res)
       });
+
+    debugger
+    
     this.props.fetchArtist(this.props.painting.artist);
   }
 

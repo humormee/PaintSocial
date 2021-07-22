@@ -21,7 +21,7 @@ export const receivePaintings = paintings => ({
 });
 
 export const receivePainting = painting => ({
-  type: RECEIVE_PAINTINGS,
+  type: RECEIVE_PAINTING,
   painting
 });
 
@@ -65,7 +65,7 @@ export const fetchPaintings = () => dispatch => (
 );
 
 export const fetchPainting = id => dispatch => (
-  getPainting().then(painting => dispatch(receivePainting(painting))).catch(err =>
+  getPainting(id).then(painting => dispatch(receivePainting(painting))).catch(err =>
   console.log(err))
 )
 
