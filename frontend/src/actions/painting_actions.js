@@ -21,7 +21,7 @@ export const receivePaintings = paintings => ({
 });
 
 export const receivePainting = painting => {
-  debugger
+  // debugger
   return ({
     type: RECEIVE_PAINTING,
     painting
