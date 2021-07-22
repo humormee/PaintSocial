@@ -9,7 +9,6 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-  // debugger
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return {
@@ -23,16 +22,9 @@ export default function (state = initialState, action) {
         user: undefined
       };
     case RECEIVE_USER_SIGN_IN:
-      // debugger
       return {
         ...state,
         isSignedIn: true
-      }
-    case RECEIVE_ARTIST:
-      debugger
-      return {
-        ...state,
-        artist: action.artist
       }
     default:
       return state;

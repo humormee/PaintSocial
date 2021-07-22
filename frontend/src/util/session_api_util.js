@@ -8,10 +8,6 @@ export const setAuthToken = token => {
   }
 };
 
-export const getArtist = id => {
-  return axios.get(`/api/users/${id}`)
-}
-
 export const signup = (userData) => {
   return axios.post('/api/users/register', userData);
 };

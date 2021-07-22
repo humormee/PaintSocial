@@ -84,7 +84,6 @@ router.post('/register', (req, res) => {
             jwt.sign(
                 payload,
                 keys.secretOrKey,
-                // Tell the key to expire in one hour
                 {expiresIn: 3600},
                 (err, token) => {
                 res.json({
@@ -99,13 +98,6 @@ router.post('/register', (req, res) => {
       })
   })
 
-  // router.get('/:id', (req, res) => {
-//   Painting.findById(req.params.id)
-//       .then(painting => res.json(painting))
-//       .catch(err =>
-//           res.status(404).json({ nopaintingfound: 'No painting found with that ID' })
-//       );
-// });
 
 router.get('/:id', (req, res) => {
   debugger
