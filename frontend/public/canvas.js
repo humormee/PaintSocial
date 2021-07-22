@@ -4,7 +4,6 @@ window.addEventListener('load', () => {
   // canvas.height = window.innerheight - 80;
   canvas.height = 600;
   
-  
   const context = canvas.getContext('2d');
   context.fillStyle = "white";
   context.fillRect(0, 0, canvas.width, canvas.height);
