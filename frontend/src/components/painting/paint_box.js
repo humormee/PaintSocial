@@ -2,11 +2,11 @@ import React, { useRef, useState, useEffect } from 'react';
 
 let restoreArray = [];
 let submitArray = [];
-export const paintings_obj = {};
+export const paintingObject = {};
 let index = -1;
 let count = 0;
 
-function PaintBox(props) {
+export function PaintBox(props) {
 
   // props.test();
 
@@ -114,7 +114,7 @@ function PaintBox(props) {
     while (index !== -1) {
       submitUndo()
     }
-    paintings_obj.count = submitArray;
+    paintingObject.count = submitArray;
     count += 1;
     // debugger
     submitArray = [];
@@ -124,7 +124,7 @@ function PaintBox(props) {
     // count = 0;
     index += 1;
     // debugger
-    contextRef.current.putImageData(paintings_obj.count[index], 0, 0);
+    contextRef.current.putImageData(paintingObject.count[index], 0, 0);
   }
 
   return (
@@ -168,5 +168,5 @@ function PaintBox(props) {
   )
 }
 
-export default PaintBox;
+// export default PaintBox;
 
