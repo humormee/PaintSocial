@@ -13,6 +13,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     this.clearedErrors = false;
   }
 
@@ -56,35 +57,39 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
+      <div>
         <form onSubmit={this.handleSubmit}>
           <div className="signup-form">
-            <br />
+          <div className="formbacksign">
+            <img src="https://cdn.discordapp.com/attachments/597985513701376013/867246418484658176/Form_Background.png" alt="formbackground">
+            </img>
+          </div>
+
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"
             />
-            <br />
+
             <input type="text"
               value={this.state.username}
               onChange={this.update('username')}
               placeholder="Username"
             />
-            <br />
+
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             />
-            <br />
+
             <input type="password"
               value={this.state.password2}
               onChange={this.update('password2')}
               placeholder="Confirm Password"
             />
-            <br />
-            <input type="submit" value="Submit" />
+
+            <input type="submit" value="Sign Up" className="submit"/>
             {this.renderErrors()}
           </div>
         </form>

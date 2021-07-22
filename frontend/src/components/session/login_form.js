@@ -13,6 +13,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -27,6 +28,13 @@ class LoginForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  demoLogin(){
+    this.setState({
+      ['email']: 'demoUser@paintsocial.com',
+      ['password']: 'password'
+    })
   }
 
   handleSubmit(e) {
@@ -52,27 +60,38 @@ class LoginForm extends React.Component {
     );
   }
 
+
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              placeholder="Email"
-            />
-            <br />
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"
-            />
-            <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
+        <div className="login-form">
+          <div className="formbacklog">
+            <img src="https://cdn.discordapp.com/attachments/597985513701376013/867246418484658176/Form_Background.png" alt="formbackground">
+            </img>
           </div>
-        </form>
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                placeholder="Email"
+              />
+              <br />
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="Password"
+              />
+              <br />
+              <input type="submit" value="Login" className="submit"/>
+              {/* <br /> */}
+              {/* <div className="demobutton"> */}
+                <button onClick={this.demoLogin} className="demobutton">Demo</button>
+              {/* </div> */}
+              {this.renderErrors()}
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

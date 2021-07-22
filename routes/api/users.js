@@ -1,4 +1,3 @@
-
 const express = require("express");
 const router = express.Router();
 const bcrypt = require('bcryptjs');
@@ -20,6 +19,8 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
     });
   })
 
+
+
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -27,14 +28,12 @@ router.post('/register', (req, res) => {
     return res.status(400).json(errors);
   }
 
-    // Check to make sure nobody has already registered with a duplicate email
+
     User.findOne({ email: req.body.email })
       .then(user => {
         if (user) {
-          // Throw a 400 error if the email address already exists
           return res.status(400).json({email: "A user has already registered with this address"})
         } else {
-          // Otherwise create a new user
           const newUser = new User({
             username: req.body.username,
             email: req.body.email,
@@ -81,7 +80,6 @@ router.post('/register', (req, res) => {
             jwt.sign(
                 payload,
                 keys.secretOrKey,
-                // Tell the key to expire in one hour
                 {expiresIn: 3600},
                 (err, token) => {
                 res.json({
@@ -95,5 +93,14 @@ router.post('/register', (req, res) => {
         })
       })
   })
+
+
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id)
+      .then(user => res.json(user))
+      .catch(err =>
+        res.status(404).json({ nouserfoundwiththatid: 'No painting found with that ID' })
+      );
+})
 
 module.exports = router;
