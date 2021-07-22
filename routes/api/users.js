@@ -29,15 +29,12 @@ router.post('/register', (req, res) => {
     return res.status(400).json(errors);
   }
 
-    // Check to make sure nobody has already registered with a duplicate email
+
     User.findOne({ email: req.body.email })
       .then(user => {
         if (user) {
-          // Throw a 400 error if the email address already exists
           return res.status(400).json({email: "A user has already registered with this address"})
         } else {
-          // Otherwise create a new user
-          debugger
           const newUser = new User({
             username: req.body.username,
             email: req.body.email,
@@ -100,7 +97,6 @@ router.post('/register', (req, res) => {
 
 
 router.get('/:id', (req, res) => {
-  debugger
   User.findById(req.params.id)
       .then(user => res.json(user))
       .catch(err =>

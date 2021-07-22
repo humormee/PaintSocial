@@ -26,7 +26,7 @@ export const receivePainting = painting => ({
 });
 
 export const receiveArtist = artist => {
-  debugger
+  
   return ({
     type: RECEIVE_ARTIST,
     artist
@@ -49,10 +49,10 @@ export const removePainting = id => ({
 })
 
 export const fetchArtist = id => dispatch => {
-  debugger
+  
 return (
   getArtist(id).then(artist => {
-    debugger
+    
     return (
       dispatch(receiveArtist(artist))
     )
