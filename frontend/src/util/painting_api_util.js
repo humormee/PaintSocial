@@ -5,9 +5,10 @@ export const getPaintings = () => {
   return axios.get('/api/paintings')
 };
 
-export const getArtist = artistId => {
-  return axios.get(`/users/${artistId}`)
+export const getArtist = id => {
+  return axios.get(`/api/users/${id}`)
 }
+
 export const getPainting = id => {
   return axios.get(`/api/paintings/${id}`)
 }

@@ -32,15 +32,13 @@ router.get('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    debugger
-    // var id = req.params.id;
-    // var collection = db.get().collection('paintings');
+
 
     Painting.deleteOne({ _id: req.params.id })
         .then(() => res.status(200).json({message: 'Deleted Successfully!'})
         .catch( err =>
             res.status(404).json({ nopaintingfound: 'No painting found with that ID' }))
-            );
+        );
 });
 
 router.post('/', 

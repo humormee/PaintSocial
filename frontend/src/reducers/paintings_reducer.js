@@ -3,8 +3,10 @@ import {
   RECEIVE_USER_PAINTINGS,
   RECEIVE_NEW_PAINTING,
   RECEIVE_PAINTING,
-  REMOVE_PAINTING
+  REMOVE_PAINTING,
+  RECEIVE_ARTIST
 } from '../actions/painting_actions';
+
 
 const paintingsReducer = (oldState = { all: {}, user: {}, new: undefined}, action) => {
   Object.freeze(oldState);
@@ -14,7 +16,7 @@ const paintingsReducer = (oldState = { all: {}, user: {}, new: undefined}, actio
       nextState.all = action.paintings.data;
       return nextState;
     case RECEIVE_PAINTING:
-      return Object.assing({}, oldState, {pin: action.pin})
+      return Object.assign({}, oldState, {painting: action.painting})
     case RECEIVE_USER_PAINTINGS:
       nextState.user = action.paintings.data;
       return nextState;
@@ -24,6 +26,10 @@ const paintingsReducer = (oldState = { all: {}, user: {}, new: undefined}, actio
     case REMOVE_PAINTING:
       delete nextState[action.id]
       return nextState;
+    case RECEIVE_ARTIST:
+      nextState.artist = action.artist.data
+      return nextState
+      
     default:
       return oldState;
   }

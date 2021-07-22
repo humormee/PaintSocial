@@ -13,6 +13,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     this.clearedErrors = false;
   }
 
@@ -88,7 +89,7 @@ class SignupForm extends React.Component {
               placeholder="Confirm Password"
             />
 
-            <input type="submit" value="Submit" className="submit"/>
+            <input type="submit" value="Sign Up" className="submit"/>
             {this.renderErrors()}
           </div>
         </form>
