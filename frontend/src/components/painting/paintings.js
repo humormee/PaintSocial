@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class Painting extends React.Component {
   constructor(props) {
@@ -34,6 +34,7 @@ class Painting extends React.Component {
               {this.state.paintings.map(painting => (              
                 <div className="painting-index-item">
                   painting ID: {painting._id}
+                  <Link key={painting._id} to={`/paintings/${painting._id}`} >painting ID: {painting._id} </Link>
                   <br />
                   title: {painting.title}
                   <br />
