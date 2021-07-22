@@ -1,7 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 
 let restoreArray = [];
+let submitArray = [];
+const paintings_obj = {};
 let index = -1;
+let count = 0;
 
 function PaintBox() {
 
@@ -65,7 +68,12 @@ function PaintBox() {
   }
 
   const changeColor = (color) => {
+    debugger
     contextRef.current.strokeStyle = color;
+  }
+
+  const changeLineWidth = (width) => {
+    contextRef.current.lineWidth = width;
   }
 
   const clearCanvas = () => {
@@ -89,6 +97,34 @@ function PaintBox() {
     console.log(restoreArray)
   }
 
+  const submitUndo = () => {
+    if ( index <= 0 ) {
+      clearCanvas();
+    } else {
+      index -= 1;
+      submitArray.push(restoreArray.pop());
+      contextRef.current.putImageData(restoreArray[index], 0, 0);
+    }
+    console.log(restoreArray)
+  }
+
+  const submit = () => {
+    while (index !== -1) {
+      submitUndo()
+    }
+    paintings_obj.count = submitArray;
+    count += 1;
+    debugger
+    submitArray = [];
+  }
+
+  function pullImage(){
+    // count = 0;
+    index += 1;
+    debugger
+    contextRef.current.putImageData(paintings_obj.count[index], 0, 0);
+  }
+
   return (
     <div>
       <canvas
@@ -103,20 +139,28 @@ function PaintBox() {
         ref={canvasRef}
       />
       <div className="tools">
+        <button onClick={() => submit()} type="button" className="button">Save</button>
+        <button onClick={() => pullImage()} type="button" className="button">Image</button>
         <button onClick={() => undo()} type="button" className="button">Undo</button>
         <button onClick={() => clearCanvas()} type="button" className="button">Clear</button>
+        <button onClick={() => changeColor("white")} className="button">Eraser</button>
 
-        <input 
-          onInput={() => changeColor()} 
+        {/* <input 
           type="color" 
-          className="color-picker" 
-        />
+          className="color-picker"
+          // value="#fdffff"
+          // onChange={changeColor(`this.value`)}
+          // value="#e66465"
+          // onInput={changeColor(this.value)}
+        /> */}
 
         <div onClick={() => changeColor("black")} className="color-field black"></div>
         <div onClick={() => changeColor("red")} className="color-field red"></div>
         <div onClick={() => changeColor("yellow")} className="color-field yellow"></div>
         <div onClick={() => changeColor("green")} className="color-field green"></div>
         <div onClick={() => changeColor("blue")} className="color-field blue"></div>
+        
+        {/* <input onInput={(width) => contextRef.current.lineWidth = width} type="range" min="1" max="100" className="pen-range"></input> */}
       </div>
     </div>
   )
