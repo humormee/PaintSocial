@@ -2,11 +2,13 @@ import React, { useRef, useState, useEffect } from 'react';
 
 let restoreArray = [];
 let submitArray = [];
-const paintings_obj = {};
+export const paintings_obj = {};
 let index = -1;
 let count = 0;
 
-function PaintBox() {
+function PaintBox(props) {
+
+  // props.test();
 
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
@@ -114,14 +116,14 @@ function PaintBox() {
     }
     paintings_obj.count = submitArray;
     count += 1;
-    debugger
+    // debugger
     submitArray = [];
   }
 
   function pullImage(){
     // count = 0;
     index += 1;
-    debugger
+    // debugger
     contextRef.current.putImageData(paintings_obj.count[index], 0, 0);
   }
 

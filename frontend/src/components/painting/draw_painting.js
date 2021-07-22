@@ -1,5 +1,6 @@
 import React from 'react';
 import PaintBox from './paint_box';
+import { painting_obj } from './paint_box';
 
 class DrawPainting extends React.Component {
   constructor(props) {
@@ -22,7 +23,12 @@ class DrawPainting extends React.Component {
     });
   }
 
+  test() {
+    console.log("test")
+  }
+
   render() {
+    console.log(painting_obj)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
