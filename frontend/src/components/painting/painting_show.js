@@ -45,10 +45,14 @@ export default class PaintingShow extends React.Component {
     .then(() => this.props.history.push('/'));
   }
 
+  
   renderButton() {
     const { user } = this.props.session;
     const artistId = this.props.painting.artist;
     // debugger
+    if(!user) {
+      this.props.history.push('/')
+    }
     if(artistId === user.id){
       return (
         <div>
