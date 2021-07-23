@@ -13,7 +13,7 @@ class ArtistShow extends React.Component {
   }
 
   render(){
-    debugger
+    // debugger
     if(!this.props.entities.paintings.artist || !this.props.entities.paintings.user.length > 0){
       return null;
     }
@@ -21,7 +21,7 @@ class ArtistShow extends React.Component {
     const { username, email } = this.props.entities.paintings.artist;
     
     const userPaintings = this.props.entities.paintings.user;
-    debugger
+    // debugger
 
     // const paintingsArr;
 

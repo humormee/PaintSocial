@@ -45,10 +45,9 @@ export default class PaintingShow extends React.Component {
   }
 
   renderButton() {
-    
     const { user } = this.props.session;
     const artistId = this.props.painting.artist;
-    debugger
+    // debugger
     if(artistId === user.id){
       return (
         <div>
@@ -57,7 +56,6 @@ export default class PaintingShow extends React.Component {
       )
     }
   }
-
 
   render() {
     
@@ -69,6 +67,7 @@ export default class PaintingShow extends React.Component {
         <p>You are on the Paintings Show Component</p>
         <p>{this.props.painting.title}</p>
         <p>{this.props.entities.paintings.artist.email}</p>
+        <img src={this.props.painting.painting_image} />
         {console.log(this.props.painting)}
         <div>{this.renderButton()}</div>
       </div>

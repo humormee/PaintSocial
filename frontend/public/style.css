@@ -10,6 +10,15 @@ body {
   
 }
 
+a {
+  text-decoration: none; 
+  color: black;
+}
+
+a:hover {
+  color: grey;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-between;

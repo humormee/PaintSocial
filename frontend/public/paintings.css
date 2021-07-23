@@ -18,11 +18,15 @@
 
   border: 1px solid lightgrey;
   border-radius: 10px;
-  width: 900px;
+  width: 90%;
   margin: 20px auto;
 }
 
 .painting-index-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   border: 1px solid lightgrey;
   border-radius: 10px;
   padding: 10px;
@@ -108,3 +112,9 @@ canvas {
   padding: 10px;
 }
 
+
+/* showing painting images */
+
+  .show-image {
+    height: 200px;
+  }
