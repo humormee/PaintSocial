@@ -57,13 +57,13 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="signup-form">
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-          <div className="formbacksign">
-            <img src="https://cdn.discordapp.com/attachments/597985513701376013/867246418484658176/Form_Background.png" alt="formbackground">
-            </img>
-          </div>
+          <div className="form">
+            {/* <div className="formbacksign">
+              <img src="https://cdn.discordapp.com/attachments/597985513701376013/867246418484658176/Form_Background.png" alt="formbackground">
+              </img>
+            </div> */}
 
             <input type="text"
               value={this.state.email}

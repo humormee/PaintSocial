@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class PaintingShow extends React.Component {
   constructor(props){
@@ -62,12 +63,17 @@ export default class PaintingShow extends React.Component {
     if(!this.props.painting || !this.props.entities.paintings.artist){
       return null;
     }
+    // debugger
     return (
       <div className="painting-show">
         {/* <p>You are on the Paintings Show Component</p> */}
         <h1>{this.props.painting.title}</h1>
-        <h2>{this.props.entities.paintings.artist.username}</h2>
-        <p>{this.props.entities.paintings.artist.email}</p>
+        <Link to={`/artist/${this.props.painting.artist}`}>
+          <div className="painting-show-user">
+            <h2>{this.props.entities.paintings.artist.username}</h2>
+            <p>{this.props.entities.paintings.artist.email}</p>
+          </div>
+        </Link>
         <br />
         <img src={this.props.painting.painting_image} />
         {console.log(this.props.painting)}

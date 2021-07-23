@@ -29,15 +29,18 @@ class ArtistShow extends React.Component {
     //   if(allPaintings[i]._id === this.props.match.params)
     // }
     return (
-      <div className="usershowpage">
-        <h1>you are on a users show page</h1>
-        <p>{username}</p>
+      <div className="user-show-page">
+        {/* <h1>you are on a users show page</h1> */}
+        <h1>{username}</h1>
         <div className="user-painting-index">
-        {userPaintings.map(painting => (
-          <div className="user-painting-item">
-            <Link to={`/paintings/${painting._id}`}>{painting.title}</Link>
+          {userPaintings.map(painting => (
+            <div className="user-painting-item">
+              <Link to={`/paintings/${painting._id}`}>
+                {painting.title}
+                <img src={painting.painting_image}/>
+              </Link>
             </div>
-        ))}
+          ))}
         </div>
       </div>
     )

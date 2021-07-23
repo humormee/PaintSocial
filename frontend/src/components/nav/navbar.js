@@ -16,16 +16,21 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
-          <div className="newpaintingicon">
-            <Link to={'/painting'}>
+        <div className="nav-links">
+          <div className="newpainting-icon">
+            <Link to={'/painting'}> 
+              <button className="nav-button">
+                Paint
                 <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223282989006889/Make_New_File_Icon.png" alt="NewFile"/>
+              </button>
             </Link>
           </div>
 
-          <div className="logouticon">
-            <button onClick={this.logoutUser}>
-                <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223281827971092/Log_Out_Icon.png" alt="LogOut"/>
+          <div className="logout-icon"> 
+            
+            <button className="nav-button" onClick={this.logoutUser}>
+              Logout
+              <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223281827971092/Log_Out_Icon.png" alt="LogOut"/>
             </button>
           </div>
 
@@ -46,7 +51,7 @@ class NavBar extends React.Component {
       <div className="nav-bar">
         <div className="logo">
             <Link to="/">
-                <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223288769675304/PaintSocial_Logo.png" alt="PaintSocialLogo"/>
+                <img src="https://media.discordapp.net/attachments/865977609330753600/868137469281972254/PaintSocial_Logo_Bigger.png?width=538&height=538"/>
             </Link>
         </div>
         {this.getLinks()}

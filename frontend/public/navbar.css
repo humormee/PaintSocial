@@ -5,97 +5,39 @@
 
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
   margin: 0;
-  padding: 11px 10px;
+  padding: 5px 25px;
 
-  background: rgb(247, 250, 255); 
+  background: rgb(50, 175, 222); 
   z-index: 5;
+  
 }
 
-.frontlogo img {
-  position: relative;
-  left: 28.5%;
-  width: 45%;
-  cursor: pointer;
+.nav-links {
+  display: flex;
+  align-items: center;
 }
-
-/* .frontlogo:hover img {
-  position: relative;
-  top: -30px;
-  left: 26%;
-  width: 55%;
-  opacity: 80%;
-} */
 
 .logo img {
-  position: absolute;
-  top: -1.90%;
-  left: 0.25%;
-  width: 80px;
-  height: 80px;
+  height: 50px;
+  padding: 5px;
+  background: white;
+  border-radius: 50%;
 }
 
-.logo:hover img {
-  position: absolute;
-  top: -2.2%;
-  left: 0.1%;
-  width: 85px;
-  height: 85px;
-  opacity: 70%;
+.logout-icon img, .newpainting-icon img {
+  height: 25px;
 }
 
-.newpaintingicon {
-  position: relative;
-  top: -7px;
-  right: 180%;
-}
+.nav-button {
+  display: flex;
+  align-items: center;
 
-.newpaintingicon img {
-  position: absolute;
-  top: 1px;
-  right: 25%;
-  width: 46.70px;
-  height: 46.70px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-  /* border: 1.5px solid #ccc; */
-  background: rgba(221, 221, 221, 0.25);
-  border-radius: 200px;
-  z-index: 10;
-  cursor: pointer;
-}
+  padding: 5px;
+  margin: 5px;
 
-.newpaintingicon:hover img {
-  position: absolute;
-  top: -0.5px;
-  right: 21%;
-  width: 50.25px;
-  height: 50.25px;
-  opacity: 55%;
-}
-
-.logouticon {
-  position: relative;
-  top: -50px;
-  right: 0%;
-}
-
-.logouticon img {
-  position: absolute;
-  top: 123.5%;
-  right: 25%;
-  width: 46.70px;
-  height: 46.70px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-  background: rgba(221, 221, 221, 0.25);
-  border-radius: 200px;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.logouticon:hover img {
-  position: absolute;
-  top: 120%;
-  right: 21%;
-  width: 50.25px;
-  height: 50.25px;
-  opacity: 55%;
+  background: white;
+  /* background:lightgreen; */
+  color: rgba(67, 164, 255, 1);;
+  font-size: 14px;
+  font-weight: 600;
 }

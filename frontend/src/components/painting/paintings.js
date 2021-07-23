@@ -47,7 +47,7 @@ class Painting extends React.Component {
                   <div className="painting-index-item">                       
                     <h1>{painting.title}</h1>                    
                     
-                    <Link to={`/artist/${painting.artist}`}> {painting.artist} </Link>
+                    {/* <Link to={`/artist/${painting.artist}`}> {painting.artist} </Link> */}
                     
                     <img src={painting.painting_image} className="index-image"/>
 

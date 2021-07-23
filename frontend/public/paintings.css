@@ -18,6 +18,9 @@
   border-radius: 10px;
   width: 90%;
   margin: 20px auto;
+
+  background: lightblue;
+  /* background: rgb(180, 150, 125); */
 }
 
 .painting-index-item{
@@ -25,10 +28,25 @@
   flex-direction: column;
   align-items: center;
 
-  border: 1px solid lightgrey;
+  /* border: 1px solid lightgrey; */
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
+
+  /* background: white; */
+  /* background: #EFDEF2; */
+  background: lightblue;
+  /* color: white */
+}
+
+.painting-index-item img {
+  border: 1px solid lightpink;
+}
+
+.painting-show-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Draw Painting */
@@ -39,7 +57,7 @@
   justify-content: center;
   align-items: center;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 canvas {
@@ -145,4 +163,16 @@ canvas {
     padding: 20px;
     border: 1px solid grey;
     border-radius: 10px;
+
+    background: lightblue;
+    /* background: rgb(85, 125, 161); */
+    color: black;
+  }
+
+  .painting-show a {
+    color: black;
+  }
+
+  .painting-show img {
+    border-radius: 15px;
   }

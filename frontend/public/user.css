@@ -1,0 +1,36 @@
+.user-show-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #CBD0ED;
+  /* border: 1px solid lightpink; */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.user-painting-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  /* border: 1px solid lightpink;   */
+}
+
+.user-painting-index img {
+  height: 200px;
+  border-radius: 15px;
+}
+
+.user-painting-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  /* border: 1px solid lightpink;   */
+}
