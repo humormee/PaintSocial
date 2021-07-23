@@ -49,7 +49,7 @@ class Painting extends React.Component {
                     
                     <Link to={`/artist/${painting.artist}`}> {painting.artist} </Link>
                     
-                    <img src={painting.painting_image} className="show-image"/>
+                    <img src={painting.painting_image} className="index-image"/>
 
                     {/* <button onClick={() => this.delete(painting._id)}>
                       Delete

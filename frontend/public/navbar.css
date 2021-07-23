@@ -1,0 +1,101 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+  margin: 0;
+  padding: 11px 10px;
+
+  background: rgb(247, 250, 255); 
+  z-index: 5;
+}
+
+.frontlogo img {
+  position: relative;
+  left: 28.5%;
+  width: 45%;
+  cursor: pointer;
+}
+
+/* .frontlogo:hover img {
+  position: relative;
+  top: -30px;
+  left: 26%;
+  width: 55%;
+  opacity: 80%;
+} */
+
+.logo img {
+  position: absolute;
+  top: -1.90%;
+  left: 0.25%;
+  width: 80px;
+  height: 80px;
+}
+
+.logo:hover img {
+  position: absolute;
+  top: -2.2%;
+  left: 0.1%;
+  width: 85px;
+  height: 85px;
+  opacity: 70%;
+}
+
+.newpaintingicon {
+  position: relative;
+  top: -7px;
+  right: 180%;
+}
+
+.newpaintingicon img {
+  position: absolute;
+  top: 1px;
+  right: 25%;
+  width: 46.70px;
+  height: 46.70px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  /* border: 1.5px solid #ccc; */
+  background: rgba(221, 221, 221, 0.25);
+  border-radius: 200px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.newpaintingicon:hover img {
+  position: absolute;
+  top: -0.5px;
+  right: 21%;
+  width: 50.25px;
+  height: 50.25px;
+  opacity: 55%;
+}
+
+.logouticon {
+  position: relative;
+  top: -50px;
+  right: 0%;
+}
+
+.logouticon img {
+  position: absolute;
+  top: 123.5%;
+  right: 25%;
+  width: 46.70px;
+  height: 46.70px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  background: rgba(221, 221, 221, 0.25);
+  border-radius: 200px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.logouticon:hover img {
+  position: absolute;
+  top: 120%;
+  right: 21%;
+  width: 50.25px;
+  height: 50.25px;
+  opacity: 55%;
+}

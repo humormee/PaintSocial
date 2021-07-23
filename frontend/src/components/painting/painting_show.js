@@ -63,12 +63,15 @@ export default class PaintingShow extends React.Component {
       return null;
     }
     return (
-      <div>
-        <p>You are on the Paintings Show Component</p>
-        <p>{this.props.painting.title}</p>
+      <div className="painting-show">
+        {/* <p>You are on the Paintings Show Component</p> */}
+        <h1>{this.props.painting.title}</h1>
+        <h2>{this.props.entities.paintings.artist.username}</h2>
         <p>{this.props.entities.paintings.artist.email}</p>
+        <br />
         <img src={this.props.painting.painting_image} />
         {console.log(this.props.painting)}
+        <br />
         <div>{this.renderButton()}</div>
       </div>
     )

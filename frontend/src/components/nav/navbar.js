@@ -18,15 +18,15 @@ class NavBar extends React.Component {
       return (
         <div>
           <div className="newpaintingicon">
-              <Link to={'/painting'}>
-                  <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223282989006889/Make_New_File_Icon.png" alt="NewFile"/>
-              </Link>
+            <Link to={'/painting'}>
+                <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223282989006889/Make_New_File_Icon.png" alt="NewFile"/>
+            </Link>
           </div>
 
           <div className="logouticon">
-              <button onClick={this.logoutUser}>s
-                  <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223281827971092/Log_Out_Icon.png" alt="LogOut"/>
-              </button>
+            <button onClick={this.logoutUser}>
+                <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223281827971092/Log_Out_Icon.png" alt="LogOut"/>
+            </button>
           </div>
 
         </div>
