@@ -159,7 +159,6 @@ export function PaintBox({placePainting}) {
         <input className="pen-range" 
           type="range" 
           min="1" max="100" 
-          // onInput={(width) => contextRef.current.lineWidth = width} 
           onInput={e => changeSize(e.target.value)}
         />
       </div>

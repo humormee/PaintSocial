@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router-dom"
 import { paintingArray, PaintBox } from './paint_box';
 
 class DrawPainting extends React.Component {
@@ -13,11 +14,12 @@ class DrawPainting extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createPainting(this.state)
+      .then(res => this.props.history.push(`/paintings/${res.painting.data._id}`))    
   }
 
-  update() {
+  update(field) {
     return e => this.setState({
-      title: e.currentTarget.value
+      [field]: e.currentTarget.value
     });
   }
 
@@ -27,7 +29,7 @@ class DrawPainting extends React.Component {
   }
 
   render() {
-    console.log(paintingArray, "paintArray")
+    // console.log(paintingArray, "paintArray")
     window.paintingArray = paintingArray;
     window.state = this.state;
     return (
@@ -37,19 +39,19 @@ class DrawPainting extends React.Component {
             <div className="info">
               <input type="text" 
                 value={this.state.title} 
-                onChange={this.update()}
+                onChange={this.update("title")}
                 placeholder="Title"
               />
               <input type="text" 
                 value={this.state.painting_image} 
-                onChange={this.update()}
+                onChange={this.update("painting_image")}
                 placeholder="Link"
               />
               <input type="submit" value="Create Painting" />
             </div>
             <PaintBox placePainting={() => this.placePainting.bind(this)}/>
             {/* <PaintBox placePainting={"banana"}/> */}
-            {this.state.painting_image=paintingArray.count}
+            {/* {this.state.painting_image=paintingArray.count} */}
           </div>
         </form>
       </div>
@@ -58,4 +60,4 @@ class DrawPainting extends React.Component {
 
 }
 
-export default DrawPainting;
+export default withRouter(DrawPainting);
