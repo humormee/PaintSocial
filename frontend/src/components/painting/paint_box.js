@@ -149,7 +149,9 @@ export function PaintBox({placePainting}) {
           onInput={e => changeColor(e.target.value)} 
         />
 
-        <div onClick={() => changeColor("white")} className="color-field eraser"></div>
+        <div onClick={() => changeColor("white")} className="eraser">
+          <img src="https://cdn.discordapp.com/attachments/865977609330753600/868114328233074698/Eraser_Fix.png" alt="eraser"/>
+        </div>
         <div onClick={() => changeColor("black")} className="color-field black"></div>
         <div onClick={() => changeColor("red")} className="color-field red"></div>
         <div onClick={() => changeColor("yellow")} className="color-field yellow"></div>
