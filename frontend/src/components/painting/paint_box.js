@@ -143,13 +143,13 @@ export function PaintBox({placePainting}) {
         <button onClick={() => pullImage()} type="button" className="button">Image</button>
         <button onClick={() => undo()} type="button" className="button">Undo</button>
         <button onClick={() => clearCanvas()} type="button" className="button">Clear</button>
-        <button onClick={() => changeColor("white")} className="button">Eraser</button>
 
         <input className="color-picker"
           type="color" 
           onInput={e => changeColor(e.target.value)} 
         />
 
+        <div onClick={() => changeColor("white")} className="color-field eraser"></div>
         <div onClick={() => changeColor("black")} className="color-field black"></div>
         <div onClick={() => changeColor("red")} className="color-field red"></div>
         <div onClick={() => changeColor("yellow")} className="color-field yellow"></div>
