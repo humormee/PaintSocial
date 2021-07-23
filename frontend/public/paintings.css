@@ -39,8 +39,18 @@
   /* color: white */
 }
 
+.painting-index-item h1 {
+  position: relative;
+  bottom: 10px;
+  margin-bottom: 0;
+  border-bottom: 1px solid grey;
+  width: 80%;
+  text-align: center;
+}
+
 .painting-index-item img {
-  border: 1px solid lightpink;
+  /* border: 2px solid lightpink; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, .75);
 }
 
 .painting-show-user {
@@ -175,4 +185,7 @@ canvas {
 
   .painting-show img {
     border-radius: 15px;
+    max-height: 500px;
+    min-height: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .75);
   }

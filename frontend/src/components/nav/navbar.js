@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -10,7 +10,8 @@ class NavBar extends React.Component {
 
   logoutUser(e) {
     e.preventDefault();
-    this.props.logout();
+    this.props.logout()
+      // .then(() => this.props.history.push(`/`));
   }
 
   getLinks() {
@@ -27,10 +28,9 @@ class NavBar extends React.Component {
           </div>
 
           <div className="logout-icon"> 
-            
             <button className="nav-button" onClick={this.logoutUser}>
               Logout
-              <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223281827971092/Log_Out_Icon.png" alt="LogOut"/>
+                <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223281827971092/Log_Out_Icon.png" alt="LogOut"/> 
             </button>
           </div>
 
@@ -60,4 +60,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

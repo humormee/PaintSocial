@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
 
-  background: #CBD0ED;
+  /* background: #CBD0ED; */
+  background: rgba(203, 208, 237, 0.8);
   /* border: 1px solid lightpink; */
   border-radius: 15px;
   padding: 20px;
@@ -22,13 +23,15 @@
 .user-painting-index img {
   height: 200px;
   border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .75);
+  margin: 10px;
 }
 
 .user-painting-item a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white;
+  /* background: white; */
   padding: 10px;
   margin: 10px;
   border-radius: 15px;

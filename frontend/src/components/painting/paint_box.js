@@ -85,7 +85,7 @@ export function PaintBox({placePainting}) {
     contextRef.current.fillRect(0, 0, canvas.width, canvas.height);
     restoreArray = [];
     index = -1;
-    console.log(restoreArray)
+    // console.log(restoreArray)
   }
 
   const undo = () => {
@@ -96,7 +96,7 @@ export function PaintBox({placePainting}) {
       restoreArray.pop();
       contextRef.current.putImageData(restoreArray[index], 0, 0);
     }
-    console.log(restoreArray)
+    // console.log(restoreArray)
   }
 
   const submitUndo = () => {
@@ -107,7 +107,7 @@ export function PaintBox({placePainting}) {
       submitArray.push(restoreArray.pop());
       contextRef.current.putImageData(restoreArray[index], 0, 0);
     }
-    console.log(restoreArray)
+    // console.log(restoreArray)
   }
 
   const submit = () => {
