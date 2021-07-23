@@ -1,19 +1,46 @@
 body {
 
-  background: rgb(238, 237, 229); 
+  /* background: rgb(238, 237, 229);  */
   /*  background: rgb(185, 70, 41); 
    background: rgb(232, 159, 101);  */
+  background: linear-gradient(rgba(230, 100, 101, 0.8), rgba(145, 152, 229, 0.8));
+  /* animation-duration: 2s; */
+  /* animation-name: slidein; */
+  /* animation-iteration-count: infinite; */
   
   overflow-x: hidden;
   padding: 0;
   margin: 0;
-  
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
 }
 
 .nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* animation-duration: 1s;
+  animation-name: fade; */
 
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
   margin: 0;
@@ -145,6 +172,20 @@ input:focus::placeholder {
 }
 
 .log:hover {
+  background-color: rgb(108, 184, 255);
+}
+
+.demobutton {
+  border-radius: 6px;
+  background-color: rgba(67, 164, 255, 1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.demobutton:hover {
   background-color: rgb(108, 184, 255);
 }
 

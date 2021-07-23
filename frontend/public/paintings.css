@@ -42,7 +42,7 @@
 
 canvas {
   box-shadow: 5px 5px 5px 5px rgb(56, 54, 54);
-  cursor: pointer;
+  cursor: crosshair;
 }
 
 /* #canvas {
@@ -83,6 +83,20 @@ canvas {
 .blue { background: blue; }
 .yellow { background: yellow; }
 .green { background: green; }
+
+.color-picker:hover, .color-field:hover, .pen-range:hover, .eraser:hover {
+  opacity: 70%;
+}
+
+.eraser img {
+  position: relative;
+  top: 5%;
+  margin: 0 5px;
+  border: 2px solid white;
+  border-radius: 15px;
+  width: 41px;
+  cursor: pointer;
+}
 
 .tools .button {
   align-self: center;
