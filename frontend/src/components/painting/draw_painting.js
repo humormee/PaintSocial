@@ -5,10 +5,9 @@ class DrawPainting extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = {title: "temp title"}
     this.state = this.props.newPainting;
-
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.placePainting = this.placePainting.bind(this);
   }
 
   handleSubmit(e) {
@@ -22,13 +21,13 @@ class DrawPainting extends React.Component {
     });
   }
 
-  test() {
-    console.log("test")
+  placePainting(painting) {
+    this.setState({painting_image: painting})
   }
 
   render() {
-    console.log(paintingObject, "hello")
     window.paintingObject = paintingObject;
+    window.state = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -39,7 +38,9 @@ class DrawPainting extends React.Component {
               placeholder="Title"
             />
             <input type="submit" value="Create Painting" />
-            <PaintBox />
+            <PaintBox placePainting={() => this.placePainting.bind(this)}/>
+            {/* <PaintBox placePainting={"banana"}/> */}
+            {this.state.painting_image=paintingObject.count}
           </div>
         </form>
       </div>

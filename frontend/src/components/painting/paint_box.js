@@ -7,9 +7,6 @@ let index = -1;
 let count = 0;
 
 export function PaintBox(props) {
-
-  // props.test();
-
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
@@ -125,6 +122,8 @@ export function PaintBox(props) {
     index += 1;
     // debugger
     contextRef.current.putImageData(paintingObject.count[index], 0, 0);
+    console.log("placing banana")
+    props.placePainting("banana");
   }
 
   return (

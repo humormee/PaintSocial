@@ -2,15 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PaintingSchema = new Schema(
-    
     {
     artist: {
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
     painting_image: {
-        type: Array,
-        required: false
+        type: string,
+        required: true 
     },
     title: {
         type: String,
@@ -32,6 +31,6 @@ const PaintingSchema = new Schema(
     //     type: String,
     //     required: false
     // }
-  })
-  
-  module.exports = Painting = mongoose.model('Painting', PaintingSchema);  
+})
+
+module.exports = Painting = mongoose.model('Painting', PaintingSchema);  
