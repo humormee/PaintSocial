@@ -1,0 +1,110 @@
+
+
+/* painting index */
+.index-container {
+  margin-top: 20px;
+}
+
+.index-container > h1{
+  text-align: center;
+}
+
+.painting-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  background: white;
+
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  width: 900px;
+  margin: 20px auto;
+}
+
+.painting-index-item{
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Draw Painting */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid red;
+}
+
+canvas {
+  box-shadow: 5px 5px 5px 5px rgb(56, 54, 54);
+  cursor: pointer;
+}
+
+/* #canvas {
+  position: relative;
+  left: 17.5%;
+  border: 2px solid black;
+  background: white;
+  /* width: 800px;
+  height: 500px; 
+} */
+
+/* ---------- */
+
+.tools {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 15px 0;
+}
+
+.tools .color-field {
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 15px;
+  /* border-radius: 50%; */
+  border: 2px solid white;
+  align-self: center;
+  margin: 0 5px;
+}
+
+.black { background: black; }
+.red { background: red; }
+.blue { background: blue; }
+.yellow { background: yellow; }
+.green { background: green; }
+
+.tools .button {
+  align-self: center;
+  width: 100px;
+  height: 40px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: white;
+  background: #222;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.color-picker {
+  align-self: center;
+  margin: 0 5px;
+  height: 40px;
+}
+
+.pen-range {
+  align-self: center;
+  margin: 0 5px;
+  padding: 10px;
+}
+

@@ -10,13 +10,12 @@ export function PaintBox({placePainting}) {
   const contextRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const canvasBackground = "white";
-  const [color, setColor] = useState("black");
-  const [size, setSize] = useState(3);
   // debugger
 
   placePainting();
 
   useEffect(() => {
+    console.log(window.innerWidth)
     const canvas = canvasRef.current;
     canvas.width = window.innerWidth * 2;
     canvas.height = window.innerHeight * 2;
@@ -34,13 +33,12 @@ export function PaintBox({placePainting}) {
 
     context.scale(2,2);
     context.lineCap = "round"
-    context.strokeStyle = color
-    context.lineWidth = size;
+    context.strokeStyle = "black"
+    context.lineWidth = 3
     contextRef.current = context;
   }, [])
 
   const start = ({nativeEvent}) => {
-    contextRef.current.beginPath()
     const {offsetX, offsetY} = nativeEvent;
     contextRef.current.beginPath()
     contextRef.current.moveTo(offsetX, offsetY)
@@ -127,37 +125,6 @@ export function PaintBox({placePainting}) {
     contextRef.current.putImageData(paintingArray[index], 0, 0);
   }
 
-  const ColorPicker = () => {
-    if(contextRef.current){
-      changeColor(color)
-    }
-  
-    return (
-      <input className="color-picker"
-        type="color" 
-        value={color} 
-        onChange={e => setColor(e.target.value)} 
-      />
-    );
-  }
-
-  const LineWidth = () => {
-    if(contextRef.current){
-      changeSize(size)
-    }
-
-    return(
-      <input className="pen-range" 
-        type="range" 
-        min="1" 
-        max="100" 
-        value={size}
-        // onInput={(width) => contextRef.current.lineWidth = width} 
-        onChange={e => setSize(e.target.value)}
-      />
-    ) 
-  }
-
   return (
     <div>
       <canvas
@@ -178,7 +145,10 @@ export function PaintBox({placePainting}) {
         <button onClick={() => clearCanvas()} type="button" className="button">Clear</button>
         <button onClick={() => changeColor("white")} className="button">Eraser</button>
 
-        <ColorPicker />
+        <input className="color-picker"
+          type="color" 
+          onInput={e => changeColor(e.target.value)} 
+        />
 
         <div onClick={() => changeColor("black")} className="color-field black"></div>
         <div onClick={() => changeColor("red")} className="color-field red"></div>
@@ -186,7 +156,12 @@ export function PaintBox({placePainting}) {
         <div onClick={() => changeColor("green")} className="color-field green"></div>
         <div onClick={() => changeColor("blue")} className="color-field blue"></div>
         
-        <LineWidth />
+        <input className="pen-range" 
+          type="range" 
+          min="1" max="100" 
+          // onInput={(width) => contextRef.current.lineWidth = width} 
+          onInput={e => changeSize(e.target.value)}
+        />
       </div>
     </div>
   )

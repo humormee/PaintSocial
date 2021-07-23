@@ -34,12 +34,19 @@ class DrawPainting extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div className="field">
-            <input type="text" 
-              value={this.state.title} 
-              onChange={this.update()}
-              placeholder="Title"
-            />
-            <input type="submit" value="Create Painting" />
+            <div className="info">
+              <input type="text" 
+                value={this.state.title} 
+                onChange={this.update()}
+                placeholder="Title"
+              />
+              <input type="text" 
+                value={this.state.painting_image} 
+                onChange={this.update()}
+                placeholder="Link"
+              />
+              <input type="submit" value="Create Painting" />
+            </div>
             <PaintBox placePainting={() => this.placePainting.bind(this)}/>
             {/* <PaintBox placePainting={"banana"}/> */}
             {this.state.painting_image=paintingArray.count}
