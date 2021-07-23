@@ -7,7 +7,7 @@ const mSTP = (state) => {
     newPainting: {
       title: '',
       artist: state.session.user,
-      painting_image: ["this is a string in an array"],
+      painting_image: "this is a string in an array",
       date: Date.now
     }
   };
