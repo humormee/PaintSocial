@@ -2,16 +2,19 @@ import React, { useRef, useState, useEffect } from 'react';
 
 let restoreArray = [];
 let submitArray = [];
-export const paintingObject = {};
+export const paintingArray = [];
 let index = -1;
-let count = 0;
 
-export function PaintBox(props) {
+export function PaintBox({placePainting}) {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const canvasBackground = "white";
+  const [color, setColor] = useState("black");
+  const [size, setSize] = useState(3);
   // debugger
+
+  placePainting();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -31,8 +34,8 @@ export function PaintBox(props) {
 
     context.scale(2,2);
     context.lineCap = "round"
-    context.strokeStyle = "black"
-    context.lineWidth = 3;
+    context.strokeStyle = color
+    context.lineWidth = size;
     contextRef.current = context;
   }, [])
 
@@ -60,15 +63,17 @@ export function PaintBox(props) {
 
   const draw = ({nativeEvent}) => {
     if(!isDrawing) { return }
-
     const {offsetX, offsetY} = nativeEvent;
     contextRef.current.lineTo(offsetX, offsetY)
     contextRef.current.stroke()
   }
 
   const changeColor = (color) => {
-    debugger
     contextRef.current.strokeStyle = color;
+  }
+  
+  const changeSize = (size) => {
+    contextRef.current.lineWidth = size;
   }
 
   const changeLineWidth = (width) => {
@@ -111,19 +116,46 @@ export function PaintBox(props) {
     while (index !== -1) {
       submitUndo()
     }
-    paintingObject.count = submitArray;
-    count += 1;
-    // debugger
-    submitArray = [];
+    // paintingArray = tempPaintingArray.concat(submitArray);
+    submitArray.forEach(element => {
+      paintingArray.push(element)
+    }) 
   }
 
   function pullImage(){
-    // count = 0;
     index += 1;
-    // debugger
-    contextRef.current.putImageData(paintingObject.count[index], 0, 0);
-    console.log("placing banana")
-    props.placePainting("banana");
+    contextRef.current.putImageData(paintingArray[index], 0, 0);
+  }
+
+  const ColorPicker = () => {
+    if(contextRef.current){
+      changeColor(color)
+    }
+  
+    return (
+      <input className="color-picker"
+        type="color" 
+        value={color} 
+        onChange={e => setColor(e.target.value)} 
+      />
+    );
+  }
+
+  const LineWidth = () => {
+    if(contextRef.current){
+      changeSize(size)
+    }
+
+    return(
+      <input className="pen-range" 
+        type="range" 
+        min="1" 
+        max="100" 
+        value={size}
+        // onInput={(width) => contextRef.current.lineWidth = width} 
+        onChange={e => setSize(e.target.value)}
+      />
+    ) 
   }
 
   return (
@@ -146,14 +178,7 @@ export function PaintBox(props) {
         <button onClick={() => clearCanvas()} type="button" className="button">Clear</button>
         <button onClick={() => changeColor("white")} className="button">Eraser</button>
 
-        {/* <input 
-          type="color" 
-          className="color-picker"
-          // value="#fdffff"
-          // onChange={changeColor(`this.value`)}
-          // value="#e66465"
-          // onInput={changeColor(this.value)}
-        /> */}
+        <ColorPicker />
 
         <div onClick={() => changeColor("black")} className="color-field black"></div>
         <div onClick={() => changeColor("red")} className="color-field red"></div>
@@ -161,7 +186,7 @@ export function PaintBox(props) {
         <div onClick={() => changeColor("green")} className="color-field green"></div>
         <div onClick={() => changeColor("blue")} className="color-field blue"></div>
         
-        {/* <input onInput={(width) => contextRef.current.lineWidth = width} type="range" min="1" max="100" className="pen-range"></input> */}
+        <LineWidth />
       </div>
     </div>
   )

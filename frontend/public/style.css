@@ -332,7 +332,7 @@ canvas {
   border-radius: 50%;
   border: 2px solid white;
   align-self: center;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .black { background: black; }
@@ -350,17 +350,17 @@ canvas {
   color: white;
   background: #222;
   font-weight: bold;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .color-picker {
   align-self: center;
-  margin: 0 10px;
-  height: 50px;
+  margin: 0 5px;
+  height: 40px;
 }
 
 .pen-range {
   align-self: center;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 

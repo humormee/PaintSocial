@@ -1,5 +1,5 @@
 import React from 'react';
-import { paintingObject, PaintBox } from './paint_box';
+import { paintingArray, PaintBox } from './paint_box';
 
 class DrawPainting extends React.Component {
   constructor(props) {
@@ -21,12 +21,14 @@ class DrawPainting extends React.Component {
     });
   }
 
-  placePainting(painting) {
-    this.setState({painting_image: painting})
+  placePainting() {
+    console.log("asdfasd")
+    this.setState({painting_image: paintingArray})
   }
 
   render() {
-    window.paintingObject = paintingObject;
+    console.log(paintingArray, "paintArray")
+    window.paintingArray = paintingArray;
     window.state = this.state;
     return (
       <div>
@@ -40,7 +42,7 @@ class DrawPainting extends React.Component {
             <input type="submit" value="Create Painting" />
             <PaintBox placePainting={() => this.placePainting.bind(this)}/>
             {/* <PaintBox placePainting={"banana"}/> */}
-            {this.state.painting_image=paintingObject.count}
+            {this.state.painting_image=paintingArray.count}
           </div>
         </form>
       </div>
