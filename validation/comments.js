@@ -2,8 +2,9 @@ const Validator = require('validator');
 const validText = require('./valid-text');
 
 module.exports = function validateComment(data) {
+  debugger
   let errors = {};
-  data.description = validText(data.desription) ? data.description : '';
+  data.description = validText(data.description) ? data.description : '';
 
   if (Validator.isEmpty(data.description)) {
     errors.description = "Description is required";
