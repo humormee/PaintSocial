@@ -1,3 +1,4 @@
+const { text } = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -19,16 +20,12 @@ const PaintingSchema = new Schema(
         type: Date,
         default: Date.now
     },
-    // description: {
-    //     type: Text,
+    // comments: {
+    //     type: Array,
     //     required: false
     // },
-    // category: {
-    //     type: String,
-    //     required: false
-    // },
-    // tag: {
-    //     type: String,
+    // likes: {
+    //     type: Array,
     //     required: false
     // }
 })
