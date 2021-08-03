@@ -4,13 +4,14 @@ import {
   createComment,
   deleteComment
 } from '../util/comment_api_util'
+import { getUserPaintings } from '../util/painting_api_util';
 
 export const RECEIVE_PAINTING_COMMENTS = 'RECEIVE_PAINTING_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const RECEIVE_NEW_COMMENT = 'CREATE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
-const receiveUserComments = comments => ({
+const receivePaintingComments = comments => ({
   type: RECEIVE_PAINTING_COMMENTS,
   comments
 })
@@ -30,8 +31,35 @@ const removeComment = id => ({
   id
 })
 
-// export const fetchUserComments = paintingId => dispatch => {
-//   return (
 
-//   )
-// }
+export const fetchPaintingComments = paintingId => dispatch => {
+  return (
+    getPaintingComments(paintingId)
+        .then(comments => dispatch(receivePaintingComments(comments)))
+        .catch(err => console.log(err))
+  )
+}
+
+export const fetchComment = commentId => dispatch => {
+  return (
+    getComment(commentId)
+        .then(comment => dispatch(receiveComment(comment)))
+        .catch(err => console.log(err))
+  )
+}
+
+export const makeComment = data => dispatch => {
+  return (
+    createComment(data)
+        .then(comment => dispatch(receiveNewComment(comment)))
+        .catch(err => console.log(err))
+  )
+}
+
+export const deleteComment = commentId => dispatch => {
+  return (
+    deleteComment(commentId)
+        .then(commentId => dispatch(removeComment(commentId)))
+        .catch(err => console.log(err))
+  )
+}

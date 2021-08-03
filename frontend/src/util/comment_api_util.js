@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getPaintingComments = paintingId => {
-  return axios.get(`/api/comments/${paintingId}`)
+  return axios.get(`/api/comments/painting/${paintingId}`)
 }
 
 export const getComment = commentId => {
