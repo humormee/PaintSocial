@@ -51,12 +51,17 @@ export const fetchComment = commentId => dispatch => {
 export const makeComment = data => dispatch => {
   return (
     createComment(data)
-        .then(comment => dispatch(receiveNewComment(comment)))
+        .then(comment => {
+          debugger
+          return (
+            dispatch(receiveNewComment(comment))
+          )
+        })
         .catch(err => console.log(err))
   )
 }
 
-export const deleteComment = commentId => dispatch => {
+export const eraseComment = commentId => dispatch => {
   return (
     deleteComment(commentId)
         .then(commentId => dispatch(removeComment(commentId)))
