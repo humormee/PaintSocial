@@ -6,6 +6,11 @@ export default class PaintingShow extends React.Component {
     super(props)
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.eraseComment = this.eraseComment.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state={
+      comment: null
+    };
   }
 
   componentDidMount() {
@@ -20,24 +25,7 @@ export default class PaintingShow extends React.Component {
     });
     
     this.props.fetchPaintingComments(this.props.match.params.id);
-    
   }
-
-
-  // renderButton(){
-
-  //   const { user } = this.props;
-  //   const { id } = this.props.user;
-  //   const { author_id } = this.props.event;
-  //   if(user && id === author_id){
-  //     return (
-  //       <div className="edit-delete-event">
-  //         <button className="edit-event" value={this.props.event.id} onClick={this.handleEdit}>Edit Event</button>
-  //         <button className="delete-event" value={this.props.event.id} onClick={this.handleDelete}>Delete Event</button>
-  //       </div>
-  //     )
-  //   };
-  // }
 
   handleDelete(e) {
     e.preventDefault();
@@ -45,11 +33,95 @@ export default class PaintingShow extends React.Component {
     .then(() => this.props.history.push('/'));
   }
 
+
+
+  eraseComment(e, comment) { 
+    debugger 
+    e.preventDefault();
+    this.props.eraseComment(comment._id);
+        
+  }
+
+  handleSubmit(e, comment) {
+    e.preventDefault();
+    comment.description = this.state.comment;
+    this.props.makeComment(comment);
+  }
+
   
+  createComment(e) {
+    debugger
+    e.preventDefault();
+    let { user } = this.props.session.user;
+    if(!user) {
+      return null;
+    }
+    let comment = {};
+    comment.commenter = user.id;
+    comment.painting = this.props.match.params.id;
+    comment.description = this.state.description;
+    return (
+      <div>
+        <form onSubmit={e => this.handleSubmit(e, comment)}>
+
+          <textarea value={comment.description} onChange={e => this.updateComment(e)}>
+          </textarea>
+          <button type="submit">Post</button>
+
+        </form>
+      </div>
+    )
+    
+    
+
+  }
+
+  updateComment(e) {
+    this.setState({comment: e.currentTarget.value})
+  }
+
+  renderCommentForm(e) {
+    debugger
+    e.preventDefault();
+    let { user } = this.props.session.user;
+    if(!user) {
+      return null;
+    }
+    let comment = {};
+    comment.commenter = user.id;
+    comment.painting = this.props.match.params.id;
+    comment.description = this.state.description;
+    return (
+      <div>
+        <form onSubmit={e => this.handleSubmit(e, comment)}>
+
+          <textarea value={comment.description} onChange={e => this.updateComment(e)}>
+          </textarea>
+          <button type="submit">Post</button>
+
+        </form>
+      </div>
+    )
+  }
+
+  renderEraseButton(comment) {
+    const { user } = this.props.session;
+    debugger
+    if(!comment.commenter === user.id) {
+      return null
+    }
+    
+      return (
+        <div>
+          <button className="delete-comment" value={this.props.match.params.id} onClick={e => this.eraseComment(e, comment)}>Delete</button>
+        </div>
+      )
+    
+  }
+
   renderButton() {
     const { user } = this.props.session;
     const artistId = this.props.painting.artist;
-    // debugger
     if(!user) {
       this.props.history.push('/')
     }
@@ -60,17 +132,16 @@ export default class PaintingShow extends React.Component {
         </div>
       )
     }
-  }
+  } 
 
   render() {
     
     if(!this.props.painting || !this.props.entities.paintings.artist){
       return null;
     }
-    // debugger
+    debugger
     return (
       <div className="painting-show">
-        {/* <p>You are on the Paintings Show Component</p> */}
         <h1>{this.props.painting.title}</h1>
         <Link to={`/artist/${this.props.painting.artist}`}>
           <div className="painting-show-user">
@@ -83,6 +154,20 @@ export default class PaintingShow extends React.Component {
         {console.log(this.props.painting)}
         <br />
         <div>{this.renderButton()}</div>
+        <h2>Comments</h2>
+        <div className="comments">
+          {this.props.comments.paintingComments.map(comment => (
+            <div>
+              <p>{comment.description}</p>
+              <div>{e => this.renderEraseButton(e, comment)}</div>
+            </div>
+          ))}
+        </div>
+      <div>
+        <h2>create a comment</h2>
+        {/* {this.createComment()} */}
+        {e => this.createComment(e)}
+      </div>
       </div>
     )
   }

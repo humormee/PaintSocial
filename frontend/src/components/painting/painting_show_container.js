@@ -15,7 +15,8 @@ const mSTP = (state, props) => {
   return {
     painting: painting,
     entities: state.entities,
-    session: state.session
+    session: state.session,
+    comments: state.entities.comments
   }
 };
 
