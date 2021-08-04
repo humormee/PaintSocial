@@ -9,6 +9,7 @@ export default class PaintingShow extends React.Component {
     this.eraseComment = this.eraseComment.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state={
+      // commentId = null,
       comment: null
     };
   }
@@ -35,10 +36,10 @@ export default class PaintingShow extends React.Component {
 
 
 
-  eraseComment(e, comment) { 
+  eraseComment(e) { 
     debugger 
     e.preventDefault();
-    this.props.eraseComment(comment._id);
+    this.props.eraseComment(e.currentTarget.value);
         
   }
 
@@ -107,13 +108,13 @@ export default class PaintingShow extends React.Component {
   renderEraseButton(comment) {
     const { user } = this.props.session;
     debugger
-    if(!comment.commenter === user.id) {
+    if(comment.commenter !== user.id) {
       return null
     }
     
       return (
         <div>
-          <button className="delete-comment" value={this.props.match.params.id} onClick={e => this.eraseComment(e, comment)}>Delete</button>
+          <button className="delete-comment" value={comment._id} onClick={this.eraseComment}>Delete</button>
         </div>
       )
     
@@ -159,7 +160,7 @@ export default class PaintingShow extends React.Component {
           {this.props.comments.paintingComments.map(comment => (
             <div>
               <p>{comment.description}</p>
-              <div>{e => this.renderEraseButton(e, comment)}</div>
+              <div>{this.renderEraseButton(comment)}</div>
             </div>
           ))}
         </div>
