@@ -17,9 +17,7 @@ export default class PaintingShow extends React.Component {
   componentDidMount() {
     
     this.props.fetchPaintings();
-    // this.props.fetchPainting(this.props.match.params.id).then(res => {
-    //   return console.log(res)
-    //   });
+    
 
     this.props.fetchPainting(this.props.match.params.id).then(() => {
       this.props.fetchArtist(this.props.painting.artist)
@@ -52,8 +50,8 @@ export default class PaintingShow extends React.Component {
   
   createComment(e) {
     debugger
-    e.preventDefault();
-    let { user } = this.props.session.user;
+    // e.preventDefault();
+    let { user } = this.props.session;
     if(!user) {
       return null;
     }
@@ -61,6 +59,7 @@ export default class PaintingShow extends React.Component {
     comment.commenter = user.id;
     comment.painting = this.props.match.params.id;
     comment.description = this.state.description;
+    debugger
     return (
       <div>
         <form onSubmit={e => this.handleSubmit(e, comment)}>
@@ -81,33 +80,9 @@ export default class PaintingShow extends React.Component {
     this.setState({comment: e.currentTarget.value})
   }
 
-  renderCommentForm(e) {
-    debugger
-    e.preventDefault();
-    let { user } = this.props.session.user;
-    if(!user) {
-      return null;
-    }
-    let comment = {};
-    comment.commenter = user.id;
-    comment.painting = this.props.match.params.id;
-    comment.description = this.state.description;
-    return (
-      <div>
-        <form onSubmit={e => this.handleSubmit(e, comment)}>
-
-          <textarea value={comment.description} onChange={e => this.updateComment(e)}>
-          </textarea>
-          <button type="submit">Post</button>
-
-        </form>
-      </div>
-    )
-  }
-
   renderEraseButton(comment) {
     const { user } = this.props.session;
-    debugger
+    // debugger
     if(comment.commenter !== user.id) {
       return null
     }
@@ -140,7 +115,7 @@ export default class PaintingShow extends React.Component {
     if(!this.props.painting || !this.props.entities.paintings.artist){
       return null;
     }
-    debugger
+    // debugger
     return (
       <div className="painting-show">
         <h1>{this.props.painting.title}</h1>
@@ -167,7 +142,7 @@ export default class PaintingShow extends React.Component {
       <div>
         <h2>create a comment</h2>
         {/* {this.createComment()} */}
-        {e => this.createComment(e)}
+        {this.createComment()}
       </div>
       </div>
     )
