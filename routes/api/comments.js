@@ -46,9 +46,10 @@ router.post('/painting/:painting_id',
 )
 
 router.delete('/:id', (req, res) => {
+  debugger
   Comment.deleteOne({ _id: req.params.id })
     .then(() => res.status(200).json(
-      {message: "Comment deleted successfully!"}
+      {deletedComment: req.params.id}
     )
     .catch( err => 
       res.status(404).json({

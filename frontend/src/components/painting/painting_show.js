@@ -10,7 +10,8 @@ export default class PaintingShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state={
       // commentId = null,
-      comment: null
+      comment: null,
+      comments: null
     };
   }
 
@@ -18,11 +19,11 @@ export default class PaintingShow extends React.Component {
     
     this.props.fetchPaintings();
     
-
     this.props.fetchPainting(this.props.match.params.id).then(() => {
       this.props.fetchArtist(this.props.painting.artist)
     });
     
+    this.setState({comments: this.props.fetchPaintingComments(this.props.match.params.id)})
     this.props.fetchPaintingComments(this.props.match.params.id);
   }
 
@@ -35,21 +36,23 @@ export default class PaintingShow extends React.Component {
 
 
   eraseComment(e) { 
-    debugger 
+    // debugger 
     e.preventDefault();
     this.props.eraseComment(e.currentTarget.value);
-        
-  }
+    this.props.fetchPaintingComments(this.props.match.params.id);
+  } 
 
   handleSubmit(e, comment) {
     e.preventDefault();
     comment.description = this.state.comment;
     this.props.makeComment(comment);
+    this.props.fetchPaintingComments(this.props.match.params.id);
+
   }
 
   
   createComment(e) {
-    debugger
+    // debugger
     // e.preventDefault();
     let { user } = this.props.session;
     if(!user) {
@@ -59,7 +62,7 @@ export default class PaintingShow extends React.Component {
     comment.commenter = user.id;
     comment.painting = this.props.match.params.id;
     comment.description = this.state.description;
-    debugger
+    // debugger
     return (
       <div>
         <form onSubmit={e => this.handleSubmit(e, comment)}>
@@ -71,6 +74,8 @@ export default class PaintingShow extends React.Component {
         </form>
       </div>
     )
+
+    
     
     
 
