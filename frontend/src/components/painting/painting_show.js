@@ -23,7 +23,7 @@ export default class PaintingShow extends React.Component {
       this.props.fetchArtist(this.props.painting.artist)
     });
     
-    this.setState({comments: this.props.fetchPaintingComments(this.props.match.params.id)})
+    // this.setState({comments: this.props.fetchPaintingComments(this.props.match.params.id)})
     this.props.fetchPaintingComments(this.props.match.params.id);
   }
 
@@ -38,15 +38,15 @@ export default class PaintingShow extends React.Component {
   eraseComment(e) { 
     // debugger 
     e.preventDefault();
-    this.props.eraseComment(e.currentTarget.value);
-    this.props.fetchPaintingComments(this.props.match.params.id);
-  } 
+    this.props.eraseComment(e.currentTarget.value).then(() => this.props.fetchPaintingComments(this.props.match.params.id));
+  }
+
 
   handleSubmit(e, comment) {
     e.preventDefault();
     comment.description = this.state.comment;
-    this.props.makeComment(comment);
-    this.props.fetchPaintingComments(this.props.match.params.id);
+    this.props.makeComment(comment).then(() => this.props.fetchPaintingComments(this.props.match.params.id)); 
+    // this.setState({comment: null})
 
   }
 
