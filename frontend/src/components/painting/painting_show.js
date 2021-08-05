@@ -85,7 +85,7 @@ export default class PaintingShow extends React.Component {
   renderEraseButton(comment) {
     const { user } = this.props.session;
     // debugger
-    if(comment.commenter !== user.id) {
+    if(!user || comment.commenter !== user.id) {
       return null
     }
     
@@ -96,12 +96,12 @@ export default class PaintingShow extends React.Component {
       )
     
   }
-
+ 
   renderButton() {
     const { user } = this.props.session;
     const artistId = this.props.painting.artist;
     if(!user) {
-      this.props.history.push('/')
+      return null;
     }
     if(artistId === user.id){
       return (
