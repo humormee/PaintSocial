@@ -27,8 +27,6 @@ export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
 
-
-
 // export const signup = user => dispatch => {
 //   return ((
 //   APIUtil.signup(user).then(() => {
@@ -44,6 +42,7 @@ export const logoutUser = () => ({
 export const signup = user => dispatch => (
   APIUtil.signup(user)
   .then(() => dispatch(receiveUserSignIn()))
+  // .then(() => dispatch(receiveCurrentUser(user)))
   .catch(err => dispatch(receiveErrors(err.response.data)))
 );
 
