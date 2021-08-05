@@ -31,6 +31,7 @@ const mDTP = dispatch => {
     makeComment: comment => dispatch(makeComment(comment)),
     eraseComment: id => dispatch(eraseComment(id))
   }
+  
 }
 
 export default connect(mSTP, mDTP)(PaintingShow)

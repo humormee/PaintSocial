@@ -100,10 +100,12 @@ export default class PaintingShow extends React.Component {
   renderButton() {
     const { user } = this.props.session;
     const artistId = this.props.painting.artist;
+    debugger
     if(!user) {
       this.props.history.push('/')
+      return
     }
-    if(artistId === user.id){
+    if(user && artistId === user.id){
       return (
         <div>
           <button className="delete-painting" value={this.props.match.params.id} onClick={this.handleDelete}>Delete</button>
