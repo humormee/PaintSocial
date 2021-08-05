@@ -45,14 +45,12 @@ export default class PaintingShow extends React.Component {
   handleSubmit(e, comment) {
     e.preventDefault();
     comment.description = this.state.comment;
-    this.props.makeComment(comment).then(() => this.props.fetchPaintingComments(this.props.match.params.id)); 
-    // this.setState({comment: null})
-
+    this.props.makeComment(comment).then(() => this.props.fetchPaintingComments(this.props.match.params.id));
+    e.currentTarget.reset() 
   }
 
   
   createComment(e) {
-    // debugger
     // e.preventDefault();
     let { user } = this.props.session;
     if(!user) {
@@ -62,7 +60,6 @@ export default class PaintingShow extends React.Component {
     comment.commenter = user.id;
     comment.painting = this.props.match.params.id;
     comment.description = this.state.description;
-    // debugger
     return (
       <div>
         <form onSubmit={e => this.handleSubmit(e, comment)}>
