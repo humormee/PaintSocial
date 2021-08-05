@@ -102,12 +102,7 @@ export default class PaintingShow extends React.Component {
     const artistId = this.props.painting.artist;
     debugger
     if(!user) {
-<<<<<<< HEAD
-      this.props.history.push('/')
-      return
-=======
       return null;
->>>>>>> comments
     }
     if(user && artistId === user.id){
       return (
