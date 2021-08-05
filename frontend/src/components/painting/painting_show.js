@@ -9,7 +9,6 @@ export default class PaintingShow extends React.Component {
     this.eraseComment = this.eraseComment.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state={
-      // commentId = null,
       comment: null,
       comments: null
     };
