@@ -23,7 +23,7 @@ export default class PaintingShow extends React.Component {
       this.props.fetchArtist(this.props.painting.artist)
     });
     
-    // this.setState({comments: this.props.fetchPaintingComments(this.props.match.params.id)})
+
     this.props.fetchPaintingComments(this.props.match.params.id);
   }
 
@@ -84,7 +84,7 @@ export default class PaintingShow extends React.Component {
 
   renderEraseButton(comment) {
     const { user } = this.props.session;
-    // debugger
+
     if(comment.commenter !== user.id) {
       return null
     }
@@ -114,7 +114,11 @@ export default class PaintingShow extends React.Component {
 
   render() {
     
-    if(!this.props.painting || !this.props.entities.paintings.artist){
+    let { artist } = this.props.entities.paintings
+    let { painting, comments } = this.props
+    // let { comments } = this.props
+
+    if(!this.props.painting || !artist){
       return null;
     }
     // debugger
@@ -123,19 +127,19 @@ export default class PaintingShow extends React.Component {
         <h1>{this.props.painting.title}</h1>
         <Link to={`/artist/${this.props.painting.artist}`}>
           <div className="painting-show-user">
-            <h2>{this.props.entities.paintings.artist.username}</h2>
-            <p>{this.props.entities.paintings.artist.email}</p>
+            <h2>{artist.username}</h2>
+            <p>{artist.email}</p>
           </div>
         </Link>
         <br />
-        <img src={this.props.painting.painting_image} />
-        {console.log(this.props.painting)}
+        <img src={painting.painting_image} />
+        {console.log(painting)}
         <br />
         <div>{this.renderButton()}</div>
         <h2>Comments</h2>
         <div className="comments">
-          {this.props.comments.paintingComments.map(comment => (
-            <div>
+          {comments.paintingComments.map(comment => (
+            <div key={`${comment.id}`}>
               <p>{comment.description}</p>
               <div>{this.renderEraseButton(comment)}</div>
             </div>
