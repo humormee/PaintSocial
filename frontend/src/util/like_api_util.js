@@ -9,5 +9,5 @@ export const createLike = data => {
 }
 
 export const deleteLike = paintingId => {
-  return axios.delete(`/api/likes/${painingId}`)
+  return axios.delete(`/api/likes/${paintingId}`)
 }
