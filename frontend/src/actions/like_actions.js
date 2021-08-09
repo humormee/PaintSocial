@@ -29,10 +29,15 @@ export const fetchPaintingLikes = paintingId => dispatch => {
       .catch(err => console.log(err))
 }
 
-export const fetchPainting = paintingId => dispatch => {
+export const makeLike = data => dispatch => {
   return (
-    getPainting(paintingId)
-        .then(painting => dispatch(receivePainting(painting)))
+    createLike(data)
+        .then(like => {
+          
+          return (
+            dispatch(receiveLike(like))
+          )
+        })
         .catch(err => console.log(err))
   )
 }
