@@ -11,7 +11,7 @@ const likesReducer = (oldState = {}, action) => {
   // debugger
   switch (action.type) {
     case RECEIVE_ALL_LIKES:
-      debugger
+      
       nextState.likes = action.likes.data
       return nextState;
     case RECEIVE_PAINTING_LIKES:
