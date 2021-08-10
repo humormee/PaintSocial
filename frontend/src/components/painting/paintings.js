@@ -49,24 +49,22 @@ class Painting extends React.Component {
  
   toggleLike(painting){ 
     
-    debugger
     for(let i = 0; i < painting.likes.length; i++) {
       if(!this.props.user){
-        debugger
         return
       }
       else if(painting.likes[i].liker === this.props.user.id) {
         let like = painting.likes[i];
         painting.likes.splice(i, 1);
-        debugger
         this.props.eraseLike(like._id)
         this.componentDidMount();
         return
       }
     }
 
-    this.props.makeLike(painting._id);
-    this.componentDidMount();
+    this.props.makeLike(painting._id)
+        .then(() => this.componentDidMount())
+    
   }
 
   componentWillReceiveProps(newState) {
@@ -86,7 +84,6 @@ class Painting extends React.Component {
       // .then(res => console.log(res))
     // this.props.fetchPaintingLikes(painting._id)
     // painting.likes = this.props.fetchPaintingLikes(painting._id)
-    // debugger
     return (
       <div>
         <div>{painting.likes.length}</div>

@@ -8,7 +8,7 @@ import {
 const likesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let nextState = Object.assign({}, oldState);
-  // debugger
+  debugger
   switch (action.type) {
     case RECEIVE_ALL_LIKES:
       
@@ -21,6 +21,7 @@ const likesReducer = (oldState = {}, action) => {
       nextState.like = action.like.data;
       return nextState;
     case REMOVE_LIKE:
+      debugger
       delete nextState[action.id.data.deletedLike];
       return nextState;
     default:
