@@ -24,9 +24,9 @@ const paintingsReducer = (oldState = { all: {}, user: {}, new: undefined}, actio
       nextState.next = action.painting.data
       return nextState;
     case REMOVE_PAINTING:
-      debugger
+      
       delete nextState[action.id]
-      debugger
+      
       return nextState;
     case RECEIVE_ARTIST:
       nextState.artist = action.artist.data
