@@ -7,7 +7,8 @@ import { fetchAllLikes, fetchPaintingLikes, makeLike, eraseLike } from '../../ac
 const mSTP = (state) => {
   return ({
     paintings: Object.values(state.entities.paintings.all),
-    entities: state.entities
+    entities: state.entities,
+    user: state.session.user
     // likes: Object.values(state.entities.likes.likes)
   })
 }
