@@ -35,7 +35,6 @@ export default class PaintingShow extends React.Component {
 
 
   eraseComment(e) { 
-    // debugger 
     e.preventDefault();
     this.props.eraseComment(e.currentTarget.value).then(() => this.props.fetchPaintingComments(this.props.match.params.id));
   }
@@ -83,7 +82,6 @@ export default class PaintingShow extends React.Component {
 
   renderEraseButton(comment) {
     const { user } = this.props.session;
-    // debugger
     if(!user || comment.commenter !== user.id) {
       return null
     }
@@ -121,7 +119,6 @@ export default class PaintingShow extends React.Component {
     if(!this.props.painting || !artist){
       return null;
     }
-    // debugger
     return (
       <div className="painting-show">
         <h1>{this.props.painting.title}</h1>

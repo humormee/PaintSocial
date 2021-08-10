@@ -10,7 +10,6 @@ export function PaintBox({placePainting}) {
   const contextRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const canvasBackground = "white";
-  // debugger
 
   placePainting();
 

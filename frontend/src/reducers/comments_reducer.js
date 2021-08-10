@@ -10,7 +10,6 @@ const commentsReducer = (oldState = {}, action) => {
   let nextState = Object.assign({}, oldState);
   switch (action.type) {
     case RECEIVE_PAINTING_COMMENTS:
-      // debugger
       nextState.paintingComments = action.comments.data;
       return nextState;
     case RECEIVE_COMMENT:
@@ -21,7 +20,6 @@ const commentsReducer = (oldState = {}, action) => {
       return nextState;
     case REMOVE_COMMENT:
       delete nextState[action.id.data.deletedComment];
-      // debugger
       return nextState;
     default:
       return oldState;
