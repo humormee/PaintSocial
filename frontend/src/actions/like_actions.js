@@ -1,12 +1,19 @@
 import {
+  getAllLikes,
   getPaintingLikes,
   createLike,
   deleteLike
 } from '../util/like_api_util';
 
+export const RECEIVE_ALL_LIKES = 'RECEIVE_ALL_LIKES';
 export const RECEIVE_PAINTING_LIKES = 'RECEIVE_PAINTING_LIKES';
 export const REMOVE_LIKE = 'REMOVE_LIKE';
 export const RECEIVE_LIKE = 'RECEIVE_LIKE';
+
+const receiveAllLikes = likes => ({
+  type: RECEIVE_ALL_LIKES,
+  likes
+})
 
 const receivePaintingLikes = likes => ({
   type: RECEIVE_PAINTING_LIKES,
@@ -22,6 +29,16 @@ const removeLike = likeId => ({
   type: REMOVE_LIKE,
   likeId
 });
+
+export const fetchAllLikes = () => dispatch => {
+  getAllLikes()
+      .then(likes => {
+        return (
+          dispatch(receiveAllLikes(likes))
+        )
+      })
+      .catch(err => console.log(err))
+}
 
 export const fetchPaintingLikes = paintingId => dispatch => {
   getPaintingLikes(paintingId)

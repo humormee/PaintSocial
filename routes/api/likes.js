@@ -20,8 +20,10 @@ router.get('/', (req, res) => {
   Like.find()
     .then(likes => res.json(likes))
     .catch(err => 
-      res.status(404).json({nolikesfound: 'no likes found'}))
-})
+      res.status(404).json({nolikesfound: 'no likes found'}
+      )
+    );
+});
 
 router.post('/painting/:painting_id',
   passport.authenticate("jwt", { session: false }),

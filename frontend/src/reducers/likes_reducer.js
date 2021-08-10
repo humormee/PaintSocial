@@ -1,4 +1,5 @@
 import {
+  RECEIVE_ALL_LIKES,
   RECEIVE_PAINTING_LIKES,
   RECEIVE_LIKE,
   REMOVE_LIKE
@@ -10,9 +11,10 @@ const likesReducer = (oldState = {}, action) => {
   // debugger
   switch (action.type) {
     case RECEIVE_ALL_LIKES:
-      return;
-    case RECEIVE_PAINTING_LIKES:
       debugger
+      nextState.likes = action.likes.data
+      return nextState;
+    case RECEIVE_PAINTING_LIKES:
       nextState.paintingLikes = action.likes.data;
       return nextState;
     case RECEIVE_LIKE:
