@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+export const getAllLikes = () => {
+  return axios.get(`api/likes`)
+}
+
 export const getPaintingLikes = paintingId => {
   return axios.get(`/api/likes/${paintingId}`)
 }

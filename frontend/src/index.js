@@ -6,7 +6,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import axios from 'axios';
-import { getPaintingLikes, createLike, deleteLike } from './util/like_api_util';
+import { getAllLikes, getPaintingLikes, createLike, deleteLike } from './util/like_api_util';
 import { getComment, getPaintingComments, createComment, deleteComment } from './util/comment_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getPaintingComments = getPaintingComments;
   // window.createComment = createComment;
   // window.deleteComment = deleteComment;
+  window.getAllLikes = getAllLikes;
   window.getPaintingLikes = getPaintingLikes;
   window.createLike = createLike;
   window.deleteLike = deleteLike;
