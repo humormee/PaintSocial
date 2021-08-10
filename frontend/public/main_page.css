@@ -6,3 +6,10 @@
   width: 600px;
   /* height: 300px; */
 }
+
+.splashMessage {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: teal;
+  font-size: 25px;
+  margin-left: 600px;
+}
