@@ -14,6 +14,11 @@ class MainPage extends React.Component {
             {/* </Link> */}
         </div>
         <div className='splashMessage'>A painting-based social network, Paint Social allows you to express yourself through painting and connect with others through art.</div>
+        <br/>
+        <br/>
+        <div>
+        <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>
+        </div>
       </div>
     );
   }

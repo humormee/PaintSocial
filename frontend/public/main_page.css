@@ -13,3 +13,19 @@
   font-size: 25px;
   margin-left: 600px;
 }
+
+.splashPageStart {
+  margin-right: 15px;
+  border-radius: 6px;
+  background-color: rgba(67, 164, 255, 1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 1230px;
+}
+
+.splashPageStart:hover {
+  background-color: rgb(108, 184, 255);
+}
