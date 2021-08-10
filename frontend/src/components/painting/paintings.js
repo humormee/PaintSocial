@@ -51,7 +51,11 @@ class Painting extends React.Component {
     
     debugger
     for(let i = 0; i < painting.likes.length; i++) {
-      if(painting.likes[i].liker === this.props.user.id) {
+      if(!this.props.user){
+        debugger
+        return
+      }
+      else if(painting.likes[i].liker === this.props.user.id) {
         let like = painting.likes[i];
         painting.likes.splice(i, 1);
         debugger
@@ -64,11 +68,6 @@ class Painting extends React.Component {
     this.props.makeLike(painting._id);
     this.componentDidMount();
   }
-
-  // componentWillMount() {
-  //   this.props.fetchPaintings();
-  // }
-
 
   componentWillReceiveProps(newState) {
     this.setState({ paintings: newState.paintings })
@@ -102,7 +101,6 @@ class Painting extends React.Component {
       return <div>No paintings</div>
     } else {
       this.assignLikes();
-      // debugger
       return (
         <div className="index-container">
           <h1>Paintings</h1>
