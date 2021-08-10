@@ -16,12 +16,12 @@ class Painting extends React.Component {
     
     this.props.fetchPaintings().then(paintings => {
       // return
-      debugger
+      // debugger
       let { data } = paintings.paintings
       let length = data.length;
       
       for(let i = 0; i < length; i++){
-        debugger
+        // debugger
         fetchPaintingLikes(data[i]._id)
       }
     });

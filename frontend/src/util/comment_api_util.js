@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const getPaintingComments = paintingId => {
+  debugger
   return axios.get(`/api/comments/painting/${paintingId}`)
 }
 

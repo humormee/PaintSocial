@@ -6,6 +6,7 @@ const Like = require('../../models/Like');
 
 router.get('/:painting_id', (req, res) => {
   debugger
+  console.log("like get route")
   Like.find({ painting: req.params.painting_id })
     .then(likes => {
       debugger
