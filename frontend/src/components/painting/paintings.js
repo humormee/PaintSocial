@@ -10,12 +10,16 @@ class Painting extends React.Component {
     //   paintings: []
     // }
     // this.renderLikes = this.renderLikes.bind(this)
+    this.assignLikes = this.assignLikes.bind(this);
+    this.renderLikes = this.renderLikes.bind(this);
   }
 
   componentDidMount() {
     
-    this.props.fetchPaintings().then(() => this.props.fetchAllLikes());
-    debugger
+    this.props.fetchPaintings()
+        .then(() => this.props.fetchAllLikes())
+        // .then(() => this.assignLikes());
+    
     // this.props.fetchPaintings().then(paintings => {
     //   let { data } = paintings.paintings
     //   let length = data.length;
@@ -25,6 +29,26 @@ class Painting extends React.Component {
     // });
   }
 
+  assignLikes() {
+    let { paintings } = this.props;
+    let { likes } = this.props.entities.likes;
+
+    let pLength = paintings.length;
+    let lLength = likes.length;
+
+
+    for(let i = 0; i < pLength; i++) {
+      paintings[i].likes = []
+      for(let j = 0; j < lLength; j++) {
+        if(likes[j].painting === paintings[i]._id){
+          debugger
+          paintings[i].likes.push(likes[j])
+        }
+      }
+    }
+
+    return paintings
+  }
  
   delete(id){ 
     
@@ -57,22 +81,27 @@ class Painting extends React.Component {
       .then(res => console.log(res, "res"))
   }
 
-  assignLikes(painting) {
-    this.props.entities.likes
-  }
-
-  // renderLikes(paintingId){
-    
-  //   // this.props.fetchPaintingLikes(paintingId)
-  //     // .then(res => console.log(res))
-  //   this.props.likes
+  // assignLikes(painting) {
+  //   this.props.entities.likes
   // }
 
+  renderLikes(painting){
+    
+    // this.props.fetchPaintingLikes(paintingId)
+      // .then(res => console.log(res))
+    // this.props.fetchPaintingLikes(painting._id)
+    // painting.likes = this.props.fetchPaintingLikes(painting._id)
+    // debugger
+    return (
+      <div>{painting.likes.length}</div>
+    )
+  }
+
   render() {
-    if (this.props.paintings.length === 0 || this.props.entities.likes.length === undefined) {
+    if (this.props.paintings.length === 0 || this.props.entities.likes.likes === undefined) {
       return <div>No paintings</div>
     } else {
-
+      let pWithLikes = this.assignLikes();
       debugger
       return (
         <div className="index-container">
@@ -87,7 +116,7 @@ class Painting extends React.Component {
                     
                     <img src={painting.painting_image} className="index-image"/>
                     <div>
-                      {/* {this.renderLikes(painting._id)} */}
+                      {this.renderLikes(painting)}
                     </div>
                     {/* <button onClick={() => this.delete(like._id)}>
                       Delete
