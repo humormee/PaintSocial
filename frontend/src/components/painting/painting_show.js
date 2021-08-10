@@ -5,6 +5,7 @@ export default class PaintingShow extends React.Component {
   constructor(props){
     super(props)
 
+    this.toggleLike = this.toggleLike.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.eraseComment = this.eraseComment.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,6 +25,8 @@ export default class PaintingShow extends React.Component {
     
 
     this.props.fetchPaintingComments(this.props.match.params.id);
+
+    this.props.fetchPaintingLikes(this.props.match.params.id)
   }
 
   handleDelete(e) {
@@ -70,10 +73,6 @@ export default class PaintingShow extends React.Component {
       </div>
     )
 
-    
-    
-    
-
   }
 
   updateComment(e) {
@@ -93,7 +92,26 @@ export default class PaintingShow extends React.Component {
       )
     
   }
- 
+
+   toggleLike(){ 
+    
+    for(let i = 0; i < this.props.likes.length; i++) {
+      if(!this.props.session.user){
+        return
+      }
+      else if(this.props.likes[i].liker === this.props.session.user.id) {
+        let like = this.props.likes[i];
+        // this.props.painting.likes.splice(i, 1);
+        this.props.eraseLike(like._id)
+        this.props.fetchPaintingLikes(this.props.match.params.id);
+        return
+      }
+    }
+
+    this.props.makeLike(this.props.match.params.id)
+        .then(() => this.props.fetchPaintingLikes(this.props.match.params.id))
+    
+  }
   renderButton() {
     const { user } = this.props.session;
     const artistId = this.props.painting.artist;
@@ -142,6 +160,8 @@ export default class PaintingShow extends React.Component {
             </div>
           ))}
         </div>
+        <p>{this.props.likes.length}</p>
+        <button onClick={this.toggleLike}>like/unlike</button>
       <div>
         <h2>create a comment</h2>
         {/* {this.createComment()} */}
