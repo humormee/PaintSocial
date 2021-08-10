@@ -24,8 +24,13 @@ const removeLike = likeId => ({
 });
 
 export const fetchPaintingLikes = paintingId => dispatch => {
+  debugger
   getPaintingLikes(paintingId)
-      .then(likes => dispatch(receivePaintingLikes(likes)))
+      .then(likes => {
+        debugger
+        return (
+          dispatch(receivePaintingLikes(likes)))
+        })
       .catch(err => console.log(err))
 }
 
