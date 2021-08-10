@@ -21,7 +21,7 @@ const commentsReducer = (oldState = {}, action) => {
       return nextState;
     case REMOVE_COMMENT:
       delete nextState[action.id.data.deletedComment];
-      debugger
+      // debugger
       return nextState;
     default:
       return oldState;
