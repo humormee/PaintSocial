@@ -9,7 +9,7 @@ class Painting extends React.Component {
     // this.state = {
     //   paintings: []
     // }
-    this.renderLikes = this.renderLikes.bind(this)
+    // this.renderLikes = this.renderLikes.bind(this)
   }
 
   componentDidMount() {
@@ -19,7 +19,7 @@ class Painting extends React.Component {
       // debugger
       let { data } = paintings.paintings
       let length = data.length;
-      
+      debugger
       for(let i = 0; i < length; i++){
         // debugger
         fetchPaintingLikes(data[i]._id)
@@ -59,11 +59,11 @@ class Painting extends React.Component {
       .then(res => console.log(res, "res"))
   }
 
-  renderLikes(paintingId){
-    // debugger
-    this.props.fetchPaintingLikes(paintingId)
-      // .then(res => console.log(res))
-  }
+  // renderLikes(paintingId){
+  //   // debugger
+  //   this.props.fetchPaintingLikes(paintingId)
+  //     // .then(res => console.log(res))
+  // }
 
   render() {
     if (this.props.paintings.length === 0) {
@@ -83,9 +83,9 @@ class Painting extends React.Component {
                     {/* <Link to={`/artist/${painting.artist}`}> {painting.artist} </Link> */}
                     
                     <img src={painting.painting_image} className="index-image"/>
-                    <div>
+                    {/* <div>
                       {this.renderLikes(painting._id)}
-                    </div>
+                    </div> */}
                     {/* <button onClick={() => this.delete(like._id)}>
                       Delete
                     </button>            */}

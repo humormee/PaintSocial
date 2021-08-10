@@ -1,12 +1,11 @@
 import axios from 'axios';
 
 export const getPaintingLikes = paintingId => {
-  debugger
-  return axios.get(`/api/likes/painting/${paintingId}`)
+  return axios.get(`/api/likes/${paintingId}`)
 }
 
 export const createLike = data => {
-  return axios.post(`/api/likes/painting/${data.painting}`, data)
+  return axios.post(`/api/likes/painting/${data}`, data)
 }
 
 export const deleteLike = paintingId => {
