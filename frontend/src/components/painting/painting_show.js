@@ -99,7 +99,7 @@ export default class PaintingShow extends React.Component {
   renderButton() {
     const { user } = this.props.session;
     const artistId = this.props.painting.artist;
-    debugger
+    
     if(!user) {
       return null;
     }
