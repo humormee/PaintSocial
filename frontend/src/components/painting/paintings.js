@@ -15,14 +15,10 @@ class Painting extends React.Component {
   componentDidMount() {
     
     this.props.fetchPaintings().then(paintings => {
-      // return
-      // debugger
       let { data } = paintings.paintings
       let length = data.length;
-      debugger
       for(let i = 0; i < length; i++){
-        // debugger
-        fetchPaintingLikes(data[i]._id)
+        this.props.fetchPaintingLikes(data[i]._id)
       }
     });
   }
@@ -32,13 +28,12 @@ class Painting extends React.Component {
     this.props.eraseLike(id)
 
     this.props.fetchPaintings().then(paintings => {
-      // return
       let { data } = paintings.paintings
       let { length } = data;
 
       for(let i = 0; i < length; i++){
         
-        fetchPaintingLikes(data[i]._id)
+        this.props.fetchPaintingLikes(data[i]._id)
       }
     });
 
@@ -60,7 +55,7 @@ class Painting extends React.Component {
   }
 
   // renderLikes(paintingId){
-  //   // debugger
+  //   
   //   this.props.fetchPaintingLikes(paintingId)
   //     // .then(res => console.log(res))
   // }

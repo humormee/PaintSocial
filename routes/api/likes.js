@@ -5,11 +5,8 @@ const passport = require('passport');
 const Like = require('../../models/Like');
 
 router.get('/:painting_id', (req, res) => {
-  debugger
-  console.log("like get route")
   Like.find({ painting: req.params.painting_id })
     .then(likes => {
-      debugger
       return (
       res.json(likes)
     )
@@ -18,6 +15,13 @@ router.get('/:painting_id', (req, res) => {
       nolikesfound: "Painting has no likes"
     }));
 });
+
+router.get('/', (req, res) => {
+  Like.find()
+    .then(likes => res.json(likes))
+    .catch(err => 
+      res.status(404).json({nolikesfound: 'no likes found'}))
+})
 
 router.post('/painting/:painting_id',
   passport.authenticate("jwt", { session: false }),

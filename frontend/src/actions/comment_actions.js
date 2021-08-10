@@ -52,7 +52,6 @@ export const makeComment = data => dispatch => {
   return (
     createComment(data)
         .then(comment => {
-          // debugger
           return (
             dispatch(receiveNewComment(comment))
           )

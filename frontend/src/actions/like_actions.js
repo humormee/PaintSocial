@@ -24,10 +24,8 @@ const removeLike = likeId => ({
 });
 
 export const fetchPaintingLikes = paintingId => dispatch => {
-  // debugger
   getPaintingLikes(paintingId)
       .then(likes => {
-        // debugger
         return (
           dispatch(receivePaintingLikes(likes)))
         })
