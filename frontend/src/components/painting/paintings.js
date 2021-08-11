@@ -85,9 +85,12 @@ class Painting extends React.Component {
     // this.props.fetchPaintingLikes(painting._id)
     // painting.likes = this.props.fetchPaintingLikes(painting._id)
     return (
-      <div>
+      <div className="likes">
         <div>{painting.likes.length}</div>
-        <button className="toggleLike" onClick={() => this.toggleLike(painting)}>like/unlike</button>
+        <button className="toggle-like" onClick={() => this.toggleLike(painting)}>
+          <i class="far fa-heart"></i>
+        </button>
+        {/* <button className="toggle-like" onClick={() => this.toggleLike(painting)}>like/unlike</button> */}
       </div>
     )
   }
@@ -100,28 +103,33 @@ class Painting extends React.Component {
       this.assignLikes();
       return (
         <div className="index-container">
-          <h1>Paintings</h1>
+          {/* <h1>Paintings</h1> */}
             <div className="painting-index">
               {this.props.paintings.map(painting => (    
                 <>
-                <Link key={painting._id} to={`/paintings/${painting._id}`} >         
-                  <div className="painting-index-item">                       
-                    <h1>{painting.title}</h1>                    
-                    
-                    {/* <Link to={`/artist/${painting.artist}`}> {painting.artist} </Link> */}
-                    
-                    <img src={painting.painting_image} className="index-image"/>
-                    {/* <div>
-                      {this.renderLikes(painting)}
-                    </div> */}
-                    {/* <button onClick={() => this.delete(like._id)}>
-                      Delete
-                    </button>            */}
-                  </div>
-                </Link> 
                 <div>
-                  {this.renderLikes(painting)}
-                </div>
+                  <div className="title-likes">
+                    {this.renderLikes(painting)}                
+                  </div> 
+                  <Link key={painting._id} to={`/paintings/${painting._id}`} >         
+                    <div className="painting-index-item"
+                      style={{backgroundImage: `url(${painting.painting_image})` }}
+                    >                                         
+                      {/* <Link to={`/artist/${painting.artist}`}> {painting.artist} </Link> */}
+                      
+                      {/* <img src={painting.painting_image} className="index-image"/> */}
+                      {/* <div>
+                        {this.renderLikes(painting)}
+                      </div> */}
+                      {/* <button onClick={() => this.delete(like._id)}>
+                        Delete
+                      </button>            */}
+                      
+                      <p>{painting.title}</p>   
+                    </div>                  
+                  </Link>
+                  
+                </div>              
                 </>
               ))}
             </div>            
