@@ -70,7 +70,7 @@ class Painting extends React.Component {
   componentWillReceiveProps(newState) {
     this.setState({ paintings: newState.paintings })
   }
-
+ 
   artistUsername(id){
     this.props.fetchArtist(id)
       .then(res => console.log(res, "res"))
