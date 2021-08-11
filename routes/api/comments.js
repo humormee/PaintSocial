@@ -46,7 +46,7 @@ router.post('/painting/:painting_id',
 )
 
 router.delete('/:id', (req, res) => {
-  // debugger
+  
   Comment.deleteOne({ _id: req.params.id })
     .then(() => res.status(200).json(
       {deletedComment: req.params.id}
@@ -57,6 +57,5 @@ router.delete('/:id', (req, res) => {
       }))
     );
 });
-
 
 module.exports = router;

@@ -194,4 +194,16 @@ input:focus::placeholder {
   background-color: rgb(108, 184, 255);
 }
 
+.alreadyMember {
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: medium;
+}
+
+.alreadyMember:hover {
+  color:rgb(108, 184, 255);
+}
+
 

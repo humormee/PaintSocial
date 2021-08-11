@@ -5,7 +5,8 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-// import axios from 'axios';
+import axios from 'axios';
+import { getAllLikes, getPaintingLikes, createLike, deleteLike } from './util/like_api_util';
 import { getComment, getPaintingComments, createComment, deleteComment } from './util/comment_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,14 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
 
-  // window.axios = axios;
-  window.getComment = getComment;
+  window.axios = axios;
+  // window.getComment = getComment;
   window.getPaintingComments = getPaintingComments;
-  window.createComment = createComment;
-  window.deleteComment = deleteComment;
+  // window.createComment = createComment;
+  // window.deleteComment = deleteComment;
+  window.getAllLikes = getAllLikes;
+  window.getPaintingLikes = getPaintingLikes;
+  window.createLike = createLike;
+  window.deleteLike = deleteLike;
+  // window.
+
   window.store = store;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-
+ 
   ReactDOM.render(<Root store={store} />, root);
 });

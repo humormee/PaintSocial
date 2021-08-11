@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import PaintingShow from './painting_show';
 import { makeComment, fetchPaintingComments, fetchComment, eraseComment } from '../../actions/comment_actions';
 import { fetchPainting, fetchPaintings, fetchArtist, deletePainting} from '../../actions/painting_actions';
+import { fetchPaintingLikes, makeLike, eraseLike } from '../../actions/like_actions';
 
 const mSTP = (state, props) => {
   const paintArray = state.entities.paintings.all;
@@ -16,7 +17,8 @@ const mSTP = (state, props) => {
     painting: painting,
     entities: state.entities,
     session: state.session,
-    comments: state.entities.comments
+    comments: state.entities.comments,
+    likes: state.entities.likes.paintingLikes
   }
 };
 
@@ -29,7 +31,10 @@ const mDTP = dispatch => {
     deletePainting: id => dispatch(deletePainting(id)),
     fetchPaintingComments: id => dispatch(fetchPaintingComments(id)),
     makeComment: comment => dispatch(makeComment(comment)),
-    eraseComment: id => dispatch(eraseComment(id))
+    eraseComment: id => dispatch(eraseComment(id)),
+    makeLike: data => dispatch(makeLike(data)),
+    eraseLike: id => dispatch(eraseLike(id)),
+    fetchPaintingLikes: id => dispatch(fetchPaintingLikes(id))
   }
   
 }

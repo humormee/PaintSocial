@@ -5,6 +5,7 @@ export default class PaintingShow extends React.Component {
   constructor(props){
     super(props)
 
+    this.toggleLike = this.toggleLike.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.eraseComment = this.eraseComment.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,6 +25,8 @@ export default class PaintingShow extends React.Component {
     
 
     this.props.fetchPaintingComments(this.props.match.params.id);
+
+    this.props.fetchPaintingLikes(this.props.match.params.id)
   }
 
   handleDelete(e) {
@@ -35,7 +38,6 @@ export default class PaintingShow extends React.Component {
 
 
   eraseComment(e) { 
-    // debugger 
     e.preventDefault();
     this.props.eraseComment(e.currentTarget.value).then(() => this.props.fetchPaintingComments(this.props.match.params.id));
   }
@@ -71,10 +73,6 @@ export default class PaintingShow extends React.Component {
       </div>
     )
 
-    
-    
-    
-
   }
 
   updateComment(e) {
@@ -83,7 +81,6 @@ export default class PaintingShow extends React.Component {
 
   renderEraseButton(comment) {
     const { user } = this.props.session;
-    // debugger
     if(!user || comment.commenter !== user.id) {
       return null
     }
@@ -95,11 +92,29 @@ export default class PaintingShow extends React.Component {
       )
     
   }
- 
+
+   toggleLike(){ 
+    
+    for(let i = 0; i < this.props.likes.length; i++) {
+      if(!this.props.session.user){
+        return
+      }
+      else if(this.props.likes[i].liker === this.props.session.user.id) {
+        let like = this.props.likes[i];
+        this.props.eraseLike(like._id)
+        this.props.fetchPaintingLikes(this.props.match.params.id);
+        return
+      }
+    }
+
+    this.props.makeLike(this.props.match.params.id)
+        .then(() => this.props.fetchPaintingLikes(this.props.match.params.id))
+    
+  }
   renderButton() {
     const { user } = this.props.session;
     const artistId = this.props.painting.artist;
-    // debugger
+    
     if(!user) {
       return null;
     }
@@ -118,10 +133,9 @@ export default class PaintingShow extends React.Component {
     let { painting, comments } = this.props
     // let { comments } = this.props
 
-    if(!this.props.painting || !artist){
+    if(!this.props.painting || !artist || !this.props.likes){
       return null;
     }
-    // debugger
     return (
       <div className="painting-show">
         <h1 className="painting-title">{this.props.painting.title}</h1>
@@ -145,11 +159,16 @@ export default class PaintingShow extends React.Component {
             </div>
           ))}
         </div>
+        <p>{this.props.likes.length}</p>
+        <button onClick={this.toggleLike}>like/unlike</button>
+      <div>
+        <h2>create a comment</h2>
       {/* <h2>create a comment</h2> */}
       <div>
         
         {/* {this.createComment()} */}
         {this.createComment()}
+      </div>
       </div>
       </div>
     )

@@ -6,6 +6,7 @@ export const getPaintings = () => {
 };
 
 export const getArtist = id => {
+  
   return axios.get(`/api/users/${id}`)
 }
 
