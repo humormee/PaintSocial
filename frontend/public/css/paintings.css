@@ -1,4 +1,8 @@
 /* painting index */
+.painting-title {
+  font-size: 30px;
+}
+
 .index-container {
   margin-top: 20px;
 }

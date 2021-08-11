@@ -1,0 +1,48 @@
+.comment-title {
+  font-size: 20px;
+}
+
+.comments {
+  /* border: 1px solid red; */
+  padding: 10px;
+
+  width: 400px;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: white;
+  border-radius: 5px;
+
+  border-bottom: 1px solid black;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+.comment div button{
+  margin: 0;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* border: 1px solid red; */
+  padding: 5px;
+}
+
+.comment-form button{
+  margin-top: 5px;
+  background: white;
+}
+
+.comment-form textarea{
+  resize: none;
+  width: 300px;
+}

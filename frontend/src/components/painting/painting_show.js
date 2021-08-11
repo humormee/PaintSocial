@@ -63,11 +63,11 @@ export default class PaintingShow extends React.Component {
     comment.description = this.state.description;
     return (
       <div>
-        <form onSubmit={e => this.handleSubmit(e, comment)}>
+        <form className="comment-form" onSubmit={e => this.handleSubmit(e, comment)}>
 
-          <textarea value={comment.description} onChange={e => this.updateComment(e)}>
+          <textarea placeholder="add a comment" value={comment.description} onChange={e => this.updateComment(e)}>
           </textarea>
-          <button type="submit">Post</button>
+          <button type="submit">comment</button>
 
         </form>
       </div>
@@ -138,7 +138,7 @@ export default class PaintingShow extends React.Component {
     }
     return (
       <div className="painting-show">
-        <h1>{this.props.painting.title}</h1>
+        <h1 className="painting-title">{this.props.painting.title}</h1>
         <Link to={`/artist/${this.props.painting.artist}`}>
           <div className="painting-show-user">
             <h2>{artist.username}</h2>
@@ -150,10 +150,10 @@ export default class PaintingShow extends React.Component {
         {console.log(painting)}
         <br />
         <div>{this.renderButton()}</div>
-        <h2>Comments</h2>
+        <h2 className="comment-title">Comments</h2>
         <div className="comments">
           {comments.paintingComments.map(comment => (
-            <div key={`${comment.id}`}>
+            <div className="comment" key={`${comment.id}`}>
               <p>{comment.description}</p>
               <div>{this.renderEraseButton(comment)}</div>
             </div>
@@ -163,7 +163,12 @@ export default class PaintingShow extends React.Component {
         <button onClick={this.toggleLike}>like/unlike</button>
       <div>
         <h2>create a comment</h2>
+      {/* <h2>create a comment</h2> */}
+      <div>
+        
+        {/* {this.createComment()} */}
         {this.createComment()}
+      </div>
       </div>
       </div>
     )

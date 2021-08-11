@@ -2,7 +2,11 @@ const Validator = require('validator');
 const validText = require('./valid-text');
 
 module.exports = function validateComment(data) {
+<<<<<<< HEAD
   
+=======
+  // debugger
+>>>>>>> mergePainting
   let errors = {};
   data.description = validText(data.description) ? data.description : '';
 
