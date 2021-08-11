@@ -125,19 +125,19 @@ export function PaintBox({placePainting}) {
     // const btnSave = document.querySelector("#btnSave");
           
     // btnSave.addEventListener("click", function () {
-      // if (window.navigator.msSaveBlob) {
-      //   window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
-      // } else {
-        const canvas = canvasRef.current;
-        const context = canvas.getContext('2d');
+      const canvas = canvasRef.current;
+      const context = canvas.getContext('2d');
+      if (window.navigator.msSaveBlob) {
+        window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
+      } else {
         const a = document.createElement("a");
 
         document.body.appendChild(a);
         a.href = canvas.toDataURL();
-        a.download = "canvas-image.png"
+        a.download = "painting-social-image.png"
         a.click();
         document.body.removeChild(a);
-      // }
+      }
     // });
   }
 
