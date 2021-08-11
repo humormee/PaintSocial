@@ -12,9 +12,15 @@
 }
 
 .painting-index {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
+
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
 
   background: white;
 
@@ -23,7 +29,7 @@
   width: 90%;
   margin: 20px auto;
 
-  background: lightblue;
+  /* background: lightblue; */
   /* background: rgb(180, 150, 125); */
 }
 
@@ -39,7 +45,7 @@
 
   /* background: white; */
   /* background: #EFDEF2; */
-  background: lightblue;
+  /* background: lightblue; */
   /* color: white */
 }
 
@@ -54,7 +60,13 @@
 
 .painting-index-item img {
   /* border: 2px solid lightpink; */
+  border-radius: 3px;
   box-shadow: 0 0 10px rgba(0, 0, 0, .75);
+}
+
+.index-image {
+  height: 150px;
+  /* border-radius: 20px; */
 }
 
 .painting-show-user {
@@ -157,11 +169,6 @@ canvas {
 }
 
 /* showing painting images */
-
-  .index-image {
-    height: 200px;
-    border-radius: 20px;
-  }
 
   .show-image {
 

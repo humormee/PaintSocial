@@ -40,7 +40,7 @@ class Painting extends React.Component {
     } else {
       return (
         <div className="index-container">
-          <h1>Paintings</h1>
+          {/* <h1>Paintings</h1> */}
             <div className="painting-index">
               {this.props.paintings.map(painting => (    
                 <Link key={painting._id} to={`/paintings/${painting._id}`} >         
