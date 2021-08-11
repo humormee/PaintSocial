@@ -120,7 +120,26 @@ export function PaintBox({placePainting}) {
   //   }) 
   // }
   
+  const submit = () => {
+    // debugger
+    // const btnSave = document.querySelector("#btnSave");
+          
+    // btnSave.addEventListener("click", function () {
+      // if (window.navigator.msSaveBlob) {
+      //   window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
+      // } else {
+        const canvas = canvasRef.current;
+        const context = canvas.getContext('2d');
+        const a = document.createElement("a");
 
+        document.body.appendChild(a);
+        a.href = canvas.toDataURL();
+        a.download = "canvas-image.png"
+        a.click();
+        document.body.removeChild(a);
+      // }
+    // });
+  }
 
   // function pullImage(){
   //   index += 1;
