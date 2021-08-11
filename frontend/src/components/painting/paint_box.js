@@ -110,20 +110,22 @@ export function PaintBox({placePainting}) {
     // console.log(restoreArray)
   }
 
-  const submit = () => {
-    while (index !== -1) {
-      submitUndo()
-    }
-    // paintingArray = tempPaintingArray.concat(submitArray);
-    submitArray.forEach(element => {
-      paintingArray.push(element)
-    }) 
-  }
+  // const submit = () => {
+  //   while (index !== -1) {
+  //     submitUndo()
+  //   }
+  //   // paintingArray = tempPaintingArray.concat(submitArray);
+  //   submitArray.forEach(element => {
+  //     paintingArray.push(element)
+  //   }) 
+  // }
+  
 
-  function pullImage(){
-    index += 1;
-    contextRef.current.putImageData(paintingArray[index], 0, 0);
-  }
+
+  // function pullImage(){
+  //   index += 1;
+  //   contextRef.current.putImageData(paintingArray[index], 0, 0);
+  // }
 
   return (
     <div>
@@ -139,8 +141,8 @@ export function PaintBox({placePainting}) {
         ref={canvasRef}
       />
       <div className="tools">
-        <button onClick={() => submit()} type="button" className="button">Save</button>
-        <button onClick={() => pullImage()} type="button" className="button">Image</button>
+        <button onClick={() => submit()} type="button" id="btnSave" className="button">Save</button>
+        {/* <button onClick={() => pullImage()} type="button" className="button">Image</button> */}
         <button onClick={() => undo()} type="button" className="button">Undo</button>
         <button onClick={() => clearCanvas()} type="button" className="button">Clear</button>
 

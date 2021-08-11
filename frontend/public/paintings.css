@@ -73,6 +73,7 @@
 canvas {
   box-shadow: 5px 5px 5px 5px rgb(56, 54, 54);
   cursor: crosshair;
+  /* cursor: url(https://cdn.discordapp.com/attachments/597985513701376013/875047802160431174/Eraser.png), auto; */
 }
 
 /* #canvas {
@@ -159,9 +160,9 @@ canvas {
     border-radius: 20px;
   }
 
-  .show-image {
+  /* .show-image {
 
-  }
+  } */
 
   .painting-show {
     display: flex;
