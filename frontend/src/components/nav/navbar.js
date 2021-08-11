@@ -50,7 +50,7 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar">
         <div className="logo">
-            <Link to="/">
+            <Link to="/index">
                 <img src="https://media.discordapp.net/attachments/865977609330753600/868137469281972254/PaintSocial_Logo_Bigger.png?width=538&height=538"/>
             </Link>
         </div>
