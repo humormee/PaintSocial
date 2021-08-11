@@ -48,6 +48,9 @@ class NavBar extends React.Component {
 
   render() {
     return (
+      <div>
+      <span className="topbackground"><img src="https://cdn.discordapp.com/attachments/597985513701376013/874777752077762610/Background_1.png"/></span>
+      <span className="bottombackground"><img src="https://cdn.discordapp.com/attachments/597985513701376013/875045711060799548/Background_3.png"/></span>
       <div className="nav-bar">
         <div className="logo">
             <Link to="/index">
@@ -55,6 +58,7 @@ class NavBar extends React.Component {
             </Link>
         </div>
         {this.getLinks()}
+      </div>
       </div>
     );
   }
