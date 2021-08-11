@@ -87,7 +87,10 @@ class Painting extends React.Component {
     return (
       <div className="likes">
         <div>{painting.likes.length}</div>
-        <button className="toggle-like" onClick={() => this.toggleLike(painting)}>like/unlike</button>
+        <button className="toggle-like" onClick={() => this.toggleLike(painting)}>
+          <i class="far fa-heart"></i>
+        </button>
+        {/* <button className="toggle-like" onClick={() => this.toggleLike(painting)}>like/unlike</button> */}
       </div>
     )
   }

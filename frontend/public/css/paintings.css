@@ -44,7 +44,7 @@
 
   margin: 10px;
   padding: 10px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .painting-index-item{
@@ -96,7 +96,8 @@
 }
 
 .toggle-like {
-  z-index: 2;
+  background: none;
+  border: 0;
 }
 
 
