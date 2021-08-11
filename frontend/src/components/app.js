@@ -15,11 +15,11 @@ const App = () => (
   <div className="outermost">
     <NavBarContainer />
     <Switch>
-      <AuthRoute exact path="/" component={MainPage} />
+      <Route exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
-      <Route exact path="/" component={PaintingsContainer} />
+      <Route exact path="/index" component={PaintingsContainer} />
       <ProtectedRoute exact path="/draw-painting" component={DrawPaintingContainer} />
       <ProtectedRoute exact path="/painting" component={DrawPaintingContainer} />
       <Route exact path="/paintings/:id" component={PaintingShowContainer} />
