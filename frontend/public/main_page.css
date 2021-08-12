@@ -61,9 +61,25 @@
   display: flex;
   height: 300px;
   width: 80%;
+  justify-content: space-around;
 }
 
-.
+.profile .picture {
+  height: 100px;
+  border-radius: 50%;
+}
 
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+.profile .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
