@@ -183,6 +183,21 @@ input:focus::placeholder {
   color: rgba(144, 148, 156, 0.85);
 }
 
+.welcome {
+  margin-right: 15px;
+  border-radius: 6px;
+  background-color: rgba(67, 164, 255, 1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.welcome:hover {
+  background-color: rgb(108, 184, 255);
+}
+
 .sign {
   margin-right: 15px;
   border-radius: 6px;

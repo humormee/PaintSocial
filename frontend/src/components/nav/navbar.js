@@ -34,6 +34,16 @@ class NavBar extends React.Component {
             </button>
           </div>
 
+          <div className="welcome-icon">
+            <Link to="/">
+              <button classsName="nav-button">
+                Welcome!
+                <img src="https://cdn.discordapp.com/attachments/865977609330753600/875399258927427624/welcome.png"
+                alt="Welcome"/>
+              </button>
+            </Link>
+          </div>
+
         </div>
       );
     } else {
@@ -41,6 +51,7 @@ class NavBar extends React.Component {
         <div>
           <Link to={'/signup'}><button className="sign">Signup</button></Link>
           <Link to={'/login'}><button className="log">Login</button></Link>
+          <Link to={'/'}><button className="welcome">Welcome!</button></Link>
         </div>
       );
     }
