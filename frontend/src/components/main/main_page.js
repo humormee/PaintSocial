@@ -19,7 +19,7 @@ class MainPage extends React.Component {
         <div>
           <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>
         </div>
-        <h2>Meet the Team!</h2>
+        
         <div className="splashProfiles">
           <div className="profile">Christian Miguel Dela Cruz
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463472530481233/miggs.jpeg" alt="miguelpicture"/>
