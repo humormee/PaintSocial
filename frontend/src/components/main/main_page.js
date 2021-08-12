@@ -19,6 +19,36 @@ class MainPage extends React.Component {
         <div>
           <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>
         </div>
+        <div className="splashProfiles">Meet the Team!
+          <div className="profile">Christian Miguel Dela Cruz
+            <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463472530481233/miggs.jpeg" alt="miguelpicture"/>
+            <div className="links">
+              <a href="https://www.linkedin.com/in/christian-miguel-dela-cruz-724656218/">LinkedIn</a>
+              <a href="">AngelList</a>
+            </div>
+          </div>
+          <div className="profile">Kin Ka Tse
+            <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463470777270293/kinka.png" alt="kinpicture"/>
+            <div className="links">
+              <a href="https://www.linkedin.com/in/kin-ka-tse/">LinkedIn</a>
+              <a href="https://angel.co/u/kin-ka-tse">AngelList</a>
+            </div>
+          </div>
+          <div className="profile">Eric Tran
+            <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463458513117184/eric.png" alt="ericpicture"/>
+            <div className="links">
+              <a href="https://www.linkedin.com/in/eric-tran-6aab70130/">LinkedIn</a>
+              <a href="">AngelList</a>
+            </div>
+          </div>
+          <div className="profile">Justin Ernst
+            <img className="picture" src="" alt="justinpicutre"/>
+            <div className="links">
+              <a href="https://www.linkedin.com/in/justin-ernst-a0ab10156/">LinkedIn</a>
+              <a href="">AngelList</a>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
