@@ -62,6 +62,7 @@ export default class PaintingShow extends React.Component {
     comment.description = this.state.description;
     return (
       <div>
+        <h2>create a comment</h2>
         <form className="comment-form" onSubmit={e => this.handleSubmit(e, comment)}>
 
           <textarea placeholder="add a comment" value={comment.description} onChange={e => this.updateComment(e)}>
@@ -161,7 +162,7 @@ export default class PaintingShow extends React.Component {
         <p>{this.props.likes.length}</p>
         <button onClick={this.toggleLike}>like/unlike</button>
       <div>
-        <h2>create a comment</h2>
+        
       {/* <h2>create a comment</h2> */}
       <div>
         
