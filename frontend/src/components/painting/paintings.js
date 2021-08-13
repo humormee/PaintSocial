@@ -47,8 +47,7 @@ class Painting extends React.Component {
     return paintings
   }
  
-  toggleLike(painting){ 
-    
+  toggleLike(painting){     
     for(let i = 0; i < painting.likes.length; i++) {
       if(!this.props.user){
         return
@@ -88,7 +87,8 @@ class Painting extends React.Component {
       <div className="likes">
         <div>{painting.likes.length}</div>
         <button className="toggle-like" onClick={() => this.toggleLike(painting)}>
-          <i class="far fa-heart"></i>
+          {/* <i class="far fa-heart"></i> */}
+          <img src="https://media.discordapp.net/attachments/865977609330753600/875043682431152189/Heart_Unliked.png?width=566&height=566" />
         </button>
         {/* <button className="toggle-like" onClick={() => this.toggleLike(painting)}>like/unlike</button> */}
       </div>
@@ -108,7 +108,6 @@ class Painting extends React.Component {
               {this.props.paintings.map(painting => (    
                 <>
                 <div className="item-container">
-                  
                   <div className="title-likes">  
                     {this.renderLikes(painting)}
                   </div>
