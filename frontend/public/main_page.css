@@ -1,20 +1,42 @@
+.outermost {
+  height: 90vh;
+}
+
+.frontlogowrapper {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100%;
+  /* border: 1px solid red; */
+  flex-direction: column;
+}
+
+
 .front-logo {
-  margin-left: 200px;
+  /* margin-left: 200px; */
+  /* position: absolute; */
+  display: flex;
+  /* margin-right: 27%; */
 }
 
 .paintsocialtitle {
   width: 600px;
-  /* height: 300px; */
+  height: 300px;
 }
 
 .splashMessage {
+  /* position: absolute; */
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: teal;
   font-size: 25px;
-  margin-left: 600px;
+  /* margin-left: 600px; */
+  width: 80%;
+  display: flex;
 }
 
 .splashPageStart {
+  /* position: absolute; */
+  display: flex;
   margin-right: 15px;
   border-radius: 6px;
   background-color: rgba(67, 164, 255, 1);
@@ -23,9 +45,41 @@
   color: white;
   border: none;
   cursor: pointer;
-  margin-left: 1230px;
 }
 
 .splashPageStart:hover {
   background-color: rgb(108, 184, 255);
 }
+
+.paintbrush {
+  position: relative;
+  top: 0; left: 0; bottom: 0;
+  width: 24%;
+}
+
+.splashProfiles {
+  display: flex;
+  height: 300px;
+  width: 80%;
+  justify-content: space-around;
+}
+
+.profile .picture {
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.profile .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+

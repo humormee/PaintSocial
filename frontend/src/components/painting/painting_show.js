@@ -11,7 +11,8 @@ export default class PaintingShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state={
       comment: null,
-      comments: null
+      comments: null,
+      painting: null
     };
   }
 
@@ -19,10 +20,8 @@ export default class PaintingShow extends React.Component {
     
     this.props.fetchPaintings();
     
-    this.props.fetchPainting(this.props.match.params.id).then(() => {
-      this.props.fetchArtist(this.props.painting.artist)
-    });
-    
+    this.props.fetchPainting(this.props.match.params.id)
+      .then(painting => this.props.fetchArtist(painting.painting.data.artist))
 
     this.props.fetchPaintingComments(this.props.match.params.id);
 
@@ -63,6 +62,7 @@ export default class PaintingShow extends React.Component {
     comment.description = this.state.description;
     return (
       <div>
+        <h2>create a comment</h2>
         <form className="comment-form" onSubmit={e => this.handleSubmit(e, comment)}>
 
           <textarea placeholder="add a comment" value={comment.description} onChange={e => this.updateComment(e)}>
@@ -162,7 +162,7 @@ export default class PaintingShow extends React.Component {
         <p>{this.props.likes.length}</p>
         <button onClick={this.toggleLike}>like/unlike</button>
       <div>
-        <h2>create a comment</h2>
+        
       {/* <h2>create a comment</h2> */}
       <div>
         

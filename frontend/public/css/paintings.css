@@ -48,9 +48,6 @@
   /* border: 1px solid red; */
 }
 
-.item-container {
-}
-
 .painting-index-item{
   display: flex;
   justify-content: flex-start;
@@ -142,6 +139,7 @@
 canvas {
   box-shadow: 5px 5px 5px 5px rgb(56, 54, 54);
   cursor: crosshair;
+  /* cursor: url(https://cdn.discordapp.com/attachments/597985513701376013/875047802160431174/Eraser.png), auto; */
 }
 
 /* #canvas {
@@ -223,7 +221,13 @@ canvas {
 
 /* showing painting images */
 
+  .index-image {
+    height: 200px;
+    border-radius: 20px;
+  }
+
   /* .show-image {
+  .show-image {
 
   } */
 

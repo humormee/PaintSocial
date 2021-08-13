@@ -24,7 +24,7 @@
   border-radius: 50%;
 }
 
-.logout-icon img, .newpainting-icon img {
+.logout-icon img, .newpainting-icon img, .welcome-icon img {
   height: 25px;
 }
 
@@ -40,4 +40,23 @@
   color: rgba(67, 164, 255, 1);;
   font-size: 14px;
   font-weight: 600;
+}
+
+.welcome-icon button {
+  display: flex;
+  align-items: center;
+
+  padding: 5px;
+  margin: 5px;
+
+  background: white;
+  /* background:lightgreen; */
+  color: rgba(67, 164, 255, 1);;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.welcome-icon button img {
+  margin-left: 5px;
+  margin-right: 3px;
 }
