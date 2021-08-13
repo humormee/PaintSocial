@@ -107,10 +107,11 @@ class Painting extends React.Component {
             <div className="painting-index">
               {this.props.paintings.map(painting => (    
                 <>
-                <div>
-                  <div className="title-likes">
-                    {this.renderLikes(painting)}                
-                  </div> 
+                <div className="item-container">
+                  
+                  <div className="title-likes">  
+                    {this.renderLikes(painting)}
+                  </div>
                   <Link key={painting._id} to={`/paintings/${painting._id}`} >         
                     <div className="painting-index-item"
                       style={{backgroundImage: `url(${painting.painting_image})` }}
@@ -123,13 +124,12 @@ class Painting extends React.Component {
                       </div> */}
                       {/* <button onClick={() => this.delete(like._id)}>
                         Delete
-                      </button>            */}
-                      
-                      <p>{painting.title}</p>   
+                      </button>            */}                      
+                      <p>{painting.title}</p>  
                     </div>                  
-                  </Link>
-                  
-                </div>              
+                  </Link>  
+
+                </div>          
                 </>
               ))}
             </div>            
