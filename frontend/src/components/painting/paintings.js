@@ -75,7 +75,16 @@ class Painting extends React.Component {
       .then(res => console.log(res, "res"))
   }
 
- 
+  renderLikeIcon(painting){
+    for(let i = 0; i < painting.likes.length; i++) {
+      if(painting.likes[i].liker === this.props.user.id) {
+        return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875043220034301962/Heart.png" />
+      } else if (!painting.likes){
+        return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" />
+      }
+    }
+    return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" />
+  }
 
   renderLikes(painting){
     
@@ -88,8 +97,7 @@ class Painting extends React.Component {
         <div>{painting.likes.length}</div>
         <button className="toggle-like" onClick={() => this.toggleLike(painting)}>
           {/* <i class="far fa-heart"></i> */}
-          <img src="https://media.discordapp.net/attachments/865977609330753600/875043220034301962/Heart.png?width=566&height=566"/>
-          {/* <img src="https://media.discordapp.net/attachments/865977609330753600/875043682431152189/Heart_Unliked.png?width=566&height=566" /> */}
+          {this.renderLikeIcon(painting)} 
         </button>
         {/* <button className="toggle-like" onClick={() => this.toggleLike(painting)}>like/unlike</button> */}
       </div>
