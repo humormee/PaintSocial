@@ -88,7 +88,8 @@ class Painting extends React.Component {
         <div>{painting.likes.length}</div>
         <button className="toggle-like" onClick={() => this.toggleLike(painting)}>
           {/* <i class="far fa-heart"></i> */}
-          <img src="https://media.discordapp.net/attachments/865977609330753600/875043682431152189/Heart_Unliked.png?width=566&height=566" />
+          <img src="https://media.discordapp.net/attachments/865977609330753600/875043220034301962/Heart.png?width=566&height=566"/>
+          {/* <img src="https://media.discordapp.net/attachments/865977609330753600/875043682431152189/Heart_Unliked.png?width=566&height=566" /> */}
         </button>
         {/* <button className="toggle-like" onClick={() => this.toggleLike(painting)}>like/unlike</button> */}
       </div>

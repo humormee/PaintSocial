@@ -45,6 +45,7 @@
   justify-content: space-between;
   margin: 5px;
   padding: 10px;
+  z-index: 2;
   /* border: 1px solid red; */
 }
 
@@ -67,16 +68,18 @@
   background-position: center;
   background-repeat: no-repeat;
 
+  transition: all 500ms;
+  overflow: hidden;
+
   /* background: white; */
   /* background: #EFDEF2; */
   /* background: lightblue; */
   /* color: white */
 }
 
-/* .painting-index-item:hover {
-  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-  transform: translateY(-3px) scale(1.1);
-} */
+.painting-index-item:hover {
+  transform: translateY(-1px) scale(1.05);
+}
 
 .painting-index-item p {
   position: relative;
