@@ -3,6 +3,7 @@
 }
 
 .frontlogowrapper {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   /* justify-content: center; */
   align-items: center;
@@ -26,8 +27,8 @@
 
 .splashMessage {
   /* position: absolute; */
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: teal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(22, 22, 22);
   font-size: 25px;
   /* margin-left: 600px; */
   width: 80%;
@@ -127,3 +128,7 @@
   align-items: center;
 }
 
+.linkicon {
+  /* height: 150%; */
+  margin: 10px;
+}

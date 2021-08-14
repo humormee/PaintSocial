@@ -24,8 +24,9 @@ class MainPage extends React.Component {
           <div className="profile">Christian Miguel Dela Cruz
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463472530481233/miggs.jpeg" alt="miguelpicture"/>
             <div className="links">
-              <i class="fab fa-linkedin"></i>
-              <a href="https://www.linkedin.com/in/christian-miguel-dela-cruz-724656218/">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/christian-miguel-dela-cruz-724656218/">
+              <i class="fab fa-linkedin"></i>LinkedIn
+              </a>
               <i class="fab fa-angellist"></i>
               <a href="">AngelList</a>
               <i class="fab fa-github"></i>
