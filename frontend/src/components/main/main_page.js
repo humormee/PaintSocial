@@ -24,29 +24,45 @@ class MainPage extends React.Component {
           <div className="profile">Christian Miguel Dela Cruz
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463472530481233/miggs.jpeg" alt="miguelpicture"/>
             <div className="links">
+              <i class="fab fa-linkedin"></i>
               <a href="https://www.linkedin.com/in/christian-miguel-dela-cruz-724656218/">LinkedIn</a>
+              <i class="fab fa-angellist"></i>
               <a href="">AngelList</a>
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/migs-dc">Github</a>
             </div>
           </div>
           <div className="profile">Kin Ka Tse
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463470777270293/kinka.png" alt="kinpicture"/>
             <div className="links">
+              <i class="fab fa-linkedin"></i>
               <a href="https://www.linkedin.com/in/kin-ka-tse/">LinkedIn</a>
+              <i class="fab fa-angellist"></i>
               <a href="https://angel.co/u/kin-ka-tse">AngelList</a>
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/kinkatse">Github</a>
             </div>
           </div>
           <div className="profile">Eric Tran
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463458513117184/eric.png" alt="ericpicture"/>
             <div className="links">
+              <i class="fab fa-linkedin"></i>
               <a href="https://www.linkedin.com/in/eric-tran-6aab70130/">LinkedIn</a>
+              <i class="fab fa-angellist"></i>
               <a href="">AngelList</a>
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/eric-tran2">Github</a>
             </div>
           </div>
           <div className="profile">Justin Ernst
             <img className="picture" src="" alt="justinpicutre"/>
             <div className="links">
+              <i class="fab fa-linkedin"></i>
               <a href="https://www.linkedin.com/in/justin-ernst-a0ab10156/">LinkedIn</a>
+              <i class="fab fa-angellist"></i>
               <a href="">AngelList</a>
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/humormee">Github</a>
             </div>
           </div>
         </div>
