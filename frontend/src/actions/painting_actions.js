@@ -80,9 +80,14 @@ export const fetchUserPaintings = id => dispatch => (
   getUserPaintings(id).then(paintings => dispatch(receiveUserPaintings(paintings))).catch(err => console.log(err))
 );
 
-export const createPainting = data => dispatch => (
-  drawPainting(data).then(painting => dispatch(receiveNewPainting(painting))).catch(err => console.log(err))
-);
+export const createPainting = data => dispatch => {
+  debugger
+  return (
+  drawPainting(data).then(painting => {
+    debugger
+    return (dispatch(receiveNewPainting(painting)))})
+    .catch(err => console.log(err))
+)};
 
 export const deletePainting = id => dispatch => (deleteP(id)
   .then(() => dispatch(removePainting(id)))

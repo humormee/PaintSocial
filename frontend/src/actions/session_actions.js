@@ -43,7 +43,6 @@ export const signup = user => dispatch => (
   APIUtil.signup(user)
       .then(() => dispatch(receiveUserSignIn()))
       // .then(() => {
-      //   debugger
       //   login(user)
       // }
       // )

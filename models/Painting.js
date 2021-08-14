@@ -8,9 +8,11 @@ const PaintingSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
+    contentType: {
+        type: String
+    },
     painting_image: {
-        type: String,
-        required: false
+        binData: Buffer
     },
     title: {
         type: String,
