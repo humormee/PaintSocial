@@ -185,7 +185,7 @@ input:focus::placeholder {
 
 .welcome {
   margin-right: 15px;
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: rgba(67, 164, 255, 1);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   font-weight: bold;
@@ -200,7 +200,7 @@ input:focus::placeholder {
 
 .sign {
   margin-right: 15px;
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: rgba(67, 164, 255, 1);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   font-weight: bold;
@@ -214,7 +214,7 @@ input:focus::placeholder {
 }
 
 .log {
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: rgba(67, 164, 255, 1);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   font-weight: bold;
@@ -228,7 +228,7 @@ input:focus::placeholder {
 }
 
 .submit {
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: rgba(67, 164, 255, 1);
   font-weight: bold;
   color: white;

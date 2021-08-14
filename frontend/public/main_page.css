@@ -3,7 +3,7 @@
 }
 
 .frontlogowrapper {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
   /* justify-content: center; */
   align-items: center;
@@ -21,25 +21,75 @@
 }
 
 .paintsocialtitle {
+  position: relative;
+  top: 15%;
+  left: 5%;
   width: 600px;
   height: 300px;
+  animation-duration: 1s;
+  animation-name: colorrotate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes colorrotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(50deg);
+  }
+  to {
+    filter: hue-rotate(0deg);
+  }
 }
 
 .splashMessage {
   /* position: absolute; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(22, 22, 22);
-  font-size: 25px;
+  font-size: 17.97px;
   /* margin-left: 600px; */
+  padding: 15px;
+  margin-top: 20px;
   width: 80%;
   display: flex;
+  background-color: rgb(193, 236, 255, 0.5); 
+  border: 2px solid rgb(255, 255, 255,0.5); 
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.splashMessage:hover {
+  animation-duration: 5s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
+}
+
+.meet {
+  color: rgb(231, 248, 255);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  font-size: 40px;
+}
+
+.names {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 600;
+}
+
+@keyframes colorrotate2 {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .splashPageStart {
   /* position: absolute; */
   display: flex;
-  margin-right: 15px;
-  border-radius: 6px;
+  margin-left: 10px;
+  border-radius: 4px;
   background-color: rgba(67, 164, 255, 1);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   font-weight: bold;
@@ -62,12 +112,18 @@
   display: flex;
   height: 300px;
   width: 80%;
+  padding: 25px;
   justify-content: space-around;
+  background-color: rgb(193, 236, 255, 0.5); 
+  border: 2px solid rgb(255, 255, 255, 0.5); 
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 .profile .picture {
   height: 100px;
   border-radius: 50%;
+  margin: 15px;
   border: 4px solid rgba(237, 237, 237, 0.9);
   border-color: rgb(127, 255, 191);
 }
@@ -128,7 +184,7 @@
   align-items: center;
 }
 
-.linkicon {
+.fab {
   /* height: 150%; */
-  margin: 10px;
+  margin: 3px;
 }
