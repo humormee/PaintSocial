@@ -72,7 +72,6 @@ export default class PaintingShow extends React.Component {
         </form>
       </div>
     )
-
   }
 
   updateComment(e) {
@@ -85,12 +84,13 @@ export default class PaintingShow extends React.Component {
       return null
     }
     
-      return (
-        <div>
-          <button className="delete-comment" value={comment._id} onClick={this.eraseComment}>Delete</button>
-        </div>
-      )
-    
+    return (
+      <div>
+        <button className="delete-comment" value={comment._id} onClick={this.eraseComment}>
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    )    
   }
 
    toggleLike(){ 
@@ -138,17 +138,31 @@ export default class PaintingShow extends React.Component {
     }
     return (
       <div className="painting-show">
-        <h1 className="painting-title">{this.props.painting.title}</h1>
-        <Link to={`/artist/${this.props.painting.artist}`}>
-          <div className="painting-show-user">
-            <h2>{artist.username}</h2>
-            <p>{artist.email}</p>
-          </div>
-        </Link>
-        <br />
         <img src={painting.painting_image} />
-        {console.log(painting)}
-        <br />
+        {/* <div className="painting-show-image"
+          style={{backgroundImage: `url(${painting.painting_image})` }} >
+        </div> */}
+
+        <div className="painting-tag">
+          <span className="painting-title">{this.props.painting.title}</span>
+          <br />
+          <br />
+          <Link to={`/artist/${this.props.painting.artist}`}>
+            by: <p>{artist.username}</p>
+            {/* <p>{artist.email}</p> */}
+          </Link>
+        </div>
+
+        {/* LIKES */}
+        <p>{this.props.likes.length}</p>
+        <button onClick={this.toggleLike}>like/unlike</button>
+        {/* COMMENTS */}
+        <div>
+          <div>
+            {this.createComment()}
+          </div>
+        </div>
+
         <div>{this.renderButton()}</div>
         <h2 className="comment-title">Comments</h2>
         <div className="comments">
@@ -159,17 +173,7 @@ export default class PaintingShow extends React.Component {
             </div>
           ))}
         </div>
-        <p>{this.props.likes.length}</p>
-        <button onClick={this.toggleLike}>like/unlike</button>
-      <div>
-        
-      {/* <h2>create a comment</h2> */}
-      <div>
-        
-        {/* {this.createComment()} */}
-        {this.createComment()}
-      </div>
-      </div>
+
       </div>
     )
   }

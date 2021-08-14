@@ -1,7 +1,3 @@
-/* painting index */
-.painting-title {
-  font-size: 30px;
-}
 
 .index-container {
   margin-top: 20px;
@@ -33,21 +29,7 @@
   /* background: rgb(180, 150, 125); */
 }
 
-.title-likes{
-  position: absolute;
 
-  /* width: 295px; */
-
-  /* width: 100%; */
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 5px;
-  padding: 10px;
-  z-index: 2;
-  /* border: 1px solid red; */
-}
 
 .painting-index-item{
   display: flex;
@@ -75,6 +57,8 @@
   /* background: #EFDEF2; */
   /* background: lightblue; */
   /* color: white */
+
+
 }
 
 .painting-index-item:hover {
@@ -101,14 +85,31 @@
   border-radius: 20px;
 } */
 
+.title-likes{
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 5px;
+  padding: 10px;
+  z-index: 2;
+  /* border: 1px solid red; */
+}
+
 .likes {
   display: flex;
   align-items: center;
+  /* flex-direction: column; */
+  
 }
 
 .toggle-like {
   background: none;
   border: 0;
+  margin: 0;
+  padding: 0 5px 0 0;
 }
 
 .toggle-like > img {
@@ -117,15 +118,6 @@
 
 .far {
   font-size: 20px;
-}
-
-
-/* --------------------------------------------------- */
-
-.painting-show-user {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Draw Painting */
@@ -233,30 +225,3 @@ canvas {
   .show-image {
 
   } */
-
-  .painting-show {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 90%;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid grey;
-    border-radius: 10px;
-
-    background: lightblue;
-    /* background: rgb(85, 125, 161); */
-    color: black;
-  }
-
-  .painting-show a {
-    color: black;
-  }
-
-  .painting-show img {
-    border-radius: 15px;
-    max-height: 500px;
-    min-height: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .75);
-  }

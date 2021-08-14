@@ -1,0 +1,49 @@
+
+/* PAINTING SHOW */
+.painting-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 1000px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+
+  background: rgb(202, 226, 235);
+  /* background: rgb(85, 125, 161); */
+  color: black;
+}
+
+.painting-show a {
+  color: black;
+}
+
+.painting-show img {
+  border-radius: 3px;
+  max-height: 40rem;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.painting-tag {
+  border: 1px solid white;
+  background: white;
+  margin: 20px;
+  padding: 10px;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* painting index */
+.painting-title {
+  font-size: 1.25rem;
+  font-weight: 750;
+
+}
+
+.painting-tag p {
+  /* color: navy; */
+}
+

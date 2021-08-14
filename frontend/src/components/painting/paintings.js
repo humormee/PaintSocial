@@ -6,7 +6,6 @@ class Painting extends React.Component {
   constructor(props) {
     super(props);
 
-   
     this.toggleLike = this.toggleLike.bind(this);
     this.assignLikes = this.assignLikes.bind(this);
     this.renderLikes = this.renderLikes.bind(this);
@@ -46,7 +45,7 @@ class Painting extends React.Component {
 
     return paintings
   }
- 
+
   toggleLike(painting){     
     for(let i = 0; i < painting.likes.length; i++) {
       if(!this.props.user){
@@ -69,7 +68,7 @@ class Painting extends React.Component {
   componentWillReceiveProps(newState) {
     this.setState({ paintings: newState.paintings })
   }
- 
+
   artistUsername(id){
     this.props.fetchArtist(id)
       .then(res => console.log(res, "res"))
@@ -87,18 +86,17 @@ class Painting extends React.Component {
   }
 
   renderLikes(painting){
-    
     // this.props.fetchPaintingLikes(paintingId)
       // .then(res => console.log(res))
     // this.props.fetchPaintingLikes(painting._id)
     // painting.likes = this.props.fetchPaintingLikes(painting._id)
     return (
       <div className="likes">
-        <div>{painting.likes.length}</div>
         <button className="toggle-like" onClick={() => this.toggleLike(painting)}>
           {/* <i class="far fa-heart"></i> */}
           {this.renderLikeIcon(painting)} 
         </button>
+        <div>{painting.likes.length}</div>
         {/* <button className="toggle-like" onClick={() => this.toggleLike(painting)}>like/unlike</button> */}
       </div>
     )
@@ -124,6 +122,7 @@ class Painting extends React.Component {
                     <div className="painting-index-item"
                       style={{backgroundImage: `url(${painting.painting_image})` }}
                     >                                         
+                      <p>{painting.title}</p>  
                       {/* <Link to={`/artist/${painting.artist}`}> {painting.artist} </Link> */}
                       
                       {/* <img src={painting.painting_image} className="index-image"/> */}
@@ -133,7 +132,6 @@ class Painting extends React.Component {
                       {/* <button onClick={() => this.delete(like._id)}>
                         Delete
                       </button>            */}                      
-                      <p>{painting.title}</p>  
                     </div>                  
                   </Link>  
 
