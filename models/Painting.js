@@ -12,7 +12,7 @@ const PaintingSchema = new Schema(
         type: String
     },
     painting_image: {
-        binData: Buffer
+        type: String
     },
     title: {
         type: String,
@@ -21,15 +21,7 @@ const PaintingSchema = new Schema(
     date: {
         type: Date,
         default: Date.now
-    },
-    // comments: {
-    //     type: Array,
-    //     required: false
-    // },
-    // likes: {
-    //     type: Array,
-    //     required: false
-    // }
+    }
 })
 
 module.exports = Painting = mongoose.model('Painting', PaintingSchema);  

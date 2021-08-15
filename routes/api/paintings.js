@@ -64,7 +64,10 @@ router.post('/',
         title: req.body.title
     })
 
-    newPainting.save().then(painting => res.json(painting)).catch(err =>
+    newPainting.save().then(painting => {
+        debugger
+        return (res.json(painting))})
+        .catch(err =>
             res.status(404).json({ paintingnotposted: 'painting did not save correctly' }
         )
     )
