@@ -45,7 +45,6 @@ export const fetchComment = commentId => dispatch => {
   return (
     getComment(commentId)
         .then(comment => {
-          debugger
           dispatch(receiveComment(comment))
           getArtist(comment.commenter)
         })

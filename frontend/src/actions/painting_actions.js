@@ -28,7 +28,6 @@ export const receivePainting = painting => {
 };
 
 export const receiveArtist = artist => {
-  debugger
   return ({
     type: RECEIVE_ARTIST,
     artist

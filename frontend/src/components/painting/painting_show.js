@@ -142,6 +142,7 @@ export default class PaintingShow extends React.Component {
     this.props.fetchArtist(comment.commenter)
       .then(commenter =>
       {
+        debugger
         return (
           <div className="comment" key={`${comment.id}`}>
             <p>{comment.description}</p>
@@ -205,7 +206,12 @@ export default class PaintingShow extends React.Component {
 
         <div className="comments">
           {comments.paintingComments.map(comment => (
-            this.renderComment(comment)
+            // this.renderComment(comment)
+            <div className="comment" key={`${comment.id}`}>
+            <p>{comment.description}</p>
+            <p>{comment.commenter.username}</p>
+           <div>{this.renderEraseButton(comment)}</div>
+        </div>
             // <div className="comment" key={`${comment.id}`}>
             //   <p>{comment.description}</p>
             //   <div>{this.renderEraseButton(comment)}</div>
