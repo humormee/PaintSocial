@@ -184,7 +184,7 @@ export function PaintBox({placePainting}) {
         ref={canvasRef}
       />
       <div className="tools">
-        <button onClick={() => convertToDataUrl()} type="button" id="btnDonwload" className="button">convertToDataUrl</button>
+        {/* <button onClick={() => convertToDataUrl()} type="button" id="btnDonwload" className="button">convertToDataUrl</button> */}
 
         <button onClick={() => submit()} type="button" id="btnSave" className="button">Save</button>
         {/* <button onClick={() => pullImage()} type="button" className="button">Image</button> */}
