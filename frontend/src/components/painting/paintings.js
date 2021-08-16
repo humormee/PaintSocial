@@ -78,8 +78,6 @@ class Painting extends React.Component {
     for(let i = 0; i < painting.likes.length; i++) {
       if(painting.likes[i].liker === this.props.user.id) {
         return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875043220034301962/Heart.png" />
-      } else if (!painting.likes){
-        return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" />
       }
     }
     return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" />
