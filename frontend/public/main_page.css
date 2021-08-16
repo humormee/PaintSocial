@@ -96,10 +96,6 @@
 }
 
 .paintsocialtitle {
-<<<<<<< HEAD
-  width: 100%;
-  height: 100%;
-=======
   position: relative;
   top: 15%;
   left: 5%;
@@ -108,7 +104,6 @@
   animation-duration: 1s;
   animation-name: colorrotate;
   animation-iteration-count: infinite;
->>>>>>> Splash-Styling
 }
 
 .splashMessage {
@@ -164,18 +159,15 @@
 }
 
 .splashProfiles {
-<<<<<<< HEAD
   margin-top: 50px;
-  background-color: #32AFDE;
-  display: flex;
-  height: 100%;
-  width: 100%;
-=======
+  /* background-color: #32AFDE; */
+  /* display: flex; */
+  /* height: 100%;
+  width: 100%; */
   /* display: flex; */
   height: 320px;
   width: 80%;
   padding: 25px;
->>>>>>> Splash-Styling
   justify-content: space-around;
   /* background-color: rgb(193, 236, 255, 0.5); 
   border: 2px solid rgb(255, 255, 255, 0.5); 

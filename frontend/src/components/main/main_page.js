@@ -19,11 +19,8 @@ class MainPage extends React.Component {
         <div>
           <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>
         </div>
-<<<<<<< HEAD
         
-=======
         <h2 className="meet">Meet the Team!</h2>
->>>>>>> Splash-Styling
         <div className="splashProfiles">
           <div className="profile">
             <div className="left">
