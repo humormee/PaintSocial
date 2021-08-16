@@ -27,15 +27,15 @@ class MainPage extends React.Component {
             <div className="links">
               <a href="https://www.linkedin.com/in/christian-miguel-dela-cruz-724656218/">
                 <i class="fab fa-linkedin"></i>
-                LinkedIn
+                <span className="social">LinkedIn</span>
               </a>
               <a href="">
                 <i class="fab fa-angellist"></i>
-                AngelList
+                <span className="social">AngelList</span>
               </a>
               <a href="https://github.com/migs-dc">
                 <i class="fab fa-github"></i>
-                Github
+                <span className="social">Github</span>
               </a>
             </div>
           </div>
@@ -45,15 +45,15 @@ class MainPage extends React.Component {
             <div className="links">
               <a href="https://www.linkedin.com/in/kin-ka-tse/">
                 <i class="fab fa-linkedin"></i>
-                LinkedIn
+                <span className="social">LinkedIn</span>
               </a>
               <a href="https://angel.co/u/kin-ka-tse">
                 <i class="fab fa-angellist"></i>
-                AngelList
+                <span className="social">AngelList</span>
               </a>
               <a href="https://github.com/kinkatse">
                 <i class="fab fa-github"></i>
-                Github
+                <span className="social">Github</span>
               </a>
             </div>
           </div>
@@ -63,33 +63,33 @@ class MainPage extends React.Component {
             <div className="links">
               <a href="https://www.linkedin.com/in/eric-tran-6aab70130/">
                 <i class="fab fa-linkedin"></i>
-                LinkedIn
+                <span className="social">LinkedIn</span>
               </a>
               <a href="">
                 <i class="fab fa-angellist"></i>
-                AngelList
+                <span className="social">AngelList</span>
               </a>
               <a href="https://github.com/eric-tran2">
                 <i class="fab fa-github"></i>
-                Github
+                <span className="social">Github</span>
               </a>
             </div>
           </div>
           <div className="profile">
             <span className="names">Justin Ernst</span>
-            <img className="picture" src="" alt="justinpicutre"/>
+            <img className="picture" src="" alt="justinpicture"/>
             <div className="links">
               <a href="https://www.linkedin.com/in/justin-ernst-a0ab10156/">
                 <i class="fab fa-linkedin"></i>
-                LinkedIn
+                <span className="social">LinkedIn</span>
               </a>
               <a href="">
                 <i class="fab fa-angellist"></i>
-                AngelList
+                <span className="social">AngelList</span>
               </a>
               <a href="https://github.com/humormee">
                 <i class="fab fa-github"></i>
-                Github
+                <span className="social">Github</span>
               </a>
             </div>
           </div>
