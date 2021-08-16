@@ -8,3 +8,10 @@ A painting-based social network, [Paint Social](https://paintsocial.herokuapp.co
 * React/Redux
 * Node.js
 * Canvas API
+
+# Features
+### Paintings
+* Drawing on canvas and saving and displaying artwork will be possible for users. 
+* The color dial and color wheel can both be adjusted to fit different sizes.
+* 
+
