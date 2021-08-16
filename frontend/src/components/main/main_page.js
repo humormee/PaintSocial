@@ -22,8 +22,11 @@ class MainPage extends React.Component {
         <h2 className="meet">Meet the Team!</h2>
         <div className="splashProfiles">
           <div className="profile">
-            <span className="names">Christian Miguel Dela Cruz</span>
+            <div className="miguel">
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463472530481233/miggs.jpeg" alt="miguelpicture"/>
+            <span className="names">Christian Miguel Dela Cruz
+              <div className="description">Worked on frontend with a perfect smile</div>
+            </span>
             <div className="links">
               <a href="https://www.linkedin.com/in/christian-miguel-dela-cruz-724656218/">
                 <i class="fab fa-linkedin"></i>
@@ -37,6 +40,7 @@ class MainPage extends React.Component {
                 <i class="fab fa-github"></i>
                 <span className="social">Github</span>
               </a>
+            </div>
             </div>
           </div>
           <div className="profile">
