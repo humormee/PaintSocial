@@ -1,12 +1,20 @@
+.comments-container {
+  background: white;
+  padding: 20px;
+  margin: 10px 20px;
+  width: 100%;
+  
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
 .comment-title {
   font-size: 20px;
 }
 
 .comments {
-  /* border: 1px solid red; */
   padding: 10px;
-
-  width: 400px;
+  width: 100%;
 }
 
 .comment {
@@ -15,17 +23,19 @@
   align-items: center;
 
   background: white;
-  border-radius: 5px;
 
   border-bottom: 1px solid black;
   padding: 5px 10px;
   margin-top: 5px;
 }
 
-.comment div button{
+.comment div button{ 
   margin: 0;
   padding: 3px;
-  border-radius: 5px;
+
+  background: none;
+  border: 0;
+  /* border-radius: 5px; */
 }
 
 .comment-form {
@@ -51,10 +61,10 @@
 .comment-form textarea{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  padding: 10px;
 
-  resize: none;
-  height: 40px;
-  width: 300px;
+  resize: vertical;
+  /* height: 40px; */
+  width: 100%;
   
 }
-

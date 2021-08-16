@@ -29,7 +29,7 @@ class ArtistShow extends React.Component {
     return (
       <div className="user-show-page">
         {/* <h1>you are on a users show page</h1> */}
-        <h1>{username}</h1>
+        <h1>{username}'s Paintings</h1>
         <div className="user-painting-index">
           {userPaintings.map(painting => (
             <div className="user-painting-item">

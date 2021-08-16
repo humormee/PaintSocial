@@ -149,46 +149,50 @@ export default class PaintingShow extends React.Component {
     }
     return (
       <div className="painting-show">
-        <img src={painting.painting_image} />
+        <div>          
+          <img className="painting-show-image" src={painting.painting_image} />
 
-        <div className="info-likes">
-          <div className="painting-tag">
-            <span className="painting-title">{this.props.painting.title}</span>
-            <br />
-            <Link to={`/artist/${this.props.painting.artist}`}>
-              <span>by: <span className="artist-username">{artist.username}</span></span>
-              {/* <p>{artist.email}</p> */}
-            </Link>
-          </div>
+          <div className="below-painting">
+            <div className="info-likes">
+              <div className="painting-tag">
+                <span className="painting-title">{this.props.painting.title}</span>
+                <br />
+                <Link to={`/artist/${this.props.painting.artist}`}>
+                  <span>by: <span className="artist-username">{artist.username}</span></span>
+                  {/* <p>{artist.email}</p> */}
+                </Link>
+              </div>
 
-          <div>{this.renderButton()}</div>
-          
-          {/* LIKES */}
-          <div className="show-likes">  
-            <p>{this.props.likes.length}</p>
-            {/* {this.renderLikes(painting)} */}
-            <button onClick={this.toggleLike}><img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" /></button>
-            {/* <button onClick={this.toggleLike}>like/unlike</button> */}
-          </div>
-        </div>
-        
-        {/* COMMENTS */}
-        <h2 className="comment-title">Comments</h2>
-        <div>
-          <div>
-            {this.createComment()}
-          </div>
-        </div>
+              {/* LIKES */}
+              <div className="show-likes">  
+                <p>{this.props.likes.length}</p>
+                {/* {this.renderLikes(painting)} */}
+                <button onClick={this.toggleLike}><img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" /></button>
+                {/* <button onClick={this.toggleLike}>like/unlike</button> */}
+              </div>
 
-        <div className="comments">
-          {comments.paintingComments.map(comment => (
-            <div className="comment" key={`${comment.id}`}>
-              <p>{comment.description}</p>
-              <div>{this.renderEraseButton(comment)}</div>
+              <div>{this.renderButton()}</div>
             </div>
-          ))}
-        </div>
+            
+            <div className="comments-container">{/* COMMENTS */}
+              <h2 className="comment-title">Comments</h2>
+              <div>
+                <div>
+                  {this.createComment()}
+                </div>
+              </div>
 
+              <div className="comments">
+                {comments.paintingComments.map(comment => (
+                  <div className="comment" key={`${comment.id}`}>
+                    <p>{comment.description}</p>
+                    <div>{this.renderEraseButton(comment)}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
