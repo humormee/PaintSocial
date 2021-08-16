@@ -20,8 +20,8 @@
 }
 
 .paintsocialtitle {
-  width: 600px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
 }
 
 .splashMessage {
@@ -58,9 +58,11 @@
 }
 
 .splashProfiles {
+  margin-top: 50px;
+  background-color: #32AFDE;
   display: flex;
-  height: 300px;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   justify-content: space-around;
 }
 
