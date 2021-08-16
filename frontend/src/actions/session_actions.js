@@ -6,8 +6,12 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS"
 
-
+export const receiveAllUsers = users => ({
+  type: RECEIVE_ALL_USERS,
+  users
+})
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -27,27 +31,24 @@ export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
 
-// export const signup = user => dispatch => {
-//   return ((
-//   APIUtil.signup(user).then(() => {
-//   return ((
-//     dispatch(receiveUserSignIn())
-//   ), err => (
-//     dispatch(receiveErrors(err.response.data))
-//   ))
-//   }
-//   ))
-// )};
+
+
+export const fetchUsers = () => dispatch => (
+  // debugger
+  APIUtil.getUsers()
+      .then(users => 
+        {
+          debugger
+          return (
+            dispatch(receiveAllUsers(users))
+            )
+          })
+      .catch(err => console.log(err))
+)
 
 export const signup = user => dispatch => (
   APIUtil.signup(user)
       .then(() => dispatch(receiveUserSignIn()))
-      // .then(() => {
-      //   debugger
-      //   login(user)
-      // }
-      // )
-      // .then(() => dispatch(receiveCurrentUser(user)))
       .catch(err => dispatch(receiveErrors(err.response.data)))
   
 );

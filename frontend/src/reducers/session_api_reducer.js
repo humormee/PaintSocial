@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER,
         RECEIVE_USER_LOGOUT,
         RECEIVE_USER_SIGN_IN,
-        RECEIVE_ARTIST } from '../actions/session_actions';
+        RECEIVE_ALL_USERS } from '../actions/session_actions';
 
 const initialState = {
   isAuthenticated: false,
@@ -10,6 +10,12 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case RECEIVE_ALL_USERS:
+      debugger
+      return {
+        ...state,
+        allUsers: action.users.data
+      }
     case RECEIVE_CURRENT_USER:
       return {
         ...state,
