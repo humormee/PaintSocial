@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchPaintings, deletePainting } from '../../actions/painting_actions';
 import Paintings from './paintings';
+import { fetchUsers } from '../../actions/session_actions';
 import { fetchArtist } from '../../actions/painting_actions';
 import { fetchAllLikes, fetchPaintingLikes, makeLike, eraseLike } from '../../actions/like_actions';
 
@@ -8,12 +9,14 @@ const mSTP = (state) => {
   return ({
     paintings: Object.values(state.entities.paintings.all),
     entities: state.entities,
-    user: state.session.user
+    user: state.session.user,
+    users: state.session.allUsers
     // likes: Object.values(state.entities.likes.likes)
   })
 }
 
 const mDTP = dispatch => ({
+  fetchUsers: () => dispatch(fetchUsers()),
   fetchPaintings: () => dispatch(fetchPaintings()),
   deletePainting: id => dispatch(deletePainting(id)),
   fetchArtist: id => dispatch(fetchArtist(id)),

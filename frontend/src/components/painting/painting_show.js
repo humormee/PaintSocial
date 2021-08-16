@@ -23,8 +23,7 @@ export default class PaintingShow extends React.Component {
     this.props.fetchPainting(this.props.match.params.id)
       .then(painting => this.props.fetchArtist(painting.painting.data.artist))
 
-    this.props.fetchPaintingComments(this.props.match.params.id);
-
+    this.props.fetchPaintingComments(this.props.match.params.id)
     this.props.fetchPaintingLikes(this.props.match.params.id)
   }
 
@@ -136,6 +135,31 @@ export default class PaintingShow extends React.Component {
     }
   } 
 
+  renderComment(comment) {
+
+    this.props.fetchArtist(comment.commenter)
+      .then(commenter =>
+      {
+        debugger
+        return (
+          <div className="comment" key={`${comment.id}`}>
+            <p>{comment.description}</p>
+            <p>{commenter.artist.data.username}</p>
+          <div>{this.renderEraseButton(comment)}</div>
+        </div>
+    )
+      })
+
+      // return (
+    //   <div className="comment" key={`${comment.id}`}>
+    //     <p>{comment.description}</p>
+    //     <p>{commenter.username}</p>
+    //   <div>{this.renderEraseButton(comment)}</div>
+    // </div>
+    // )
+    
+  }
+
   render() {
     
     let { artist } = this.props.entities.paintings
@@ -186,6 +210,7 @@ export default class PaintingShow extends React.Component {
                 {comments.paintingComments.map(comment => (
                   <div className="comment" key={`${comment.id}`}>
                     <p>{comment.description}</p>
+                    <p>{comment.commenter.username}</p>
                     <div>{this.renderEraseButton(comment)}</div>
                   </div>
                 ))}

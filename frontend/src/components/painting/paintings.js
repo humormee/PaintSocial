@@ -9,21 +9,15 @@ class Painting extends React.Component {
     this.toggleLike = this.toggleLike.bind(this);
     this.assignLikes = this.assignLikes.bind(this);
     this.renderLikes = this.renderLikes.bind(this);
+    this.renderArtist = this.renderArtist.bind(this);
   }
 
   componentDidMount() {
     
     this.props.fetchPaintings()
         .then(() => this.props.fetchAllLikes())
-        // .then(() => this.assignLikes());
     
-    // this.props.fetchPaintings().then(paintings => {
-    //   let { data } = paintings.paintings
-    //   let length = data.length;
-    //   for(let i = 0; i < length; i++){
-    //     this.props.fetchPaintingLikes(data[i]._id)
-    //   }
-    // });
+    this.props.fetchUsers()
   }
 
   assignLikes() {
@@ -44,6 +38,23 @@ class Painting extends React.Component {
     }
 
     return paintings
+  }
+
+  renderArtist(artistId) {
+    if (!this.props.users) {
+      return
+    }
+    let { users } = this.props;
+
+    for(let i = 0; i < users.length; i++) {
+      if(!this.props.users){
+        return
+      } else if(users[i]._id === artistId) {
+        return (
+          <div>{users[i].username}</div>
+        )
+      }
+    }
   }
 
   toggleLike(painting){     
@@ -84,22 +95,18 @@ class Painting extends React.Component {
   }
 
   renderLikes(painting){
-    // this.props.fetchPaintingLikes(paintingId)
-      // .then(res => console.log(res))
-    // this.props.fetchPaintingLikes(painting._id)
-    // painting.likes = this.props.fetchPaintingLikes(painting._id)
+    
     return (
       <div className="likes">
         <button className="toggle-like" onClick={() => this.toggleLike(painting)}>
-          {/* <i class="far fa-heart"></i> */}
           {this.renderLikeIcon(painting)} 
         </button>
         <div>{painting.likes.length}</div>
-        {/* <button className="toggle-like" onClick={() => this.toggleLike(painting)}>like/unlike</button> */}
       </div>
     )
   }
 
+  
 
   render() {
     if (this.props.paintings.length === 0 || this.props.entities.likes.likes === undefined) {
@@ -113,6 +120,9 @@ class Painting extends React.Component {
               {this.props.paintings.map(painting => (    
                 <>
                 <div className="item-container">
+                  <div className="painter">
+                    {this.renderArtist(painting.artist)}
+                  </div>
                   <div className="title-likes">  
                     {this.renderLikes(painting)}
                   </div>
@@ -120,16 +130,7 @@ class Painting extends React.Component {
                     <div className="painting-index-item"
                       style={{backgroundImage: `url(${painting.painting_image})` }}
                     >                                         
-                      <p>{painting.title}</p>  
-                      {/* <Link to={`/artist/${painting.artist}`}> {painting.artist} </Link> */}
-                      
-                      {/* <img src={painting.painting_image} className="index-image"/> */}
-                      {/* <div>
-                        {this.renderLikes(painting)}
-                      </div> */}
-                      {/* <button onClick={() => this.delete(like._id)}>
-                        Delete
-                      </button>            */}                      
+                      <p>{painting.title}</p>                      
                     </div>                  
                   </Link>  
 

@@ -1,11 +1,12 @@
 const express = require("express");
-const app = express();
+
 const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const users = require("./routes/api/users");
 const paintings = require("./routes/api/paintings");
 const comments = require("./routes/api/comments");
 const likes = require("./routes/api/likes");
+const app = express();
 const bodyParser = require('body-parser');
 const passport = require('passport');
 require('./config/passport')(passport);

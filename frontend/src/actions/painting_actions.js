@@ -28,7 +28,6 @@ export const receivePainting = painting => {
 };
 
 export const receiveArtist = artist => {
-  
   return ({
     type: RECEIVE_ARTIST,
     artist
@@ -57,7 +56,6 @@ export const fetchArtist = id => dispatch => {
   
 return (
   getArtist(id).then(artist => {
-    
     return (
       dispatch(receiveArtist(artist))
     )
