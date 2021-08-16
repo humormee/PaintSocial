@@ -62,7 +62,6 @@ export default class PaintingShow extends React.Component {
     comment.description = this.state.description;
     return (
       <div>
-        <h2>create a comment</h2>
         <form className="comment-form" onSubmit={e => this.handleSubmit(e, comment)}>
 
           <textarea placeholder="add a comment" value={comment.description} onChange={e => this.updateComment(e)}>
@@ -72,7 +71,6 @@ export default class PaintingShow extends React.Component {
         </form>
       </div>
     )
-
   }
 
   updateComment(e) {
@@ -85,12 +83,13 @@ export default class PaintingShow extends React.Component {
       return null
     }
     
-      return (
-        <div>
-          <button className="delete-comment" value={comment._id} onClick={this.eraseComment}>Delete</button>
-        </div>
-      )
-    
+    return (
+      <div>
+        <button className="delete-comment" value={comment._id} onClick={this.eraseComment}>
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    )    
   }
 
    toggleLike(){ 
@@ -111,6 +110,18 @@ export default class PaintingShow extends React.Component {
         .then(() => this.props.fetchPaintingLikes(this.props.match.params.id))
     
   }
+
+  renderLikeIcon(painting){
+    for(let i = 0; i < painting.likes.length; i++) {
+      if(painting.likes[i].liker === this.props.user.id) {
+        return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875043220034301962/Heart.png" />
+      } else if (!painting.likes){
+        return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" />
+      }
+    }
+    return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" />
+  }
+
   renderButton() {
     const { user } = this.props.session;
     const artistId = this.props.painting.artist;
@@ -138,19 +149,37 @@ export default class PaintingShow extends React.Component {
     }
     return (
       <div className="painting-show">
-        <h1 className="painting-title">{this.props.painting.title}</h1>
-        <Link to={`/artist/${this.props.painting.artist}`}>
-          <div className="painting-show-user">
-            <h2>{artist.username}</h2>
-            <p>{artist.email}</p>
-          </div>
-        </Link>
-        <br />
         <img src={painting.painting_image} />
-        {console.log(painting)}
-        <br />
-        <div>{this.renderButton()}</div>
+
+        <div className="info-likes">
+          <div className="painting-tag">
+            <span className="painting-title">{this.props.painting.title}</span>
+            <br />
+            <Link to={`/artist/${this.props.painting.artist}`}>
+              <span>by: <span className="artist-username">{artist.username}</span></span>
+              {/* <p>{artist.email}</p> */}
+            </Link>
+          </div>
+
+          <div>{this.renderButton()}</div>
+          
+          {/* LIKES */}
+          <div className="show-likes">  
+            <p>{this.props.likes.length}</p>
+            {/* {this.renderLikes(painting)} */}
+            <button onClick={this.toggleLike}><img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" /></button>
+            {/* <button onClick={this.toggleLike}>like/unlike</button> */}
+          </div>
+        </div>
+        
+        {/* COMMENTS */}
         <h2 className="comment-title">Comments</h2>
+        <div>
+          <div>
+            {this.createComment()}
+          </div>
+        </div>
+
         <div className="comments">
           {comments.paintingComments.map(comment => (
             <div className="comment" key={`${comment.id}`}>
@@ -159,17 +188,7 @@ export default class PaintingShow extends React.Component {
             </div>
           ))}
         </div>
-        <p>{this.props.likes.length}</p>
-        <button onClick={this.toggleLike}>like/unlike</button>
-      <div>
-        
-      {/* <h2>create a comment</h2> */}
-      <div>
-        
-        {/* {this.createComment()} */}
-        {this.createComment()}
-      </div>
-      </div>
+
       </div>
     )
   }
