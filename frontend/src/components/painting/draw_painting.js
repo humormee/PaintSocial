@@ -11,9 +11,25 @@ class DrawPainting extends React.Component {
     this.placePainting = this.placePainting.bind(this);
   }
 
+  
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createPainting(this.state)
+    // convertToDataUrl();
+    // const  = canvasRef.current;
+    // const context = canvas.getContext('2d');
+    // if (window.navigator.msSaveBlob) {
+    //   window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
+    // } else {
+    //   const a = document.createElement("a");
+
+    //   document.body.appendChild(a);
+    //   a.href = canvas.toDataURL();
+    // }
+    debugger
+    // this.convertToDataUrl();
+    this.setState({painting_image: window.imgData}) 
+    this.props.createPainting(Object.assign({}, this.state, {painting_image: window.imgData}))
       .then(res => this.props.history.push(`/paintings/${res.painting.data._id}`))    
   }
 
@@ -24,12 +40,10 @@ class DrawPainting extends React.Component {
   }
 
   placePainting() {
-    console.log("asdfasd")
     this.setState({painting_image: paintingArray})
   }
 
   render() {
-    // console.log(paintingArray, "paintArray")
     window.paintingArray = paintingArray;
     window.state = this.state;
     return (
@@ -42,14 +56,15 @@ class DrawPainting extends React.Component {
                 onChange={this.update("title")}
                 placeholder="Title"
               />
-              <input type="text" 
+              {/* <input type="text" 
                 value={this.state.painting_image} 
                 onChange={this.update("painting_image")}
                 placeholder="Link"
-              />
+              /> */}
+              {/* <button type="submit" onClick={() => convertToDataUrl()}>Create Painting</button> */}
               <input type="submit" value="Create Painting" />
             </div>
-            <PaintBox placePainting={() => this.placePainting.bind(this)}/>
+            <PaintBox convertToDataUrl={() => this.placePainting.bind(this)} placePainting={() => this.placePainting.bind(this)}/>
             {/* <PaintBox placePainting={"banana"}/> */}
             {/* {this.state.painting_image=paintingArray.count} */}
           </div>

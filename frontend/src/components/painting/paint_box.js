@@ -5,6 +5,19 @@ let submitArray = [];
 export const paintingArray = [];
 let index = -1;
 
+export function ConvertToDataUrl() {
+
+  const canvasRef = useRef(null);
+  const canvas = canvasRef.current;
+  // const context = canvas.getContext('2d');
+  
+  if (window.navigator.msSaveBlob) {
+    window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
+  } else {
+    window.imgData = canvas.toDataURL();
+  }
+}
+
 export function PaintBox({placePainting}) {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
@@ -12,7 +25,6 @@ export function PaintBox({placePainting}) {
   const canvasBackground = "white";
 
   placePainting();
-
   useEffect(() => {
     console.log(window.innerWidth)
     const canvas = canvasRef.current;
@@ -20,9 +32,7 @@ export function PaintBox({placePainting}) {
     canvas.height = window.innerHeight * 2;
     canvas.style.width = `${window.innerWidth}px`;
     canvas.style.height = `${window.innerHeight}px`;
-    // canvas.width = window.innerWidth - 60;
-    // canvas.width = 400;
-    // canvas.height = 400;
+    
     canvas.style.width = `${window.innerWidth}px`;
     canvas.style.height = `${window.innerHeight}px`;
 
@@ -118,9 +128,23 @@ export function PaintBox({placePainting}) {
   //     paintingArray.push(element)
   //   }) 
   // }
-  
+  const convertToDataUrl = () => {
+    debugger
+    const canvas = canvasRef.current;
+    // const context = canvas.getContext('2d');
+    
+    if (window.navigator.msSaveBlob) {
+      window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
+    } else if(!!canvas) {
+      window.imgData = canvas.toDataURL();
+    }
+    
+  }
+
+  convertToDataUrl();
+
+
   const submit = () => {
-    // debugger
     // const btnSave = document.querySelector("#btnSave");
           
     // btnSave.addEventListener("click", function () {
@@ -133,6 +157,7 @@ export function PaintBox({placePainting}) {
 
         document.body.appendChild(a);
         a.href = canvas.toDataURL();
+        // window.dataUrl = a.href;
         a.download = "painting-social-image.png"
         a.click();
         document.body.removeChild(a);
@@ -159,6 +184,8 @@ export function PaintBox({placePainting}) {
         ref={canvasRef}
       />
       <div className="tools">
+        {/* <button onClick={() => convertToDataUrl()} type="button" id="btnDonwload" className="button">convertToDataUrl</button> */}
+
         <button onClick={() => submit()} type="button" id="btnSave" className="button">Save</button>
         {/* <button onClick={() => pullImage()} type="button" className="button">Image</button> */}
         <button onClick={() => undo()} type="button" className="button">Undo</button>
@@ -189,4 +216,3 @@ export function PaintBox({placePainting}) {
 }
 
 // export default PaintBox;
-

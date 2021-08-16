@@ -8,9 +8,11 @@ const PaintingSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
+    contentType: {
+        type: String
+    },
     painting_image: {
-        type: String,
-        required: false
+        type: String
     },
     title: {
         type: String,
@@ -19,15 +21,7 @@ const PaintingSchema = new Schema(
     date: {
         type: Date,
         default: Date.now
-    },
-    // comments: {
-    //     type: Array,
-    //     required: false
-    // },
-    // likes: {
-    //     type: Array,
-    //     required: false
-    // }
+    }
 })
 
 module.exports = Painting = mongoose.model('Painting', PaintingSchema);  

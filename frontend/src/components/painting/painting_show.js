@@ -31,7 +31,7 @@ export default class PaintingShow extends React.Component {
   handleDelete(e) {
     e.preventDefault();
     this.props.deletePainting(this.props.match.params.id)
-    .then(() => this.props.history.push('/'));
+    .then(() => this.props.history.push('/index'));
   }
 
 
