@@ -48,7 +48,7 @@ class MainPage extends React.Component {
           </div>
 
           <div className="profile">
-            <div className="left">
+            <div className="right">
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463470777270293/kinka.png" alt="kinpicture"/>
             <span className="names">Kin Ka Tse
               <div className="description">Worked flexibly for maximum creativity</div>
@@ -100,7 +100,7 @@ class MainPage extends React.Component {
           </div>
 
           <div className="profile">
-            <div className="left">
+            <div className="right">
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/876950806958575637/Justin.png" alt="justinpicture"/>
             <span className="names">Justin Ernst
               <div className="description">Lead the team with a fierce fist</div>
