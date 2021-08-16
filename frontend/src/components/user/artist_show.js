@@ -33,9 +33,12 @@ class ArtistShow extends React.Component {
         <div className="user-painting-index">
           {userPaintings.map(painting => (
             <div className="user-painting-item">
-              <Link to={`/paintings/${painting._id}`}>
-                {painting.title}
-                <img src={painting.painting_image}/>
+              <Link to={`/paintings/${painting._id}`}> 
+                <div className="user-painting"
+                  style={{backgroundImage: `url(${painting.painting_image})` }}
+                >    
+                  <p>{painting.title}</p>
+                </div>
               </Link>
             </div>
           ))}

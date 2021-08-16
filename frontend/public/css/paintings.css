@@ -1,50 +1,40 @@
 
 .index-container {
-  margin-top: 20px;
-}
+  margin: 20px auto;
 
-.index-container > h1{
   width: 90%;
-  margin: 0 auto;
 }
 
 .painting-index {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
-
   display: grid;
   gap: 1rem;
 
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 250px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-auto-rows: 275px;
 
-  /* background: white;
-  border: 1px solid lightgrey; */
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
+  height: 100%;
   margin: 20px auto;
-
-  /* background: lightblue; */
-  /* background: rgb(180, 150, 125); */
 }
 
-
+.item-container {
+  margin: 10px;
+}
 
 .painting-index-item{
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
 
-
-  border: 1px solid lightgrey;
-  border-radius: 5px;
+  /* border: 1px solid lightgrey; */
+  border-radius: 3px;
   padding: 10px;
-  /* margin: 10px; */
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  background: white;
 
   height: 100%;
   width: 100%;
-  /* width: 333px; */
 
   background-size: cover;
   background-position: center;
@@ -52,13 +42,6 @@
 
   transition: all 500ms;
   overflow: hidden;
-
-  /* background: white; */
-  /* background: #EFDEF2; */
-  /* background: lightblue; */
-  /* color: white */
-
-
 }
 
 .painting-index-item:hover {
@@ -69,21 +52,13 @@
   position: relative;
   bottom: 10px;
   margin-bottom: 0;
-  /* border-bottom: 1px solid grey; */
-  /* width: 80%; */
   text-align: center;
 }
 
 .painting-index-item img {
-  /* border: 2px solid lightpink; */
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0, 0, 0, .75);
 }
-
-/* .index-image {
-  height: 150px;
-  border-radius: 20px;
-} */
 
 .title-likes{
   position: absolute;
@@ -95,14 +70,11 @@
   margin: 5px;
   padding: 10px;
   z-index: 2;
-  /* border: 1px solid red; */
 }
 
 .likes {
   display: flex;
-  align-items: center;
-  /* flex-direction: column; */
-  
+  align-items: center;  
 }
 
 .toggle-like {
@@ -136,15 +108,6 @@ canvas {
   cursor: crosshair;
   /* cursor: url(https://cdn.discordapp.com/attachments/597985513701376013/875047802160431174/Eraser.png), auto; */
 }
-
-/* #canvas {
-  position: relative;
-  left: 17.5%;
-  border: 2px solid black;
-  background: white;
-  /* width: 800px;
-  height: 500px; 
-} */
 
 /* ---------- */
 
@@ -213,15 +176,3 @@ canvas {
   margin: 0 5px;
   padding: 10px;
 }
-
-/* showing painting images */
-
-  .index-image {
-    height: 200px;
-    border-radius: 20px;
-  }
-
-  /* .show-image {
-  .show-image {
-
-  } */
