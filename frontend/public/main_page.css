@@ -60,7 +60,7 @@
     width: 0
   }
   to {
-    width: 100%
+    width: 30%
   }
 }
 
@@ -70,6 +70,52 @@
   }
   to {
     opacity: 100%;
+  }
+}
+
+@keyframes zoom {
+  from, to{
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes zoompic {
+  from, to{
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes leftslideinz {
+  from {
+    opacity: 0%;
+    position: relative;
+    z-index: -2;
+    left: 200px;
+  }
+  to {
+    opacity: 100%;
+    position: relative;
+    z-index: -2;
+    left: 0px;
+  }
+}
+
+@keyframes leftslidein {
+  from {
+    opacity: 0%;
+    position: relative;
+    left: 200px;
+  }
+  to {
+    opacity: 100%;
+    position: relative;
+    left: 0px;
   }
 }
 
@@ -180,9 +226,12 @@
 }
 
 .picture:hover {
-  animation-duration: 1s;
+  /* animation-duration: 1s;
   animation-name: colorpic;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
+  animation:
+    0.5s infinite zoompic,
+    1s infinite colorpic
 }
 
 .profile {
@@ -293,23 +342,49 @@
   /* align-items: center; */
 }
 
+.background {
+  animation-duration: 0.5s;
+  animation-name: leftslideinz;
+}
+
+/* .picture {
+  animation-duration: 0.5s;
+  animation-name: leftslideinz;
+} */
+
+.names {
+  animation-duration: 0.5s;
+  animation-name: leftslidein;
+}
+
+.description {
+  animation-duration: 0.5s;
+  animation-name: leftslidein;
+}
+
+.links {
+  /* animation: 3s ease-in slidein; */
+  animation-duration: 0.5s;
+  animation-name: leftslidein;
+}
+
 .fab {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   /* height: 150%; */
   margin: 3px;
 }
 
-/* .links {
+/* .links a:hover {
   overflow: hidden;
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.05em;
   
-  animation: typing 3s steps(29,end) 1s 1 normal both;
+  animation: typing 2s steps(29,end) 1s 1 normal both;
 } */
 
 .links a:hover {
-  animation-duration: 1s;
-  animation-name: fadein;
-  animation-iteration-count: infinite;
+  animation:
+    1s 1 fadein,
+    0.5s 0.5s infinite zoom
 }
