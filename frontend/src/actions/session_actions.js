@@ -34,11 +34,9 @@ export const logoutUser = () => ({
 
 
 export const fetchUsers = () => dispatch => (
-  // debugger
   APIUtil.getUsers()
       .then(users => 
         {
-          debugger
           return (
             dispatch(receiveAllUsers(users))
             )

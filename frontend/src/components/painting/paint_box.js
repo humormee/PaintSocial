@@ -120,7 +120,6 @@ export function PaintBox({placePainting}) {
   // }
   
   const submit = () => {
-    // debugger
     // const btnSave = document.querySelector("#btnSave");
           
     // btnSave.addEventListener("click", function () {

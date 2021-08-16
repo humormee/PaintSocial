@@ -3,7 +3,8 @@ import {
   getComment,
   createComment,
   deleteComment
-} from '../util/comment_api_util'
+} from '../util/comment_api_util';
+import { getArtist } from '../util/painting_api_util';
 import { getUserPaintings } from '../util/painting_api_util';
 
 export const RECEIVE_PAINTING_COMMENTS = 'RECEIVE_PAINTING_COMMENTS';
@@ -43,8 +44,13 @@ export const fetchPaintingComments = paintingId => dispatch => {
 export const fetchComment = commentId => dispatch => {
   return (
     getComment(commentId)
-        .then(comment => dispatch(receiveComment(comment)))
+        .then(comment => {
+          debugger
+          dispatch(receiveComment(comment))
+          getArtist(comment.commenter)
+        })
         .catch(err => console.log(err))
+    
   )
 }
 

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
-
+const User = require('../../models/User');
 const Comment = require('../../models/Comment');
 const validateComment = require('../../validation/comments');
 
@@ -16,12 +16,22 @@ router.get('/painting/:painting_id', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+ 
+  // debugger
   Comment.findById(req.params.id)
-    .then(comment => res.json(comment))
-    .catch(err =>
+    .populate({path: 'commenter', model: 'User'})
+    .then(comment => {
+      debugger
+      // post = comment;
+      // commenter = comment.commenter;
+      res.json(comment)
+    })
+    .catch(err =>{
+      debugger
       res.status(404).json({
         nocommentfound: 'No comment found with that ID'
-      }));
+      })});
+      debugger
 });
 
 router.post('/painting/:painting_id',
@@ -39,8 +49,13 @@ router.post('/painting/:painting_id',
       description: req.body.description
     })
 
-    newComment.save().then(comment => res.json(comment)).catch(err => res.status(404).json({
-      commentnotposted: 'comment did not save correctly'
+    newComment.save()
+        .then(comment => {
+          debugger
+          res.json(comment)})
+        // .populate('commenter')
+        .catch(err => res.status(404).json({
+          commentnotposted: 'comment did not save correctly'
     }))
   }
 )

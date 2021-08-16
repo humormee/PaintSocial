@@ -41,10 +41,13 @@ class Painting extends React.Component {
   }
 
   renderArtist(artistId) {
+    if (!this.props.users) {
+      return
+    }
     let { users } = this.props;
 
     for(let i = 0; i < users.length; i++) {
-      if(!this.props.user){
+      if(!this.props.users){
         return
       } else if(users[i]._id === artistId) {
         return (

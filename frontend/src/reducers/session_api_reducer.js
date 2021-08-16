@@ -11,7 +11,6 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case RECEIVE_ALL_USERS:
-      debugger
       return {
         ...state,
         allUsers: action.users.data
