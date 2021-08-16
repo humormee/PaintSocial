@@ -62,7 +62,6 @@ export default class PaintingShow extends React.Component {
     comment.description = this.state.description;
     return (
       <div>
-        <h2>create a comment</h2>
         <form className="comment-form" onSubmit={e => this.handleSubmit(e, comment)}>
 
           <textarea placeholder="add a comment" value={comment.description} onChange={e => this.updateComment(e)}>
@@ -111,6 +110,18 @@ export default class PaintingShow extends React.Component {
         .then(() => this.props.fetchPaintingLikes(this.props.match.params.id))
     
   }
+
+  renderLikeIcon(painting){
+    for(let i = 0; i < painting.likes.length; i++) {
+      if(painting.likes[i].liker === this.props.user.id) {
+        return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875043220034301962/Heart.png" />
+      } else if (!painting.likes){
+        return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" />
+      }
+    }
+    return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" />
+  }
+
   renderButton() {
     const { user } = this.props.session;
     const artistId = this.props.painting.artist;
@@ -139,32 +150,36 @@ export default class PaintingShow extends React.Component {
     return (
       <div className="painting-show">
         <img src={painting.painting_image} />
-        {/* <div className="painting-show-image"
-          style={{backgroundImage: `url(${painting.painting_image})` }} >
-        </div> */}
 
-        <div className="painting-tag">
-          <span className="painting-title">{this.props.painting.title}</span>
-          <br />
-          <br />
-          <Link to={`/artist/${this.props.painting.artist}`}>
-            by: <p>{artist.username}</p>
-            {/* <p>{artist.email}</p> */}
-          </Link>
+        <div className="info-likes">
+          <div className="painting-tag">
+            <span className="painting-title">{this.props.painting.title}</span>
+            <br />
+            <Link to={`/artist/${this.props.painting.artist}`}>
+              <span>by: <span className="artist-username">{artist.username}</span></span>
+              {/* <p>{artist.email}</p> */}
+            </Link>
+          </div>
+
+          <div>{this.renderButton()}</div>
+          
+          {/* LIKES */}
+          <div className="show-likes">  
+            <p>{this.props.likes.length}</p>
+            {/* {this.renderLikes(painting)} */}
+            <button onClick={this.toggleLike}><img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" /></button>
+            {/* <button onClick={this.toggleLike}>like/unlike</button> */}
+          </div>
         </div>
-
-        {/* LIKES */}
-        <p>{this.props.likes.length}</p>
-        <button onClick={this.toggleLike}>like/unlike</button>
+        
         {/* COMMENTS */}
+        <h2 className="comment-title">Comments</h2>
         <div>
           <div>
             {this.createComment()}
           </div>
         </div>
 
-        <div>{this.renderButton()}</div>
-        <h2 className="comment-title">Comments</h2>
         <div className="comments">
           {comments.paintingComments.map(comment => (
             <div className="comment" key={`${comment.id}`}>

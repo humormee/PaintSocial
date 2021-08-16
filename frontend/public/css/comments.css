@@ -30,7 +30,6 @@
 
 .comment-form {
   display: flex;
-  flex-direction: column;
   align-items: center;
 
   /* border: 1px solid red; */
@@ -38,11 +37,24 @@
 }
 
 .comment-form button{
-  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(50, 175, 222); 
+
+  margin: 5px;
   background: white;
+  border: 1px solid white;
+  border-radius: 3px;
 }
 
 .comment-form textarea{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+
   resize: none;
+  height: 40px;
   width: 300px;
+  
 }
+
