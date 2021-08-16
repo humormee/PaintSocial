@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { createPainting } from '../../actions/painting_actions';
+import PaintBox from './paint_box';
 import DrawPainting from './draw_painting';
 
 const mSTP = (state) => {
@@ -16,6 +17,7 @@ const mSTP = (state) => {
 const mDTP = dispatch => {
   return {
     createPainting: data => dispatch(createPainting(data))
+    
   };
 };
 

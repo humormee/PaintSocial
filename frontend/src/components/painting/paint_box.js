@@ -5,6 +5,19 @@ let submitArray = [];
 export const paintingArray = [];
 let index = -1;
 
+export function ConvertToDataUrl() {
+
+  const canvasRef = useRef(null);
+  const canvas = canvasRef.current;
+  // const context = canvas.getContext('2d');
+  
+  if (window.navigator.msSaveBlob) {
+    window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
+  } else {
+    window.imgData = canvas.toDataURL();
+  }
+}
+
 export function PaintBox({placePainting}) {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
@@ -12,7 +25,6 @@ export function PaintBox({placePainting}) {
   const canvasBackground = "white";
 
   placePainting();
-
   useEffect(() => {
     console.log(window.innerWidth)
     const canvas = canvasRef.current;
@@ -117,20 +129,20 @@ export function PaintBox({placePainting}) {
   //   }) 
   // }
   const convertToDataUrl = () => {
+    debugger
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
+    // const context = canvas.getContext('2d');
     
     if (window.navigator.msSaveBlob) {
       window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
-    } else {
-       
-      // const a = document.createElement("a");
+    } else if(!!canvas) {
       window.imgData = canvas.toDataURL();
-      // document.body.appendChild(a);
-      // a.href = canvas.toDataURL();
     }
     
   }
+
+  convertToDataUrl();
+
 
   const submit = () => {
     // const btnSave = document.querySelector("#btnSave");
@@ -172,7 +184,7 @@ export function PaintBox({placePainting}) {
         ref={canvasRef}
       />
       <div className="tools">
-        <button onClick={() => convertToDataUrl()} type="button" id="btnDonwload" className="button">download</button>
+        <button onClick={() => convertToDataUrl()} type="button" id="btnDonwload" className="button">convertToDataUrl</button>
 
         <button onClick={() => submit()} type="button" id="btnSave" className="button">Save</button>
         {/* <button onClick={() => pullImage()} type="button" className="button">Image</button> */}
