@@ -7,9 +7,21 @@
   margin: 0;
   padding: 5px 25px;
 
-  background: rgb(50, 175, 222); 
+  background: rgb(193, 236, 255); 
+  /* animation-duration: 15s;
+  animation-name: colorrotate;
+  animation-iteration-count: infinite; */
   z-index: 5;
   
+}
+
+@keyframes colorrotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .nav-links {
@@ -22,6 +34,7 @@
   padding: 5px;
   background: white;
   border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .logout-icon img, .newpainting-icon img, .welcome-icon img {
@@ -37,7 +50,7 @@
 
   background: white;
   /* background:lightgreen; */
-  color: rgba(67, 164, 255, 1);;
+  color: rgb(138, 198, 255);;
   font-size: 14px;
   font-weight: 600;
 }
@@ -51,7 +64,7 @@
 
   background: white;
   /* background:lightgreen; */
-  color: rgba(67, 164, 255, 1);;
+  color: rgb(138, 198, 255);
   font-size: 14px;
   font-weight: 600;
 }

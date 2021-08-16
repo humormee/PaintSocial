@@ -1,8 +1,84 @@
+@keyframes colorrotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(50deg);
+  }
+  to {
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes colorrotate2 {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes colorpic {
+  from {
+    border-color: rgb(127, 255, 191);
+  }
+  10% {
+    border-color: rgb(236, 255, 127);
+  }
+  20% {
+    border-color: rgb(255, 225, 127);
+  }
+  30% {
+    border-color: rgb(255, 163, 127);
+  }
+  40% {
+    border-color: rgb(255, 142, 127);
+  }
+  50% {
+    border-color: rgb(255, 127, 187);
+  }
+  60% {
+    border-color: rgb(251, 127, 255);
+  }
+  70% {
+    border-color: rgb(193, 127, 255);
+  }
+  80% {
+    border-color: rgb(140, 127, 255);
+  }
+  90% {
+    border-color: rgb(127, 168, 255);
+  }
+  to {
+    border-color: rgb(127, 255, 255);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+  to {
+    width: 100%
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 .outermost {
   height: 90vh;
 }
 
 .frontlogowrapper {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
   /* justify-content: center; */
   align-items: center;
@@ -20,25 +96,55 @@
 }
 
 .paintsocialtitle {
+<<<<<<< HEAD
   width: 100%;
   height: 100%;
+=======
+  position: relative;
+  top: 15%;
+  left: 5%;
+  width: 600px;
+  height: 300px;
+  animation-duration: 1s;
+  animation-name: colorrotate;
+  animation-iteration-count: infinite;
+>>>>>>> Splash-Styling
 }
 
 .splashMessage {
   /* position: absolute; */
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: teal;
-  font-size: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(22, 22, 22);
+  font-size: 17.97px;
   /* margin-left: 600px; */
+  padding: 15px;
+  margin-top: 20px;
   width: 80%;
   display: flex;
+  background-color: rgb(193, 236, 255, 0.5); 
+  border: 2px solid rgb(255, 255, 255,0.5); 
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.splashMessage:hover {
+  animation-duration: 5s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
+}
+
+.meet {
+  color: rgb(231, 248, 255);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  font-size: 40px;
+  margin-bottom: 50px;
 }
 
 .splashPageStart {
   /* position: absolute; */
   display: flex;
-  margin-right: 15px;
-  border-radius: 6px;
+  margin-left: 10px;
+  border-radius: 4px;
   background-color: rgba(67, 164, 255, 1);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   font-weight: bold;
@@ -58,30 +164,165 @@
 }
 
 .splashProfiles {
+<<<<<<< HEAD
   margin-top: 50px;
   background-color: #32AFDE;
   display: flex;
   height: 100%;
   width: 100%;
+=======
+  /* display: flex; */
+  height: 320px;
+  width: 80%;
+  padding: 25px;
+>>>>>>> Splash-Styling
   justify-content: space-around;
+  /* background-color: rgb(193, 236, 255, 0.5); 
+  border: 2px solid rgb(255, 255, 255, 0.5); 
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
 }
 
 .profile .picture {
-  height: 100px;
+  height: 150px;
   border-radius: 50%;
+  margin: 15px;
+  border: 4px solid rgba(237, 237, 237, 0.9);
+  border-color: rgb(127, 255, 191);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.picture:hover {
+  animation-duration: 1s;
+  animation-name: colorpic;
+  animation-iteration-count: infinite;
 }
 
 .profile {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: center; */
+  /* min-height: 100%;
+  overflow: hidden; */
 }
 
-.profile .links {
+.profile {
+  /* position: relative;
+  background-image: url(../images/paintmeetteambackground.png);
+  padding: 100px;
+  margin: 100px;
+  background-repeat: no-repeat; */
+  /* animation-duration: 10s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite; */
+}
+
+.background img {
+  position: relative;
+  top: -350px;
+  left: 50px;
+  z-index: -10;
+  height: 500px;
+  animation-duration: 60s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
+}
+
+.left {
+  /* border: 5px solid red; */
+  /* background-image: url(../images/Paint-Meet-Team-Background.png); */
+  max-height: 200px;
+  max-width: 500px;
+  display: flex;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 50px;
+}
+
+.right {
+  position: relative;
+  bottom: 100px;
+  left: 475px;
+  /* border: 5px solid red; */
+  /* background-image: url(../images/Paint-Meet-Team-Background.png); */
+  max-height: 200px;
+  max-width: 500px;
+  display: flex;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 50px;
+}
+
+.names {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
+  padding: 0px;
+  /* border-bottom: 3px solid rgb(155, 155, 155, 0.5); */
+  /* border: 5px solid red; */
+  margin-top: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 60%;
 }
 
+.description {
+  position: relative;
+  top: 20px;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  /* border: 5px solid red; */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  padding-top: 13px;
+  border-top: 3px solid rgba(255, 255, 255, 0.5);
+  /* width: 100%; */
+}
+
+.links {
+  /* width: 100%; */
+  /* position: relative; */
+  /* top: -120px;
+  left: 90px; */
+  margin-top: 30px;
+  /* border: 5px solid red; */
+  height: 100%;
+  font-size: 15px;
+  display: flex;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+
+.fab {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  /* height: 150%; */
+  margin: 3px;
+}
+
+/* .links {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.05em;
+  
+  animation: typing 3s steps(29,end) 1s 1 normal both;
+} */
+
+.links a:hover {
+  animation-duration: 1s;
+  animation-name: fadein;
+  animation-iteration-count: infinite;
+}
