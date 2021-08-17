@@ -46,6 +46,7 @@ class SignupForm extends React.Component {
     // })
     this.props.signup(user, this.props.history)
         .then(res => {
+          debugger
           if(!!res.errors) {
             return
           } else {
@@ -109,7 +110,9 @@ class SignupForm extends React.Component {
           </div>
         </form>
         <br/>
-        <div>Already have an account? <Link to='/login' className='alreadyMember'>Login </Link></div>
+        <div>
+          <span className="account">Already have an account? </span>
+          <Link to='/login' className='alreadyMember'>Login </Link></div>
       </div>
     );
   }
