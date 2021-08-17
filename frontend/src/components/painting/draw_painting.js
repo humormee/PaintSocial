@@ -15,25 +15,13 @@ class DrawPainting extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // convertToDataUrl();
-    // const  = canvasRef.current;
-    // const context = canvas.getContext('2d');
-    // if (window.navigator.msSaveBlob) {
-    //   window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
-    // } else {
-    //   const a = document.createElement("a");
-
-    //   document.body.appendChild(a);
-    //   a.href = canvas.toDataURL();
-    // }
-    debugger
-    // this.convertToDataUrl();
     this.setState({painting_image: window.imgData}) 
     this.props.createPainting(Object.assign({}, this.state, {painting_image: window.imgData}))
       .then(res => this.props.history.push(`/paintings/${res.painting.data._id}`))    
   }
 
   update(field) {
+    debugger
     return e => this.setState({
       [field]: e.currentTarget.value
     });
@@ -56,6 +44,12 @@ class DrawPainting extends React.Component {
                 onChange={this.update("title")}
                 placeholder="Title"
               />
+              <textarea 
+                value={this.state.description}
+                onChange={this.update("description")}
+                placeholder="Description"
+                ></textarea>
+              {/* <input type="textarea"></input> */}
               {/* <input type="text" 
                 value={this.state.painting_image} 
                 onChange={this.update("painting_image")}

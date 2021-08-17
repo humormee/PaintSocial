@@ -149,15 +149,6 @@ export default class PaintingShow extends React.Component {
         </div>
     )
       })
-
-      // return (
-    //   <div className="comment" key={`${comment.id}`}>
-    //     <p>{comment.description}</p>
-    //     <p>{commenter.username}</p>
-    //   <div>{this.renderEraseButton(comment)}</div>
-    // </div>
-    // )
-    
   }
 
   render() {

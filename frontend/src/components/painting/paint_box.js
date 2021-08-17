@@ -129,9 +129,7 @@ export function PaintBox({placePainting}) {
   //   }) 
   // }
   const convertToDataUrl = () => {
-    debugger
     const canvas = canvasRef.current;
-    // const context = canvas.getContext('2d');
     
     if (window.navigator.msSaveBlob) {
       window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
