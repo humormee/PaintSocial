@@ -8,7 +8,7 @@ const PaintingSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
-    contentType: {
+    description: {
         type: String
     },
     painting_image: {
