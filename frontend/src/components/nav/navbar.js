@@ -18,11 +18,21 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-links">
+          <div className="welcome-icon">
+            <Link to="/">
+              <button classsName="nav-button">
+                Welcome!
+                <img src="https://media.discordapp.net/attachments/597985513701376013/877202754278391919/Hand_Wave.png?width=670&height=670"
+                alt="Welcome"/>
+              </button>
+            </Link>
+          </div>
+
           <div className="newpainting-icon">
             <Link to={'/painting'}> 
               <button className="nav-button">
                 Paint
-                <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223282989006889/Make_New_File_Icon.png" alt="NewFile"/>
+                <img src="https://media.discordapp.net/attachments/597985513701376013/877200677170987148/Create_New_Icon_New.png?width=670&height=670" alt="NewFile"/>
               </button>
             </Link>
           </div>
@@ -30,18 +40,8 @@ class NavBar extends React.Component {
           <div className="logout-icon"> 
             <button className="nav-button" onClick={this.logoutUser}>
               Logout
-                <img src="https://cdn.discordapp.com/attachments/597985513701376013/867223281827971092/Log_Out_Icon.png" alt="LogOut"/> 
+                <img src="https://media.discordapp.net/attachments/597985513701376013/877200658460188702/Log_Out_Icon_New.png?width=670&height=670" alt="LogOut"/> 
             </button>
-          </div>
-
-          <div className="welcome-icon">
-            <Link to="/">
-              <button classsName="nav-button">
-                Welcome!
-                <img src="https://cdn.discordapp.com/attachments/865977609330753600/875399258927427624/welcome.png"
-                alt="Welcome"/>
-              </button>
-            </Link>
           </div>
 
         </div>
