@@ -94,7 +94,7 @@
 }
 
 @keyframes createeffect {
-  from, to{
+  from, to {
     transform: scale(1.0) rotate(0deg);
   }
   25% {

@@ -37,6 +37,11 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+.logo:hover {
+  animation:
+    0.5s infinite bounce3
+}
+
 .logout-icon img, .newpainting-icon img, .welcome-icon img {
   height: 25px;
 }

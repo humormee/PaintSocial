@@ -89,7 +89,9 @@ class LoginForm extends React.Component {
               {this.renderErrors()}
             </div>
             <br/>
-            <div>Don't have an account yet? <Link to='/signup' className='alreadyMember'>Sign Up</Link></div>
+            <div>
+              <span className="account">Don't have an account yet? </span>
+              <Link to='/signup' className='alreadyMember'>Sign Up</Link></div>
           </form>
         </div>
       </div>
