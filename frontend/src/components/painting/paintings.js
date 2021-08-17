@@ -111,7 +111,7 @@ class Painting extends React.Component {
 
   render() {
     if (this.props.paintings.length === 0 || this.props.entities.likes.likes === undefined) {
-      return <div>No paintings</div>
+      return <div>Loading...</div>
     } else {
       this.assignLikes();
       return (
