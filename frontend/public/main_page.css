@@ -136,6 +136,17 @@
   height: 90vh;
 }
 
+.shine2 img {
+  position: absolute;
+  top: -350px;
+  left: 40px;
+  z-index: -10;
+  height: 1000px;
+  animation-duration: 60s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
+}
+
 .frontlogowrapper {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
@@ -145,7 +156,6 @@
   /* border: 1px solid red; */
   flex-direction: column;
 }
-
 
 .front-logo {
   /* margin-left: 200px; */
@@ -175,23 +185,36 @@
   margin-top: 20px;
   width: 80%;
   display: flex;
-  background-color: rgb(193, 236, 255, 0.5); 
+  /* background-color: rgb(193, 236, 255, 0.5); 
   border: 2px solid rgb(255, 255, 255,0.5); 
   border-radius: 5px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
 }
 
-.splashMessage:hover {
-  animation-duration: 5s;
+.background2 img {
+  position: absolute;
+  top: -150px;
+  left: 40px;
+  z-index: -15;
+  height: 800px;
+  animation-duration: 60s;
   animation-name: colorrotate2;
   animation-iteration-count: infinite;
 }
 
 .meet {
-  color: rgb(231, 248, 255);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  color: rgb(101, 255, 222);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   font-size: 40px;
-  margin-bottom: 50px;
+  padding: 10px;
+  margin-bottom: 0px;
+  background-color: rgb(193, 236, 255, 0.5); 
+  border: 2px solid rgb(255, 255, 255,0.5); 
+  border-radius: 50px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  /* animation-duration: 15s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite; */
 }
 
 .splashPageStart {

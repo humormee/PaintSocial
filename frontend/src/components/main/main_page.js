@@ -11,13 +11,16 @@ class MainPage extends React.Component {
           {/* <img src="https://cdn.discordapp.com/attachments/597985513701376013/867240581189337098/PaintSocial_Logo_Bigger.png" alt="PaintSocialLogo"/> */}
           <img className="paintbrush" src="https://creatr-seed.s3.amazonaws.com/paintsmile-transparent3.gif" alt="paintbrushisbroken" />
           <img className="paintsocialtitle" src="https://creatr-seed.s3.amazonaws.com/PaintSocialTitle.gif" alt="paintbrushisbroken" />
-          {/* </Link> */}
         </div>
-        <div className='splashMessage'>A painting-based social network, Paint Social allows you to express yourself through painting and connect with others through art.</div>
-        <br />
-        <br />
+          <div className="shine2">
+            <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
+          </div>
         <div>
           <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>
+        </div>
+        <div className='splashMessage'>A painting-based social network, Paint Social allows you to express yourself through painting and connect with others through art.</div>
+        <div className="background2">
+          <img src="https://cdn.discordapp.com/attachments/597985513701376013/876943715959177266/paintmeetteambackground2.png"/>
         </div>
         <h2 className="meet">Meet the Team!</h2>
         <div className="splashProfiles">
