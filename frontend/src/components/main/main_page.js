@@ -11,15 +11,22 @@ class MainPage extends React.Component {
           {/* <img src="https://cdn.discordapp.com/attachments/597985513701376013/867240581189337098/PaintSocial_Logo_Bigger.png" alt="PaintSocialLogo"/> */}
           <img className="paintbrush" src="https://creatr-seed.s3.amazonaws.com/paintsmile-transparent3.gif" alt="paintbrushisbroken" />
           <img className="paintsocialtitle" src="https://creatr-seed.s3.amazonaws.com/PaintSocialTitle.gif" alt="paintbrushisbroken" />
-          {/* </Link> */}
+          {/* <div className="topshine">
+            <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
+          </div>
+          <div className="topbackground">
+            <img src="https://media.discordapp.net/attachments/597985513701376013/877025834395897896/paintmeetteambackground5.png"/>
+          </div> */}
         </div>
-        <div className='splashMessage'>A painting-based social network, Paint Social allows you to express yourself through painting and connect with others through art.</div>
-        <br />
-        <br />
         <div>
           <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>
         </div>
-        
+        <div className='splashMessage'>
+          A painting-based social network, Paint Social allows you to express yourself through painting and connect with others through art.
+          {/* <div className="messagebackground">
+            <img src="https://cdn.discordapp.com/attachments/597985513701376013/877032287965954058/paintmeetteambackground7.png"/>
+          </div> */}
+        </div>
         <h2 className="meet">Meet the Team!</h2>
         <div className="splashProfiles">
           <div className="profile">
@@ -32,7 +39,7 @@ class MainPage extends React.Component {
                 <i class="fab fa-linkedin"></i>
                 <span className="social">LinkedIn</span>
               </a>
-              <a href="">
+              <a href="https://angel.co/u/christian-miguel-dela-cruz">
                 <i class="fab fa-angellist"></i>
                 <span className="social">AngelList</span>
               </a>
@@ -42,8 +49,11 @@ class MainPage extends React.Component {
               </a>
             </div>
             </span>
-            <div className="background">
-              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876943715959177266/paintmeetteambackground2.png"/>
+            <div className="background1">
+              <img src="https://media.discordapp.net/attachments/597985513701376013/877022518777614446/paintmeetteambackground6.png"/>
+            </div>
+            <div className="shine">
+              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
             </div>
             </div>
           </div>
@@ -68,8 +78,11 @@ class MainPage extends React.Component {
               </a>
             </div>
             </span>
-            <div className="background">
+            <div className="background2">
               <img src="https://cdn.discordapp.com/attachments/597985513701376013/876943715959177266/paintmeetteambackground2.png"/>
+            </div>
+            <div className="shine">
+              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
             </div>
             </div>
           </div>
@@ -84,7 +97,7 @@ class MainPage extends React.Component {
                 <i class="fab fa-linkedin"></i>
                 <span className="social">LinkedIn</span>
               </a>
-              <a href="">
+              <a href="https://angel.co/u/eric-tran-28">
                 <i class="fab fa-angellist"></i>
                 <span className="social">AngelList</span>
               </a>
@@ -94,8 +107,11 @@ class MainPage extends React.Component {
               </a>
             </div>
             </span>
-            <div className="background">
-              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876943715959177266/paintmeetteambackground2.png"/>
+            <div className="background3">
+              <img src="https://media.discordapp.net/attachments/597985513701376013/877026113807867954/paintmeetteambackground3.png"/>
+            </div>
+            <div className="shine">
+              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
             </div>
             </div>
           </div>
@@ -110,7 +126,7 @@ class MainPage extends React.Component {
                 <i class="fab fa-linkedin"></i>
                 <span className="social">LinkedIn</span>
               </a>
-              <a href="">
+              <a href="https://angel.co/u/justin-ernst">
                 <i class="fab fa-angellist"></i>
                 <span className="social">AngelList</span>
               </a>
@@ -120,13 +136,18 @@ class MainPage extends React.Component {
               </a>
             </div>
             </span>
-            <div className="background">
-              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876943715959177266/paintmeetteambackground2.png"/>
+            <div className="background4">
+              <img src="https://media.discordapp.net/attachments/597985513701376013/877026115565281320/paintmeetteambackground4.png"/>
+            </div>
+            <div className="shine">
+              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
             </div>
             </div>
           </div>
 
         </div>
+
+        {/* <script language="javascript" type="text/javascript" src="./show-on-scroll.js"></script> */}
       </div>
     );
   }
