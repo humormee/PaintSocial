@@ -26,7 +26,7 @@ class DrawPainting extends React.Component {
     //   document.body.appendChild(a);
     //   a.href = canvas.toDataURL();
     // }
-    debugger
+    // debugger
     // this.convertToDataUrl();
     this.setState({painting_image: window.imgData}) 
     this.props.createPainting(Object.assign({}, this.state, {painting_image: window.imgData}))
@@ -62,7 +62,9 @@ class DrawPainting extends React.Component {
                 placeholder="Link"
               /> */}
               {/* <button type="submit" onClick={() => convertToDataUrl()}>Create Painting</button> */}
-              <input type="submit" value="Create Painting" />
+              <span className="create">
+                <input type="submit" value="Create Painting"/>
+              </span>
             </div>
             <PaintBox convertToDataUrl={() => this.placePainting.bind(this)} placePainting={() => this.placePainting.bind(this)}/>
             {/* <PaintBox placePainting={"banana"}/> */}

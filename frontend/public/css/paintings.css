@@ -176,3 +176,19 @@ canvas {
   margin: 0 5px;
   padding: 10px;
 }
+
+.create input {
+  background: rgb(78, 167, 250);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  /* background:lightgreen; */
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.create input:hover {
+  background-color: rgb(116, 188, 255);
+}

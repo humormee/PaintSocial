@@ -104,9 +104,7 @@ class Painting extends React.Component {
         <div>{painting.likes.length}</div>
       </div>
     )
-  }
-
-  
+  }  
 
   render() {
     if (this.props.paintings.length === 0 || this.props.entities.likes.likes === undefined) {
