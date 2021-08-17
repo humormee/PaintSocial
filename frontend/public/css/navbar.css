@@ -46,6 +46,11 @@
   height: 25px;
 }
 
+.logout-icon:hover, .newpainting-icon:hover, .welcome-icon:hover {
+  animation:
+    0.5s infinite bounce3
+}
+
 .nav-button {
   display: flex;
   align-items: center;
@@ -54,10 +59,13 @@
   margin: 5px;
 
   background: white;
+  border: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   /* background:lightgreen; */
-  color: rgb(138, 198, 255);;
+  color: rgb(104, 182, 255);
   font-size: 14px;
   font-weight: 600;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
 .welcome-icon button {
@@ -66,12 +74,16 @@
 
   padding: 5px;
   margin: 5px;
+  margin-left: 6px;
 
   background: white;
+  border: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   /* background:lightgreen; */
-  color: rgb(138, 198, 255);
+  color: rgb(104, 182, 255);
   font-size: 14px;
   font-weight: 600;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
 .welcome-icon button img {

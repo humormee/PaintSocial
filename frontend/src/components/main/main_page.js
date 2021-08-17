@@ -23,9 +23,9 @@ class MainPage extends React.Component {
         </div>
         <div className='splashMessage'>
           A painting-based social network, Paint Social allows you to express yourself through painting and connect with others through art.
-          <div className="messagebackground">
+          {/* <div className="messagebackground">
             <img src="https://cdn.discordapp.com/attachments/597985513701376013/877032287965954058/paintmeetteambackground7.png"/>
-          </div>
+          </div> */}
         </div>
         <h2 className="meet">Meet the Team!</h2>
         <div className="splashProfiles">

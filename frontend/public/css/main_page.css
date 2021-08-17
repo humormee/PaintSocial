@@ -209,16 +209,20 @@
 
 .splashMessage {
   position: relative;
-  top: -8%;
-  left: 25%;
+  top: -5%;
+  left: 7.5%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: rgb(255, 255, 255, 0);
-  background-image: linear-gradient(to left, rgb(209, 125, 209), rgb(116, 61, 155), rgb(69, 69, 189), rgb(65, 143, 65), rgb(192, 192, 45), rgb(212, 162, 69), rgb(219, 67, 67));
-  -webkit-background-clip: text;
+  color: rgb(0, 0, 0, 1);
+  border-bottom: 2px solid black;
+  background-color: rgb(255, 255, 255, 0.4);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  /* background-image: linear-gradient(to left, rgb(209, 125, 209), rgb(116, 61, 155), rgb(69, 69, 189), rgb(65, 143, 65), rgb(192, 192, 45), rgb(212, 162, 69), rgb(219, 67, 67));
+  -webkit-background-clip: text; */
   /* -webkit-text-fill-color: transparent; */
-  animation-duration: 30s;
+  /* animation-duration: 30s;
   animation-name: colorrotate2;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
   /* text-shadow: 0 0 2px rgba(255, 255, 255, 1); */
   font-size: 18px;
   text-align: center;
@@ -226,14 +230,14 @@
   padding: 15px;
   width: 26%;
   display: flex;
-  transform: rotate(-5deg);
+  /* transform: rotate(-5deg); */
   /* background-color: rgb(193, 236, 255, 0.5); 
   border: 2px solid rgb(255, 255, 255,0.5); 
   border-radius: 5px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
 }
 
-.messagebackground img {
+/* .messagebackground img {
   opacity: 70%;
   position: absolute;
   top: -160%;
@@ -241,10 +245,10 @@
   z-index: -15;
   height: 350px;
   transform: rotate(8deg);
-  /* animation-duration: 60s;
+  animation-duration: 60s;
   animation-name: colorrotate2;
-  animation-iteration-count: infinite; */
-}
+  animation-iteration-count: infinite;
+} */
 
 /* 
 .background2 img {
@@ -273,15 +277,19 @@
   position: relative;
   top: 7%;
   left: 23%;
-  color: rgb(80, 255, 217);
+  color: rgb(0, 0, 0);
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   font-size: 40px;
   padding: 10px;
   margin-bottom: 0px;
-  background-color: rgb(193, 236, 255, 0.5); 
+  border-bottom: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.4);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  /* background-color: rgb(193, 236, 255, 0.5); 
   border: 2px solid rgb(255, 255, 255,0.5); 
   border-radius: 50px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
   /* animation-duration: 15s;
   animation-name: colorrotate2;
   animation-iteration-count: infinite; */
