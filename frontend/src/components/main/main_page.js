@@ -39,7 +39,7 @@ class MainPage extends React.Component {
                 <i class="fab fa-linkedin"></i>
                 <span className="social">LinkedIn</span>
               </a>
-              <a href="">
+              <a href="https://angel.co/u/christian-miguel-dela-cruz">
                 <i class="fab fa-angellist"></i>
                 <span className="social">AngelList</span>
               </a>
