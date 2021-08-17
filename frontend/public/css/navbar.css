@@ -37,8 +37,18 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+.logo:hover {
+  animation:
+    0.5s infinite bounce3
+}
+
 .logout-icon img, .newpainting-icon img, .welcome-icon img {
   height: 25px;
+}
+
+.logout-icon:hover, .newpainting-icon:hover, .welcome-icon:hover {
+  animation:
+    0.5s infinite bounce3
 }
 
 .nav-button {
@@ -46,13 +56,24 @@
   align-items: center;
 
   padding: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
   margin: 5px;
+  margin-left: 4px;
 
-  background: white;
+  background: rgb(78, 167, 250);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   /* background:lightgreen; */
-  color: rgb(138, 198, 255);;
+  color: white;
   font-size: 14px;
   font-weight: 600;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover {
+  background-color: rgb(116, 188, 255);
 }
 
 .welcome-icon button {
@@ -60,13 +81,24 @@
   align-items: center;
 
   padding: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
   margin: 5px;
+  margin-right: 5px;
 
-  background: white;
+  background: rgb(78, 167, 250);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   /* background:lightgreen; */
-  color: rgb(138, 198, 255);
+  color: white;
   font-size: 14px;
   font-weight: 600;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-icon button:hover {
+  background-color: rgb(116, 188, 255);
 }
 
 .welcome-icon button img {
