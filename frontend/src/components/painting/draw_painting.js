@@ -16,19 +16,6 @@ class DrawPainting extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // convertToDataUrl();
-    // const  = canvasRef.current;
-    // const context = canvas.getContext('2d');
-    // if (window.navigator.msSaveBlob) {
-    //   window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
-    // } else {
-    //   const a = document.createElement("a");
-
-    //   document.body.appendChild(a);
-    //   a.href = canvas.toDataURL();
-    // }
-    // debugger
-    // this.convertToDataUrl();
     this.setState({painting_image: window.imgData})
     this.props.createPainting(Object.assign({}, this.state, {painting_image: window.imgData}))
       .then(res => this.props.history.push(`/paintings/${res.painting.data._id}`))
@@ -57,19 +44,22 @@ class DrawPainting extends React.Component {
                 onChange={this.update("title")}
                 placeholder="Title"
               />
+              <textarea 
+                value={this.state.description}
+                onChange={this.update("description")}
+                placeholder="Description"
+              />
               {/* <input type="text" 
-                value={this.state.painting_image} 
-                onChange={this.update("painting_image")}
-                placeholder="Link"
+                value={this.state.description} 
+                onChange={this.update("description")}
+                placeholder="Description"
               /> */}
-              {/* <button type="submit" onClick={() => convertToDataUrl()}>Create Painting</button> */}
               <span className="create">
                 <input type="submit" value="Create Painting"/>
               </span>
             </div>
             <PaintBox convertToDataUrl={() => this.placePainting.bind(this)} placePainting={() => this.placePainting.bind(this)}/>
-            {/* <PaintBox placePainting={"banana"}/> */}
-            {/* {this.state.painting_image=paintingArray.count} */}
+            
           </div>
         </form>
       </div>

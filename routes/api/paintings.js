@@ -60,6 +60,7 @@ router.post('/',
     const newPainting = new Painting ({
         artist: req.user.id,
         painting_image: req.body.painting_image,
+        description: req.body.description,
         // painting_image: 'temp value',
         title: req.body.title
     })
