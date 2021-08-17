@@ -44,6 +44,9 @@ class MainPage extends React.Component {
             <div className="background">
               <img src="https://cdn.discordapp.com/attachments/597985513701376013/876943715959177266/paintmeetteambackground2.png"/>
             </div>
+            <div className="shine">
+              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
+            </div>
             </div>
           </div>
 
@@ -69,6 +72,9 @@ class MainPage extends React.Component {
             </span>
             <div className="background">
               <img src="https://cdn.discordapp.com/attachments/597985513701376013/876943715959177266/paintmeetteambackground2.png"/>
+            </div>
+            <div className="shine">
+              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
             </div>
             </div>
           </div>
@@ -96,6 +102,9 @@ class MainPage extends React.Component {
             <div className="background">
               <img src="https://cdn.discordapp.com/attachments/597985513701376013/876943715959177266/paintmeetteambackground2.png"/>
             </div>
+            <div className="shine">
+              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
+            </div>
             </div>
           </div>
 
@@ -109,7 +118,7 @@ class MainPage extends React.Component {
                 <i class="fab fa-linkedin"></i>
                 <span className="social">LinkedIn</span>
               </a>
-              <a href="">
+              <a href="https://angel.co/u/justin-ernst">
                 <i class="fab fa-angellist"></i>
                 <span className="social">AngelList</span>
               </a>
@@ -122,10 +131,15 @@ class MainPage extends React.Component {
             <div className="background">
               <img src="https://cdn.discordapp.com/attachments/597985513701376013/876943715959177266/paintmeetteambackground2.png"/>
             </div>
+            <div className="shine">
+              <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
+            </div>
             </div>
           </div>
 
         </div>
+
+        {/* <script language="javascript" type="text/javascript" src="./show-on-scroll.js"></script> */}
       </div>
     );
   }

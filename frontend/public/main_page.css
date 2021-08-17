@@ -82,12 +82,25 @@
   }
 }
 
-@keyframes zoompic {
+@keyframes piceffect {
   from, to{
-    transform: scale(1.0);
+    filter: brightness(100%) contrast(100%);
+    transform: scale(1.0) rotate(0deg);
   }
   50% {
-    transform: scale(1.05);
+    filter: brightness(115%) contrast(115%);
+    transform: scale(1.05) rotate(20deg);
+  }
+}
+
+@keyframes shineeffect {
+  from, to{
+    opacity: 80%;
+    transform: scale(1.0) rotate(0deg);
+  }
+  50% {
+    opacity: 100%;
+    transform: scale(1.1) rotate(10deg);
   }
 }
 
@@ -230,7 +243,7 @@
   animation-name: colorpic;
   animation-iteration-count: infinite; */
   animation:
-    0.5s infinite zoompic,
+    0.5s infinite piceffect,
     1s infinite colorpic
 }
 
@@ -263,6 +276,19 @@
   animation-duration: 60s;
   animation-name: colorrotate2;
   animation-iteration-count: infinite;
+}
+
+.shine img {
+  position: relative;
+  top: -950px;
+  left: -140px;
+  z-index: -10;
+  height: 600px;
+  animation-duration: 60s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
+  animation:
+    15s infinite shineeffect
 }
 
 .left {
