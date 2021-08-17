@@ -51,23 +51,6 @@
     0.5s infinite bounce3
 }
 
-.sign {
-  margin-right: 15px;
-  border-radius: 4px;
-  background-color: rgba(67, 164, 255, 1);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  font-weight: bold;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.sign:hover {
-  background-color: rgb(108, 184, 255);
-  animation:
-    0.5s infinite bounce2
-}
-
 .nav-button {
   display: flex;
   align-items: center;
