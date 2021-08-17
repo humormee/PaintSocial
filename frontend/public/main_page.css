@@ -93,6 +93,21 @@
   }
 }
 
+@keyframes createeffect {
+  from, to{
+    transform: scale(1.0) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.05) rotate(5deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.05) rotate(-5deg);
+  }
+}
+
 @keyframes shineeffect {
   from, to{
     opacity: 80%;
@@ -109,12 +124,14 @@
     opacity: 0%;
     position: relative;
     z-index: -2;
+    top: -100px;
     left: 200px;
   }
   to {
     opacity: 100%;
     position: relative;
     z-index: -2;
+    top: 0px;
     left: 0px;
   }
 }
@@ -136,16 +153,31 @@
   height: 90vh;
 }
 
-.shine2 img {
+.topshine img {
   position: absolute;
-  top: -350px;
-  left: 40px;
+  opacity: 90%;
+  top: -85%;
+  left: -25%;
   z-index: -10;
-  height: 1000px;
+  height: 1500px;
   animation-duration: 60s;
   animation-name: colorrotate2;
   animation-iteration-count: infinite;
+  animation:
+    10s infinite shineeffect
 }
+
+/* .shine2 img {
+  position: relative;
+  opacity: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: -10;
+  height: 1500px;
+  animation-duration: 60s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
+} */
 
 .frontlogowrapper {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -190,11 +222,22 @@
   border-radius: 5px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
 }
-
+/* 
 .background2 img {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  z-index: -15;
+  height: 800px;
+  animation-duration: 60s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
+} */
+
+.topbackground img {
   position: absolute;
-  top: -150px;
-  left: 40px;
+  top: -15%;
+  left: 0%;
   z-index: -15;
   height: 800px;
   animation-duration: 60s;
@@ -218,20 +261,28 @@
 }
 
 .splashPageStart {
-  /* position: absolute; */
+  position: relative;
+  top: -150%;
+  left: 55%;
   display: flex;
-  margin-left: 10px;
-  border-radius: 4px;
-  background-color: rgba(67, 164, 255, 1);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  /* margin-left: 10px;   */
+  border-radius: 50px;
+  background-color: rgb(0, 236, 197, 0);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
   font-weight: bold;
-  color: white;
-  border: none;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
+  color: #72b1fa;
+  border: 5px outset rgb(0, 236, 197);
   cursor: pointer;
 }
 
 .splashPageStart:hover {
-  background-color: rgb(108, 184, 255);
+  background-color: rgb(0, 255, 213, 0.175);
+  border: 5px inset rgb(0, 236, 197);
+  animation:
+    0.1s infinite createeffect,
+    2s infinite colorpic
 }
 
 .paintbrush {
@@ -270,16 +321,16 @@
     1s infinite colorpic
 }
 
-.profile {
+/* .profile { */
   /* display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center; */
   /* min-height: 100%;
   overflow: hidden; */
-}
+/* } */
 
-.profile {
+/* .profile { */
   /* position: relative;
   background-image: url(../images/paintmeetteambackground.png);
   padding: 100px;
@@ -288,9 +339,42 @@
   /* animation-duration: 10s;
   animation-name: colorrotate2;
   animation-iteration-count: infinite; */
+/* } */
+
+.background1 img {
+  position: relative;
+  top: -350px;
+  left: 50px;
+  z-index: -10;
+  height: 500px;
+  animation-duration: 60s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
 }
 
-.background img {
+.background2 img {
+  position: relative;
+  top: -350px;
+  left: 50px;
+  z-index: -10;
+  height: 500px;
+  animation-duration: 60s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
+}
+
+.background3 img {
+  position: relative;
+  top: -350px;
+  left: 50px;
+  z-index: -10;
+  height: 500px;
+  animation-duration: 60s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
+}
+
+.background4 img {
   position: relative;
   top: -350px;
   left: 50px;
@@ -391,7 +475,22 @@
   /* align-items: center; */
 }
 
-.background {
+.background1 {
+  animation-duration: 0.5s;
+  animation-name: leftslideinz;
+}
+
+.background2 {
+  animation-duration: 0.5s;
+  animation-name: leftslideinz;
+}
+
+.background3 {
+  animation-duration: 0.5s;
+  animation-name: leftslideinz;
+}
+
+.background4 {
   animation-duration: 0.5s;
   animation-name: leftslideinz;
 }
