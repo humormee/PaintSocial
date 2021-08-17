@@ -11,12 +11,12 @@ class MainPage extends React.Component {
           {/* <img src="https://cdn.discordapp.com/attachments/597985513701376013/867240581189337098/PaintSocial_Logo_Bigger.png" alt="PaintSocialLogo"/> */}
           <img className="paintbrush" src="https://creatr-seed.s3.amazonaws.com/paintsmile-transparent3.gif" alt="paintbrushisbroken" />
           <img className="paintsocialtitle" src="https://creatr-seed.s3.amazonaws.com/PaintSocialTitle.gif" alt="paintbrushisbroken" />
-          <div className="topshine">
+          {/* <div className="topshine">
             <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
           </div>
           <div className="topbackground">
             <img src="https://media.discordapp.net/attachments/597985513701376013/877025834395897896/paintmeetteambackground5.png"/>
-          </div>
+          </div> */}
         </div>
         <div>
           <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>

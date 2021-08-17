@@ -153,7 +153,7 @@
   height: 90vh;
 }
 
-.topshine img {
+/* .topshine img {
   position: absolute;
   opacity: 90%;
   top: -85%;
@@ -165,7 +165,7 @@
   animation-iteration-count: infinite;
   animation:
     10s infinite shineeffect
-}
+} */
 
 /* .shine2 img {
   position: relative;
@@ -209,14 +209,14 @@
 
 .splashMessage {
   position: relative;
-  top: -5%;
+  top: -8%;
   left: 7.5%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(0, 0, 0, 1);
   border-bottom: 2px solid black;
-  background-color: rgb(255, 255, 255, 0.4);
+  /* background-color: rgb(255, 255, 255, 0.4); */
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
-  border-radius: 3px;
+  border-radius: 2px;
   /* background-image: linear-gradient(to left, rgb(209, 125, 209), rgb(116, 61, 155), rgb(69, 69, 189), rgb(65, 143, 65), rgb(192, 192, 45), rgb(212, 162, 69), rgb(219, 67, 67));
   -webkit-background-clip: text; */
   /* -webkit-text-fill-color: transparent; */
@@ -262,7 +262,7 @@
   animation-iteration-count: infinite;
 } */
 
-.topbackground img {
+/* .topbackground img {
   position: absolute;
   top: -15%;
   left: 0%;
@@ -271,11 +271,11 @@
   animation-duration: 60s;
   animation-name: colorrotate2;
   animation-iteration-count: infinite;
-}
+} */
 
 .meet {
   position: relative;
-  top: 7%;
+  top: 5%;
   left: 23%;
   color: rgb(0, 0, 0);
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -283,9 +283,9 @@
   padding: 10px;
   margin-bottom: 0px;
   border-bottom: 2px solid black;
-  background-color: rgba(255, 255, 255, 0.4);
+  /* background-color: rgba(255, 255, 255, 0.4); */
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
-  border-radius: 3px;
+  border-radius: 2px;
   /* background-color: rgb(193, 236, 255, 0.5); 
   border: 2px solid rgb(255, 255, 255,0.5); 
   border-radius: 50px;
@@ -303,7 +303,7 @@
   display: flex;
   /* margin-left: 10px;   */
   border-radius: 50px;
-  background-color: rgb(0, 236, 197, 0);
+  background-color: rgb(193, 236, 255, 0.6);
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
   font-size: 20px;
   font-weight: bold;
@@ -316,7 +316,7 @@
 .splashPageStart:hover {
   position: relative;
   z-index: 5;
-  background-color: rgb(193, 236, 255, 0.5);
+  background-color: rgb(193, 236, 255, 0.6);
   border: 5px inset rgb(0, 236, 197);
   animation:
     0.1s infinite createeffect,
