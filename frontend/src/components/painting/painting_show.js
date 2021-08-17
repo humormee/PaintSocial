@@ -65,7 +65,9 @@ export default class PaintingShow extends React.Component {
 
           <textarea placeholder="add a comment" value={comment.description} onChange={e => this.updateComment(e)}>
           </textarea>
-          <button type="submit">comment</button>
+          <button type="submit">
+            <span className="posthov">Post</span>
+          </button>
 
         </form>
       </div>
@@ -113,10 +115,10 @@ export default class PaintingShow extends React.Component {
   renderLikeIcon(){
     for(let i = 0; i < this.props.likes.length; i++) {
       if(this.props.likes[i].liker === this.props.session.user.id) {
-        return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875043220034301962/Heart.png" />
+        return <span className="hearthov"><img src="https://cdn.discordapp.com/attachments/865977609330753600/875043220034301962/Heart.png"/></span>
       }
     }
-    return <img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png" />
+    return <span className="hearthov"><img src="https://cdn.discordapp.com/attachments/865977609330753600/875748136147116032/Heart_Unliked.png"/></span>
   }
 
   renderButton() {
@@ -129,7 +131,7 @@ export default class PaintingShow extends React.Component {
     if(user && artistId === user.id){
       return (
         <div>
-          <button className="delete-painting" value={this.props.match.params.id} onClick={this.handleDelete}>Delete</button>
+          <button className="delete-painting" value={this.props.match.params.id} onClick={this.handleDelete}>Delete Painting</button>
         </div>
       )
     }
@@ -140,7 +142,7 @@ export default class PaintingShow extends React.Component {
     this.props.fetchArtist(comment.commenter)
       .then(commenter =>
       {
-        debugger
+        // debugger
         return (
           <div className="comment" key={`${comment.id}`}>
             <p>{comment.description}</p>

@@ -129,7 +129,7 @@ export function PaintBox({placePainting}) {
   //   }) 
   // }
   const convertToDataUrl = () => {
-    debugger
+    // debugger
     const canvas = canvasRef.current;
     // const context = canvas.getContext('2d');
     

@@ -19,7 +19,7 @@ export const getUserPaintings = id => {
 };
 
 export const drawPainting = data => {
-  debugger
+  // debugger
   return axios.post('/api/paintings/', data)
 }
 

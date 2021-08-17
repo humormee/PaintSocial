@@ -326,7 +326,15 @@ input:focus::placeholder {
 .alreadyMember:hover {
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
   color:rgb(91, 176, 255);
-
 }
 
+.hearthov img:hover {
+  animation:
+  0.5s infinite bounce3
+}
 
+.toggle-like:hover {
+  position: inherit;
+  animation:
+  0.5s infinite bounce3
+}

@@ -1,3 +1,11 @@
+@keyframes hoverover {
+  from {
+    transform: translateY(0px) scale(1);
+  }
+  to {
+    transform: translateY(-1px) scale(1.05);
+  }
+}
 
 .index-container {
   margin: 20px auto;
@@ -44,8 +52,8 @@
   overflow: hidden;
 }
 
-.painting-index-item:hover {
-  transform: translateY(-1px) scale(1.05);
+.item-container:hover {
+  animation: 0.3s hoverover forwards
 }
 
 .painting-index-item p {
@@ -191,4 +199,12 @@ canvas {
 
 .create input:hover {
   background-color: rgb(116, 188, 255);
+}
+
+.posthov:hover {
+  opacity: 70%;
+}
+
+.artist-username:hover {
+  opacity: 70%;
 }

@@ -79,10 +79,10 @@ export const fetchUserPaintings = id => dispatch => (
 );
 
 export const createPainting = data => dispatch => {
-  debugger
+  // debugger
   return (
   drawPainting(data).then(painting => {
-    debugger
+    // debugger
     return (dispatch(receiveNewPainting(painting)))})
     .catch(err => console.log(err))
 )};

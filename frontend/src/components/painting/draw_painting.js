@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router-dom"
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import { paintingArray, PaintBox } from './paint_box';
 
 class DrawPainting extends React.Component {
@@ -28,9 +29,9 @@ class DrawPainting extends React.Component {
     // }
     // debugger
     // this.convertToDataUrl();
-    this.setState({painting_image: window.imgData}) 
+    this.setState({painting_image: window.imgData})
     this.props.createPainting(Object.assign({}, this.state, {painting_image: window.imgData}))
-      .then(res => this.props.history.push(`/paintings/${res.painting.data._id}`))    
+      .then(res => this.props.history.push(`/paintings/${res.painting.data._id}`))
   }
 
   update(field) {
