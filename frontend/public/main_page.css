@@ -101,7 +101,7 @@
     transform: scale(1.05) rotate(5deg);
   }
   50% {
-    transform: scale(1.1) rotate(0deg);
+    transform: scale(1.15) rotate(0deg);
   }
   75% {
     transform: scale(1.05) rotate(-5deg);
@@ -208,20 +208,44 @@
 }
 
 .splashMessage {
-  /* position: absolute; */
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgb(22, 22, 22);
-  font-size: 17.97px;
+  position: relative;
+  top: -8%;
+  left: 25%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(255, 255, 255, 0);
+  background-image: linear-gradient(to left, rgb(209, 125, 209), rgb(116, 61, 155), rgb(69, 69, 189), rgb(65, 143, 65), rgb(192, 192, 45), rgb(212, 162, 69), rgb(219, 67, 67));
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+  animation-duration: 30s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite;
+  /* text-shadow: 0 0 2px rgba(255, 255, 255, 1); */
+  font-size: 18px;
+  text-align: center;
   /* margin-left: 600px; */
   padding: 15px;
-  margin-top: 20px;
-  width: 80%;
+  width: 26%;
   display: flex;
+  transform: rotate(-5deg);
   /* background-color: rgb(193, 236, 255, 0.5); 
   border: 2px solid rgb(255, 255, 255,0.5); 
   border-radius: 5px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
 }
+
+.messagebackground img {
+  opacity: 70%;
+  position: absolute;
+  top: -160%;
+  left: -35%;
+  z-index: -15;
+  height: 350px;
+  transform: rotate(8deg);
+  /* animation-duration: 60s;
+  animation-name: colorrotate2;
+  animation-iteration-count: infinite; */
+}
+
 /* 
 .background2 img {
   position: relative;
@@ -246,7 +270,10 @@
 }
 
 .meet {
-  color: rgb(101, 255, 222);
+  position: relative;
+  top: 7%;
+  left: 23%;
+  color: rgb(80, 255, 217);
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   font-size: 40px;
   padding: 10px;
@@ -262,6 +289,7 @@
 
 .splashPageStart {
   position: relative;
+  z-index: 5;
   top: -150%;
   left: 55%;
   display: flex;
@@ -272,13 +300,15 @@
   font-size: 20px;
   font-weight: bold;
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
-  color: #72b1fa;
+  color: rgb(59, 223, 187);
   border: 5px outset rgb(0, 236, 197);
   cursor: pointer;
 }
 
 .splashPageStart:hover {
-  background-color: rgb(0, 255, 213, 0.175);
+  position: relative;
+  z-index: 5;
+  background-color: rgb(193, 236, 255, 0.5);
   border: 5px inset rgb(0, 236, 197);
   animation:
     0.1s infinite createeffect,
@@ -395,7 +425,7 @@
   animation-name: colorrotate2;
   animation-iteration-count: infinite;
   animation:
-    15s infinite shineeffect
+    10s infinite shineeffect
 }
 
 .left {
@@ -495,6 +525,11 @@
   animation-name: leftslideinz;
 }
 
+.background4 {
+  animation-duration: 0.5s;
+  animation-name: leftslideinz;
+}
+
 /* .picture {
   animation-duration: 0.5s;
   animation-name: leftslideinz;
@@ -512,6 +547,8 @@
 
 .links {
   /* animation: 3s ease-in slidein; */
+  position: relative;
+  z-index: 5;
   animation-duration: 0.5s;
   animation-name: leftslidein;
 }
@@ -534,5 +571,5 @@
 .links a:hover {
   animation:
     1s 1 fadein,
-    0.5s 0.5s infinite zoom
+    0.5s 0.2s infinite zoom
 }
