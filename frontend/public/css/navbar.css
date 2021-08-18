@@ -27,6 +27,7 @@
 .nav-links {
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 
 .logo {
@@ -35,6 +36,8 @@
 
   display: flex;
   justify-content: center;
+  
+  z-index: 1;
 }
 
 .logo img {
@@ -45,9 +48,9 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.logo:hover {
+.logo-link:hover {
   animation:
-    0.5s infinite bounce3
+    .8s infinite bounce3
 }
 
 .logout-icon img, .newpainting-icon img, .welcome-icon img {
@@ -56,7 +59,7 @@
 
 .logout-icon:hover, .newpainting-icon:hover, .welcome-icon:hover {
   animation:
-    0.5s infinite bounce3
+    0.8s infinite bounce3
 }
 
 .nav-button {
@@ -79,6 +82,10 @@
 
 .nav-button:hover {
   background-color: rgb(116, 188, 255);
+}
+
+.welcome-icon {
+  z-index: 2;
 }
 
 .welcome-icon button {
