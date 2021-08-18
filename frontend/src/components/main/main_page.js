@@ -13,11 +13,11 @@ class MainPage extends React.Component {
           <img className="paintsocialtitle" src="https://creatr-seed.s3.amazonaws.com/PaintSocialTitle.gif" alt="paintbrushisbroken" /> */}
           <img className="front-logo" src="https://cdn.discordapp.com/attachments/597985513701376013/877591358540484648/PaintSocial_Logo_Revamped_8.png" alt="titleisbroken"/>
         </div>
-        <div>
-          <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>
-        </div>
         <div className='splashMessage'>
           A painting-based social network, Paint Social allows you to express yourself through painting and connect with others through art.
+        </div>
+        <div>
+          <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>
         </div>
         <h2 className="meet">Meet the Team!</h2>
         <div className="splashProfiles">
