@@ -36,8 +36,10 @@ class ArtistShow extends React.Component {
               <Link to={`/paintings/${painting._id}`}> 
                 <div className="user-painting"
                   style={{backgroundImage: `url(${painting.painting_image})` }}
-                >    
-                  <p>{painting.title}</p>
+                >
+                  <div className="title-name">                    
+                    <p>{painting.title}</p>
+                  </div>  
                 </div>
               </Link>
             </div>

@@ -320,7 +320,7 @@
   background-color: rgba(213, 242, 255, 0.7);
   border: 5px inset rgb(0, 236, 197);
   animation:
-    0.1s infinite createeffect,
+    0.7s infinite createeffect,
     2s infinite colorpic
 }
 

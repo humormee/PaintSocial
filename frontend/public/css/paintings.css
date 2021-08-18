@@ -53,19 +53,22 @@
 }
 
 .item-container:hover {
-  /* animation: 0.3s hoverover forwards; */
-}
-
-.painting-index-item p {
-  position: relative;
-  bottom: 10px;
-  margin-bottom: 0;
-  text-align: left;
+  animation: 0.3s hoverover forwards;
 }
 
 .painting-index-item img {
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0, 0, 0, .75);
+}
+
+.title-name{
+  padding: 10px;
+
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.painting-index-item p {
+  font-size: 15px;
 }
 
 .title-likes{

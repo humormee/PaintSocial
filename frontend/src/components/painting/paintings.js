@@ -128,7 +128,7 @@ class Painting extends React.Component {
                     <div className="painting-index-item"
                       style={{backgroundImage: `url(${painting.painting_image})` }}
                     >              
-                      <div>
+                      <div className="title-name">
                         <p>{painting.title}</p>
                         <span>by: {this.renderArtist(painting.artist)}</span>                
                       </div>                           
