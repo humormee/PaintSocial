@@ -6,6 +6,7 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="frontlogowrapper">
+        <div className=""></div>
         <div className="front-logo">
           {/* <img src="https://cdn.discordapp.com/attachments/597985513701376013/867240581189337098/PaintSocial_Logo_Bigger.png" alt="PaintSocialLogo"/> */}
           {/* <img className="paintbrush" src="https://creatr-seed.s3.amazonaws.com/paintsmile-transparent3.gif" alt="paintbrushisbroken" />
@@ -20,7 +21,6 @@ class MainPage extends React.Component {
         </div>
         <h2 className="meet">Meet the Team!</h2>
         <div className="splashProfiles">
-          
           <div className="profile">
             <div className="left">
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463472530481233/miggs.jpeg" alt="miguelpicture"/>
