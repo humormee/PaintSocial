@@ -53,7 +53,7 @@
 }
 
 .item-container:hover {
-  animation: 0.3s hoverover forwards
+  /* animation: 0.3s hoverover forwards; */
 }
 
 .painting-index-item p {
