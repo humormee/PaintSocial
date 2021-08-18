@@ -209,8 +209,8 @@ export default class PaintingShow extends React.Component {
               <div className="comments">
                 {comments.paintingComments.map(comment => (
                   <div className="comment" key={`${comment.id}`}>
-                    <p>{comment.description}</p>
                     <p>{comment.commenter.username}</p>
+                    <p>&ensp;{comment.description}</p>
                     <div>{this.renderEraseButton(comment)}</div>
                   </div>
                 ))}
