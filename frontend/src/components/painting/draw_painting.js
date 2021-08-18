@@ -44,7 +44,8 @@ class DrawPainting extends React.Component {
                 onChange={this.update("title")}
                 placeholder="Title"
               />
-              <textarea 
+              <input 
+                type="text" 
                 value={this.state.description}
                 onChange={this.update("description")}
                 placeholder="Description"

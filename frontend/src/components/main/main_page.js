@@ -7,28 +7,20 @@ class MainPage extends React.Component {
     return (
       <div className="frontlogowrapper">
         <div className="front-logo">
-          {/* <Link to="/"> */}
           {/* <img src="https://cdn.discordapp.com/attachments/597985513701376013/867240581189337098/PaintSocial_Logo_Bigger.png" alt="PaintSocialLogo"/> */}
-          <img className="paintbrush" src="https://creatr-seed.s3.amazonaws.com/paintsmile-transparent3.gif" alt="paintbrushisbroken" />
-          <img className="paintsocialtitle" src="https://creatr-seed.s3.amazonaws.com/PaintSocialTitle.gif" alt="paintbrushisbroken" />
-          {/* <div className="topshine">
-            <img src="https://cdn.discordapp.com/attachments/597985513701376013/876978725521084426/Shineeffect.png"/>
-          </div>
-          <div className="topbackground">
-            <img src="https://media.discordapp.net/attachments/597985513701376013/877025834395897896/paintmeetteambackground5.png"/>
-          </div> */}
+          {/* <img className="paintbrush" src="https://creatr-seed.s3.amazonaws.com/paintsmile-transparent3.gif" alt="paintbrushisbroken" />
+          <img className="paintsocialtitle" src="https://creatr-seed.s3.amazonaws.com/PaintSocialTitle.gif" alt="paintbrushisbroken" /> */}
+          <img className="front-logo" src="https://cdn.discordapp.com/attachments/597985513701376013/877591358540484648/PaintSocial_Logo_Revamped_8.png" alt="titleisbroken"/>
         </div>
         <div>
           <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>
         </div>
         <div className='splashMessage'>
           A painting-based social network, Paint Social allows you to express yourself through painting and connect with others through art.
-          {/* <div className="messagebackground">
-            <img src="https://cdn.discordapp.com/attachments/597985513701376013/877032287965954058/paintmeetteambackground7.png"/>
-          </div> */}
         </div>
         <h2 className="meet">Meet the Team!</h2>
         <div className="splashProfiles">
+          
           <div className="profile">
             <div className="left">
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463472530481233/miggs.jpeg" alt="miguelpicture"/>
@@ -146,8 +138,6 @@ class MainPage extends React.Component {
           </div>
 
         </div>
-
-        {/* <script language="javascript" type="text/javascript" src="./show-on-scroll.js"></script> */}
       </div>
     );
   }

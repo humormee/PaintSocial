@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes hoveroff {
+  from {
+    transform: translateY(-1px) scale(1.05);
+  }
+  to {
+    transform: translateY(0px) scale(1);
+  }
+}
+
 .index-container {
   margin: 20px auto;
 
@@ -28,6 +37,7 @@
 
 .item-container {
   margin: 10px;
+  animation: 0.3s hoveroff forwards;
 }
 
 .painting-index-item{

@@ -63,11 +63,12 @@
 }
 
 .nav-button {
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
 
   padding: 10px;
   margin-right: 10px;
+  min-width: 38px;
 
   background: rgb(78, 167, 250);
   border: none;
