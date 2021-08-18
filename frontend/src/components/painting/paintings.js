@@ -51,7 +51,7 @@ class Painting extends React.Component {
         return
       } else if(users[i]._id === artistId) {
         return (
-          <div>{users[i].username}</div>
+          <span>{users[i].username}</span>
         )
       }
     }
@@ -120,17 +120,17 @@ class Painting extends React.Component {
               {this.props.paintings.map(painting => (    
                 <>
                 <div className="item-container">
-                  <div className="painter">
-                    {this.renderArtist(painting.artist)}
-                  </div>
                   <div className="title-likes">  
                     {this.renderLikes(painting)}
                   </div>
                   <Link key={painting._id} to={`/paintings/${painting._id}`} >         
                     <div className="painting-index-item"
                       style={{backgroundImage: `url(${painting.painting_image})` }}
-                    >                                         
-                      <p>{painting.title}</p>                      
+                    >              
+                      <div>
+                        <p>{painting.title}</p>
+                        <span>by: {this.renderArtist(painting.artist)}</span>                
+                      </div>                           
                     </div>                  
                   </Link>  
 
