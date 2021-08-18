@@ -21,7 +21,15 @@ The user can sign up for an account or use the demo option for quick access. In 
 
 ### Paintings
 * Drawing on canvas and saving and displaying artwork will be possible for users. 
-* The color dial and color wheel can both be adjusted to fit different sizes.
+* The thickness of the paintbrush can be selected by the painter.
+* A plethora of colors to choose from by using a color wheel and dropper.
+* 
 
 ![painting](https://creatr-seed.s3.amazonaws.com/readMePainting.gif)
+
+### User Features
+* Paint
+* Like paintings
+* Comment on paintings
+* Save paintings
 
