@@ -17,7 +17,7 @@ class MainPage extends React.Component {
           A painting-based social network, Paint Social allows you to express yourself through painting and connect with others through art.
         </div>
         <div>
-          <Link to={'/signup'}><button className="splashPageStart">Create an Account</button></Link>
+          <Link to={'/signup'}><button className="splashPageStart">Start!</button></Link>
         </div>
         <h2 className="meet">Meet the Team!</h2>
         <div className="splashProfiles">
