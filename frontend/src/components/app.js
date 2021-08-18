@@ -23,11 +23,11 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={MainPage} />
 
-      <Route exact path="/index" component={PaintingsContainer} />
+      <ProtectedRoute exact path="/index" component={PaintingsContainer} />
       <ProtectedRoute exact path="/draw-painting" component={DrawPaintingContainer} />
       <ProtectedRoute exact path="/painting" component={DrawPaintingContainer} />
-      <Route exact path="/paintings/:id" component={PaintingShowContainer} />
-      <Route exact path="/artist/:id" component={ArtistShowContainer} />
+      <ProtectedRoute exact path="/paintings/:id" component={PaintingShowContainer} />
+      <ProtectedRoute exact path="/artist/:id" component={ArtistShowContainer} />
       {/* <DrawPaintingContainer /> */}
 
       <MainPage />
