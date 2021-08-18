@@ -87,5 +87,5 @@ h2.comment-title{
 .delete-painting:hover {
   background-color: rgb(255, 116, 116);
   animation:
-    0.5s infinite bounce1
+    0.7s infinite bounce1
 }

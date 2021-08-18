@@ -117,16 +117,22 @@ a:hover {
   z-index: -5;
 }
 
+.login-logo{
+  height: 200px;
+}
+
 .signup-form, .login-form {
-  background-image: url("https://cdn.discordapp.com/attachments/597985513701376013/867246418484658176/Form_Background.png");
+  /* background-image: url("https://cdn.discordapp.com/attachments/597985513701376013/867246418484658176/Form_Background.png"); */
   background-repeat: no-repeat;
   background-position: top;
   background-size: 500px;
+
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  height: 1200px;
+  width: 400px;
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -134,14 +140,27 @@ a:hover {
   align-items: center;
   text-align: center;
 
-  border-radius: 10px;  
+  border-radius: 3px;  
+  background: white;
   margin: 100px auto;
-  padding: 50px 10px 20px 10px;
-  z-index: 2;
+  padding: 20px 10px 50px 10px;
+  z-index: 6;
+}
+
+.form-background {
+  position: absolute;
+  z-index: 6;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .form {
-  margin-top: 100px;
+  /* margin-top: 100px; */
   display: flex;
   flex-direction: column;
 }
@@ -183,21 +202,6 @@ a:hover {
     0.5s infinite bounce2
 }
 
-/* .login-form {
-  background-image: url("https://cdn.discordapp.com/attachments/597985513701376013/867246418484658176/Form_Background.png");
-  background-repeat: no-repeat;
-  height: 1200px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  border-radius: 10px;  
-  margin: 100px auto;
-  padding: 50px 10px 20px 10px;
-} */
 
 h1 {
   font-size: 20px;
@@ -222,6 +226,7 @@ input {
   padding: 7px;
   margin: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 5px;
 }
 
@@ -315,17 +320,18 @@ input:focus::placeholder {
 }
 
 .alreadyMember {
-  color: white;
+
+  color:rgb(91, 176, 255);
   font-weight: bold;
   border: none;
   cursor: pointer;
   font-size: medium;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0);
 }
 
 .alreadyMember:hover {
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
-  color:rgb(91, 176, 255);
+  color: lightskyblue;
 }
 
 .hearthov img:hover {

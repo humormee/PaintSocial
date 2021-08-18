@@ -63,12 +63,15 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="form-background">
         <div className="login-form">
-          {/* <div className="formbacklog">
-            <img src="https://cdn.discordapp.com/attachments/597985513701376013/867246418484658176/Form_Background.png" alt="formbackground">
-            </img>
-          </div> */}
+          <Link to="/">
+            <i class="fas fa-times"></i>
+          </Link>
+          <img 
+            className="login-logo"
+            src="https://media.discordapp.net/attachments/865977609330753600/871755565951500358/PaintSocial_Logo_Revamped_7.png?width=705&height=410"/>
+
           <form onSubmit={this.handleSubmit}>
             <div className="form">
               <input type="text"

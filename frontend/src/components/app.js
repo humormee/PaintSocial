@@ -13,18 +13,24 @@ import ArtistShowContainer from './user/artist_show_container'
 
 const App = () => (
   <div className="outermost">
-    <NavBarContainer />
     <Switch>
-      <Route exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+    </Switch>
+
+    <NavBarContainer />
+
+    <Switch>
+      <Route exact path="/" component={MainPage} />
 
       <Route exact path="/index" component={PaintingsContainer} />
       <ProtectedRoute exact path="/draw-painting" component={DrawPaintingContainer} />
       <ProtectedRoute exact path="/painting" component={DrawPaintingContainer} />
       <Route exact path="/paintings/:id" component={PaintingShowContainer} />
       <Route exact path="/artist/:id" component={ArtistShowContainer} />
-      <DrawPaintingContainer />
+      {/* <DrawPaintingContainer /> */}
+
+      <MainPage />
     </Switch>
   </div>
 );
