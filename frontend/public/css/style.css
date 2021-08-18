@@ -121,6 +121,14 @@ a:hover {
   height: 200px;
 }
 
+.form-close-button {
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+  padding: 0 10px;
+}
+
 .signup-form, .login-form {
   /* background-image: url("https://cdn.discordapp.com/attachments/597985513701376013/867246418484658176/Form_Background.png"); */
   background-repeat: no-repeat;
@@ -142,12 +150,15 @@ a:hover {
 
   border-radius: 3px;  
   background: white;
-  margin: 100px auto;
   padding: 20px 10px 50px 10px;
   z-index: 6;
 }
 
 .form-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: absolute;
   z-index: 6;
   height: 100%;

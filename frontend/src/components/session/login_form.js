@@ -65,9 +65,11 @@ class LoginForm extends React.Component {
     return (
       <div className="form-background">
         <div className="login-form">
-          <Link to="/">
-            <i class="fas fa-times"></i>
-          </Link>
+          <div className="form-close-button">
+            <Link to="/">
+              <i class="fas fa-times"></i>
+            </Link>
+          </div>
           <img 
             className="login-logo"
             src="https://media.discordapp.net/attachments/865977609330753600/871755565951500358/PaintSocial_Logo_Revamped_7.png?width=705&height=410"/>
