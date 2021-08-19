@@ -17,13 +17,13 @@ A painting-based social network, [Paint Social](https://paintsocial.herokuapp.co
 ### User Authentication
 The user can sign up for an account or use the demo option for quick access. In order to use features including liking, commenting, painting, and saving, users must be logged in. 
 
-![auth](https://creatr-seed.s3.amazonaws.com/readMeAuth.gif)
+![auth](https://creatr-seed.s3.amazonaws.com/readMeAuth1.gif)
 
 ### Paintings
 * Drawing on canvas and saving and displaying artwork will be possible for users. 
 * The thickness of the paintbrush can be selected by the painter.
 * A plethora of colors to choose from by using a color wheel and dropper.
-* 
+
 
 ![painting](https://creatr-seed.s3.amazonaws.com/readMePainting.gif)
 
