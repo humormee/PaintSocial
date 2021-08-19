@@ -17,7 +17,7 @@ A painting-based social network, [Paint Social](https://paintsocial.herokuapp.co
 ### User Authentication
 The user can sign up for an account or use the demo option for quick access. In order to use features including liking, commenting, painting, and saving, users must be logged in. 
 
-![auth](https://creatr-seed.s3.amazonaws.com/readMeAuth.gif)
+![auth](![auth](https://creatr-seed.s3.amazonaws.com/readMeAuth.gif)
 
 ### Paintings
 * Drawing on canvas and saving and displaying artwork will be possible for users. 
