@@ -54,6 +54,10 @@ router.post('/painting/:painting_id',
   }
 )
 
+// router.put('painting/:painting_id', (req, res) => {
+//   const comment = Comment.findById(req.params.id)
+// })
+
 router.delete('/:id', (req, res) => {
   
   Comment.deleteOne({ _id: req.params.id })
