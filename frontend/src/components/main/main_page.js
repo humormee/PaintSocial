@@ -27,15 +27,15 @@ class MainPage extends React.Component {
             <span className="names">Christian Miguel Dela Cruz
               <div className="description">Worked on frontend with a perfect smile</div>
               <div className="links">
-              <a href="https://www.linkedin.com/in/christian-miguel-dela-cruz-724656218/">
+              <a href="https://www.linkedin.com/in/christian-miguel-dela-cruz-724656218/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
                 <span className="social">LinkedIn</span>
               </a>
-              <a href="https://angel.co/u/christian-miguel-dela-cruz">
+              <a href="https://angel.co/u/christian-miguel-dela-cruz" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-angellist"></i>
                 <span className="social">AngelList</span>
               </a>
-              <a href="https://github.com/migs-dc">
+              <a href="https://github.com/migs-dc" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i>
                 <span className="social">Github</span>
               </a>
@@ -56,15 +56,15 @@ class MainPage extends React.Component {
             <span className="names">Kin Ka Tse
               <div className="description">Worked flexibly for maximum creativity</div>
               <div className="links">
-              <a href="https://www.linkedin.com/in/kin-ka-tse/">
+              <a href="https://www.linkedin.com/in/kin-ka-tse/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
                 <span className="social">LinkedIn</span>
               </a>
-              <a href="https://angel.co/u/kin-ka-tse">
+              <a href="https://angel.co/u/kin-ka-tse" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-angellist"></i>
                 <span className="social">AngelList</span>
               </a>
-              <a href="https://github.com/kinkatse">
+              <a href="https://github.com/kinkatse" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i>
                 <span className="social">Github</span>
               </a>
@@ -85,15 +85,15 @@ class MainPage extends React.Component {
             <span className="names">Eric Tran
               <div className="description">Worked on backend using willpower</div>
               <div className="links">
-              <a href="https://www.linkedin.com/in/eric-tran-6aab70130/">
+              <a href="https://www.linkedin.com/in/eric-tran-6aab70130/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
                 <span className="social">LinkedIn</span>
               </a>
-              <a href="https://angel.co/u/eric-tran-28">
+              <a href="https://angel.co/u/eric-tran-28" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-angellist"></i>
                 <span className="social">AngelList</span>
               </a>
-              <a href="https://github.com/eric-tran2">
+              <a href="https://github.com/eric-tran2" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i>
                 <span className="social">Github</span>
               </a>
@@ -114,15 +114,15 @@ class MainPage extends React.Component {
             <span className="names">Justin Ernst
               <div className="description">Lead the team with a fierce fist</div>
               <div className="links">
-              <a href="https://www.linkedin.com/in/justin-ernst-a0ab10156/">
+              <a href="https://www.linkedin.com/in/justin-ernst-a0ab10156/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
                 <span className="social">LinkedIn</span>
               </a>
-              <a href="https://angel.co/u/justin-ernst">
+              <a href="https://angel.co/u/justin-ernst" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-angellist"></i>
                 <span className="social">AngelList</span>
               </a>
-              <a href="https://github.com/humormee">
+              <a href="https://github.com/humormee" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i>
                 <span className="social">Github</span>
               </a>
