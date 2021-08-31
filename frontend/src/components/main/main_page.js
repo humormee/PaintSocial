@@ -25,7 +25,7 @@ class MainPage extends React.Component {
             <div className="left">
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463472530481233/miggs.jpeg" alt="miguelpicture"/>
             <span className="names">Christian Miguel Dela Cruz
-              <div className="description">Worked on frontend with a perfect smile</div>
+              <div className="description">Diligently decorated the frontend</div>
               <div className="links">
               <a href="https://www.linkedin.com/in/christian-miguel-dela-cruz-724656218/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
@@ -54,7 +54,7 @@ class MainPage extends React.Component {
             <div className="right">
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463470777270293/kinka.png" alt="kinpicture"/>
             <span className="names">Kin Ka Tse
-              <div className="description">Worked flexibly for maximum creativity</div>
+              <div className="description">Adapted flexibly in different roles</div>
               <div className="links">
               <a href="https://www.linkedin.com/in/kin-ka-tse/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
@@ -83,7 +83,7 @@ class MainPage extends React.Component {
             <div className="left">
             <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/875463458513117184/eric.png" alt="ericpicture"/>
             <span className="names">Eric Tran
-              <div className="description">Worked on backend using willpower</div>
+              <div className="description">Methodically structured the backend</div>
               <div className="links">
               <a href="https://www.linkedin.com/in/eric-tran-6aab70130/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
@@ -110,9 +110,9 @@ class MainPage extends React.Component {
 
           <div className="profile">
             <div className="right">
-            <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/876950806958575637/Justin.png" alt="justinpicture"/>
+            <img className="picture" src="https://media.discordapp.net/attachments/865977609330753600/882309338713174087/Justin_2.png" alt="justinpicture"/>
             <span className="names">Justin Ernst
-              <div className="description">Lead the team with a fierce fist</div>
+              <div className="description">Guided team members as the leader</div>
               <div className="links">
               <a href="https://www.linkedin.com/in/justin-ernst-a0ab10156/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
