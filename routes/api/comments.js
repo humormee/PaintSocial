@@ -54,6 +54,10 @@ router.post('/painting/:painting_id',
   }
 )
 
+router.post('/painting/update/:id', (req, res) => {
+  Comment.findById(req.params.id)
+    .then(() => console.log("updating..."))
+})
 // router.put('painting/:painting_id', (req, res) => {
 //   const comment = Comment.findById(req.params.id)
 // })
