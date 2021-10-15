@@ -53,11 +53,37 @@ router.post('/painting/:painting_id',
     }))
   }
 )
+router.post('/painting/update/:painting_id',
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { isValid, errors } = validateComment(req.body);
 
-router.post('/painting/update/:id', (req, res) => {
-  Comment.findById(req.params.id)
-    .then(() => console.log("updating..."))
-})
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+
+    Comment.findById(req.params.id)
+      .then(comment => {
+        comment.commenter = req.user.id;
+        comment.painting = req.params.painting_id;
+        comment.description = req.body.description;
+        comment.save()
+          .then(comment => {
+            res.json(comment)})
+          .catch(err => res.status(404).json({
+            commentnotposted: 'comment did not update correctly'
+      }))
+
+      })
+    
+    
+  }
+)
+
+// router.post('/painting/update/:id', (req, res) => {
+//   Comment.findById(req.params.id)
+//     .then(() => console.log("updating..."))
+// })
 // router.put('painting/:painting_id', (req, res) => {
 //   const comment = Comment.findById(req.params.id)
 // })
