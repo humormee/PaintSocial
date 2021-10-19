@@ -110,7 +110,7 @@ class MainPage extends React.Component {
 
           <div className="profile">
             <div className="right">
-            <img className="picture" src="https://media.discordapp.net/attachments/865977609330753600/882309338713174087/Justin_2.png" alt="justinpicture"/>
+            <img className="picture" src="https://cdn.discordapp.com/attachments/865977609330753600/900135776757628968/headshot_gray2_copy.jpeg" alt="justinpicture"/>
             <span className="names">Justin Ernst
               <div className="description">Guided team members as the leader</div>
               <div className="links">
