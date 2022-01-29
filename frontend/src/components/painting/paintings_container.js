@@ -11,7 +11,6 @@ const mSTP = (state) => {
     entities: state.entities,
     user: state.session.user,
     users: state.session.allUsers
-    // likes: Object.values(state.entities.likes.likes)
   })
 }
 

@@ -11,7 +11,6 @@ class NavBar extends React.Component {
   logoutUser(e) {
     e.preventDefault();
     this.props.logout()
-      // .then(() => this.props.history.push(`/`));
     this.props.history.push(`/`);
   }
 
@@ -23,8 +22,6 @@ class NavBar extends React.Component {
           <div className="newpainting-icon">
             <Link to={'/painting'}> 
               <button className="nav-button">
-                {/* Paint
-                <img src="https://media.discordapp.net/attachments/597985513701376013/877200677170987148/Create_New_Icon_New.png?width=670&height=670" alt="NewFile"/> */}
                 <i class="fas fa-paint-brush"></i>
               </button>
             </Link>
@@ -33,7 +30,6 @@ class NavBar extends React.Component {
           <div className="logout-icon"> 
             <button className="nav-button" onClick={this.logoutUser}>
               Logout &ensp;
-                {/* <img src="https://media.discordapp.net/attachments/597985513701376013/877200658460188702/Log_Out_Icon_New.png?width=670&height=670" alt="LogOut"/>  */}
                 <i class="fas fa-sign-out-alt"></i>
             </button>
           </div>

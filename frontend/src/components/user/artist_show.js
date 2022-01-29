@@ -21,14 +21,8 @@ class ArtistShow extends React.Component {
     
     const userPaintings = this.props.entities.paintings.user;
 
-    // const paintingsArr;
-
-    // for(i = 0; i < allPaintings.length; i++) {
-    //   if(allPaintings[i]._id === this.props.match.params)
-    // }
     return (
       <div className="user-show-page">
-        {/* <h1>you are on a users show page</h1> */}
         <h1>{username}'s Paintings</h1>
         <div className="user-painting-index">
           {userPaintings.map(painting => (

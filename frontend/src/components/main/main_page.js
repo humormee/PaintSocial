@@ -8,9 +8,6 @@ class MainPage extends React.Component {
       <div className="frontlogowrapper">
         <div className=""></div>
         <div className="front-logo">
-          {/* <img src="https://cdn.discordapp.com/attachments/597985513701376013/867240581189337098/PaintSocial_Logo_Bigger.png" alt="PaintSocialLogo"/> */}
-          {/* <img className="paintbrush" src="https://creatr-seed.s3.amazonaws.com/paintsmile-transparent3.gif" alt="paintbrushisbroken" />
-          <img className="paintsocialtitle" src="https://creatr-seed.s3.amazonaws.com/PaintSocialTitle.gif" alt="paintbrushisbroken" /> */}
           <img className="front-logo" src="https://cdn.discordapp.com/attachments/597985513701376013/877591358540484648/PaintSocial_Logo_Revamped_8.png" alt="titleisbroken"/>
         </div>
         <div className='splashMessage'>

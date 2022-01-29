@@ -9,7 +9,6 @@ export function ConvertToDataUrl() {
 
   const canvasRef = useRef(null);
   const canvas = canvasRef.current;
-  // const context = canvas.getContext('2d');
   
   if (window.navigator.msSaveBlob) {
     window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
@@ -94,7 +93,6 @@ export function PaintBox({placePainting}) {
     contextRef.current.fillRect(0, 0, canvas.width, canvas.height);
     restoreArray = [];
     index = -1;
-    // console.log(restoreArray)
   }
 
   const undo = () => {
@@ -105,7 +103,6 @@ export function PaintBox({placePainting}) {
       restoreArray.pop();
       contextRef.current.putImageData(restoreArray[index], 0, 0);
     }
-    // console.log(restoreArray)
   }
 
   const submitUndo = () => {
@@ -116,22 +113,11 @@ export function PaintBox({placePainting}) {
       submitArray.push(restoreArray.pop());
       contextRef.current.putImageData(restoreArray[index], 0, 0);
     }
-    // console.log(restoreArray)
   }
 
-  // const submit = () => {
-  //   while (index !== -1) {
-  //     submitUndo()
-  //   }
-  //   // paintingArray = tempPaintingArray.concat(submitArray);
-  //   submitArray.forEach(element => {
-  //     paintingArray.push(element)
-  //   }) 
-  // }
+
   const convertToDataUrl = () => {
-    // debugger
     const canvas = canvasRef.current;
-    // const context = canvas.getContext('2d');
     
     if (window.navigator.msSaveBlob) {
       window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
@@ -145,30 +131,21 @@ export function PaintBox({placePainting}) {
 
 
   const submit = () => {
-    // const btnSave = document.querySelector("#btnSave");
           
-    // btnSave.addEventListener("click", function () {
-      const canvas = canvasRef.current;
-      const context = canvas.getContext('2d');
-      if (window.navigator.msSaveBlob) {
-        window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
-      } else {
-        const a = document.createElement("a");
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d');
+    if (window.navigator.msSaveBlob) {
+      window.navigator.msSaveBlob(canvasRef.msToBlob(), "canvas-image.png");
+    } else {
+      const a = document.createElement("a");
 
-        document.body.appendChild(a);
-        a.href = canvas.toDataURL();
-        // window.dataUrl = a.href;
-        a.download = "painting-social-image.png"
-        a.click();
-        document.body.removeChild(a);
-      }
-    // });
+      document.body.appendChild(a);
+      a.href = canvas.toDataURL();
+      a.download = "painting-social-image.png"
+      a.click();
+      document.body.removeChild(a);
+    }
   }
-
-  // function pullImage(){
-  //   index += 1;
-  //   contextRef.current.putImageData(paintingArray[index], 0, 0);
-  // }
 
   return (
     <div>
@@ -184,10 +161,7 @@ export function PaintBox({placePainting}) {
         ref={canvasRef}
       />
       <div className="tools">
-        {/* <button onClick={() => convertToDataUrl()} type="button" id="btnDonwload" className="button">convertToDataUrl</button> */}
-
         <button onClick={() => submit()} type="button" id="btnSave" className="button">Save</button>
-        {/* <button onClick={() => pullImage()} type="button" className="button">Image</button> */}
         <button onClick={() => undo()} type="button" className="button">Undo</button>
         <button onClick={() => clearCanvas()} type="button" className="button">Clear</button>
 
@@ -199,11 +173,14 @@ export function PaintBox({placePainting}) {
         <div onClick={() => changeColor("white")} className="eraser">
           <img src="https://cdn.discordapp.com/attachments/865977609330753600/868114328233074698/Eraser_Fix.png" alt="eraser"/>
         </div>
-        <div onClick={() => changeColor("black")} className="color-field black"></div>
-        <div onClick={() => changeColor("red")} className="color-field red"></div>
-        <div onClick={() => changeColor("yellow")} className="color-field yellow"></div>
-        <div onClick={() => changeColor("green")} className="color-field green"></div>
-        <div onClick={() => changeColor("blue")} className="color-field blue"></div>
+        
+        <div className="color-fields">
+          <div onClick={() => changeColor("black")} className="color-field black"></div>
+          <div onClick={() => changeColor("red")} className="color-field red"></div>
+          <div onClick={() => changeColor("yellow")} className="color-field yellow"></div>
+          <div onClick={() => changeColor("green")} className="color-field green"></div>
+          <div onClick={() => changeColor("blue")} className="color-field blue"></div>
+        </div>
         
         <input className="pen-range" 
           type="range" 
@@ -214,5 +191,3 @@ export function PaintBox({placePainting}) {
     </div>
   )
 }
-
-// export default PaintBox;

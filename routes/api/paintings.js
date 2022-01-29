@@ -24,10 +24,8 @@ router.get('/user/:user_id', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    // debugger
     Painting.findById(req.params.id)
         .then(painting => {
-            // debugger
             return (res.json(painting))})
         .catch(err =>
             res.status(404).json({ nopaintingfound: 'No painting found with that ID' })
@@ -53,20 +51,14 @@ router.post('/',
         return res.status(400).json(errors);
     }
 
-
-    // painting_image: req.body.painting_image,
-
-    // debugger
     const newPainting = new Painting ({
         artist: req.user.id,
         painting_image: req.body.painting_image,
         description: req.body.description,
-        // painting_image: 'temp value',
         title: req.body.title
     })
 
     newPainting.save().then(painting => {
-        // debugger
         return (res.json(painting))})
         .catch(err =>
             res.status(404).json({ paintingnotposted: 'painting did not save correctly' }

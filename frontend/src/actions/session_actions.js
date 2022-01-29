@@ -1,5 +1,4 @@
 import * as APIUtil from '../util/session_api_util';
-// import
 import jwt_decode from 'jwt-decode';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
@@ -47,11 +46,6 @@ export const fetchUsers = () => dispatch => (
 export const signup = user => dispatch => (
   APIUtil.signup(user)
       .then(() => dispatch(receiveUserSignIn()))
-      // .then(() => {
-      //   login(user)
-      // }
-      // )
-      // .then(() => dispatch(receiveCurrentUser(user)))
       .catch(err => dispatch(receiveErrors(err.response.data)))
   
 );

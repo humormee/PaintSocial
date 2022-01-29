@@ -35,16 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
   window.axios = axios;
-  // window.getComment = getComment;
   window.getPaintingComments = getPaintingComments;
-  // window.createComment = createComment;
-  // window.deleteComment = deleteComment;
   window.getAllLikes = getAllLikes;
   window.getPaintingLikes = getPaintingLikes;
   window.createLike = createLike;
   window.deleteLike = deleteLike;
-  // window.
-
   window.store = store;
   window.getState = store.getState;
   window.dispatch = store.dispatch;

@@ -50,7 +50,6 @@ export default class PaintingShow extends React.Component {
 
   
   createComment(e) {
-    // e.preventDefault();
     let { user } = this.props.session;
     if(!user) {
       return null;
@@ -142,7 +141,6 @@ export default class PaintingShow extends React.Component {
     this.props.fetchArtist(comment.commenter)
       .then(commenter =>
       {
-        // debugger
         return (
           <div className="comment" key={`${comment.id}`}>
             <p>{comment.description}</p>
@@ -151,22 +149,12 @@ export default class PaintingShow extends React.Component {
         </div>
     )
       })
-
-      // return (
-    //   <div className="comment" key={`${comment.id}`}>
-    //     <p>{comment.description}</p>
-    //     <p>{commenter.username}</p>
-    //   <div>{this.renderEraseButton(comment)}</div>
-    // </div>
-    // )
-    
   }
 
   render() {
     
     let { artist } = this.props.entities.paintings
     let { painting, comments } = this.props
-    // let { comments } = this.props
 
     if(!this.props.painting || !artist || !this.props.likes){
       return null;

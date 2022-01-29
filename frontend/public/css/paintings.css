@@ -45,7 +45,6 @@
   justify-content: flex-start;
   align-items: flex-end;
 
-  /* border: 1px solid lightgrey; */
   border-radius: 3px;
   padding: 10px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
@@ -120,14 +119,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* border: 1px solid red; */
 }
 
 canvas {
   box-shadow: 5px 5px 5px 5px rgb(56, 54, 54);
   cursor: crosshair;
-  /* cursor: url(https://cdn.discordapp.com/attachments/597985513701376013/875047802160431174/Eraser.png), auto; */
 }
 
 /* ---------- */
@@ -137,6 +133,11 @@ canvas {
   justify-content: center;
   flex-direction: row;
   margin: 15px 0;
+}
+
+.color-fields {
+  border: 3px solid white;
+  border-radius: 5px;
 }
 
 .tools .color-field {

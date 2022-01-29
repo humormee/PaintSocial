@@ -47,16 +47,11 @@ router.post('/painting/:painting_id',
     newComment.save()
         .then(comment => {
           res.json(comment)})
-        // .populate('commenter')
         .catch(err => res.status(404).json({
           commentnotposted: 'comment did not save correctly'
     }))
   }
 )
-
-// router.put('painting/:painting_id', (req, res) => {
-//   const comment = Comment.findById(req.params.id)
-// })
 
 router.delete('/:id', (req, res) => {
   

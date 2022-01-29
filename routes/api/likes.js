@@ -28,14 +28,7 @@ router.get('/', (req, res) => {
 router.post('/painting/:painting_id',
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    // const { isValid, errors } = validateComment(req.body);
-
-    // if (!isValid) {
-    //   return res.status(400).json(errors);
-    // }
-
-      console.log('like post route');
-
+    
     const newLike = new Like ({
       liker: req.user.id,
       painting: req.params.painting_id
